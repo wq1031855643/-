@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>boos直聘</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/posi.css">
+</head>
+<body>
+
+<div class="f_warpSearch">
+    <div class="f_contant">
+        <div class="f_search">
+            <div class="f_sel">
+                <span>全国</span>
+                <i></i>
+                <input type="text" placeholder="搜索职位、公司" class="f_text">
+                <div>
+                    <b>职位类型</b>
+                </div>
+                <div>
+                    <b>公司行业</b>
+                </div>                
+            </div>
+            <button class="f_btn"></button>
+        </div>
+        <div class = "f_cityList">
+            <ul></ul>
+            <div class="f_sor">
+                <p></p>
+            </div>
+        </div>
+        <div class = "f_cityOist">
+            <ol></ol>
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<!-- <div class="scr">
+    <div class="f_sel">未选择</div>
+    <div></div>
+</div> -->
+
+<!-- <div class="f_chidlSel" > </div> --> 
+
+<script src="jquery-1.8.3/jquery-1.8.3.js" ></script>
+<script src="js/f_library.js"></script>
+<script>
+
+
+$(".f_sel span").click(function(){
+    aja(forArr);
+    $(this).addClass("f_showCity")
+})
+
+$(".f_cityList ul").on("mouseover","li",function(){
+    var code = $(this).attr("code");
+    aja(forArr2,code);
+})
+
+$(".f_cityList ul").on("mouseover","li",function(){
+    var code = $(this).attr("code");
+    aja(forArr2,code);
+})
+
+
+
+
+$(".f_sor p").mousedown("click",function(e){
+    // console.log(e.srcElement.clientLeft);
+    this.y = e.offsetY;
+    var _this = this;
+    $(".f_cityList").bind("mousemove",function(e){
+        var lTop = e.offsetY;
+        //console.log(lTop);
+        $(_this).css("top",lTop - _this.y);
+        return false;
+    })
+    $(".f_cityList").mouseup(function(){
+       $(".f_cityList").unbind("mosemove");
+        console.log(11)
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
