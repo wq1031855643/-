@@ -23,7 +23,13 @@
     width: 65px;
     line-height: 30px;
     padding: 6px 15px 8px;
+    background: url("../images/boos_posi/f_icons.gif") no-repeat 70px 18px;
 }
+
+.f_search .f_sel span.bg{
+    background-position:70px -29px;
+}
+
 .f_search .f_sel i{
     display: inline-block;
     width: 1px;
@@ -70,7 +76,7 @@
 /* S cityList */
 .f_cityList , .f_cityOist{
     display: inline-block;
-    width: 150px;
+    width: 146px;
     height: 300px;
     border: 1px solid #00d7c6;
     border-top: none;
@@ -78,38 +84,40 @@
 }
 .f_cityOist{
     width: 146px;
-    margin-left: 150px;
+    margin-left: 200px;
     background: #f8f9fa;
 }
 
 .f_cityList ul,.f_cityOist ol{
     float: left;
-    width: 144px;
+    width: 90px;
     height: 100%;
     overflow: hidden;
 }
 
+
 .f_cityList li,.f_cityOist li{
-    width: 116px;
-    line-height: 50px;
-    padding-left: 28px;
+    width: 70px;
+    line-height: 56px;
+    padding-left: 20px;
 }
-.f_cityList li:hover{
+/* .f_cityList li:hover{
     background: #f1f3f6;
-}
+} */
 .f_cityList .f_sor{
     float: left;
     height: 100%;
-    width:6px;
+    width:56px;
     position: relative;
 }
 .f_cityList .f_sor p{
     position: absolute;
     height:50px;
-    width: 6px;
+    width: 5px;
     border-radius: 2px;
     background: #ccc;
     top:0;
+    right: 0;
 }
 
 
