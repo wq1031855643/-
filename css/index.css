@@ -194,6 +194,7 @@
 	top: 53px;
 	left: -1px;
 	color: #8d92a1;
+	z-index: 999;
 }
 
 .l_select_tree>ul {
@@ -242,7 +243,64 @@
 	-webkit-border-radius: 5px;
 }
 
-#wrap ::-webkit-scrollbar-track-piece {
+::-webkit-scrollbar-track-piece {
 	background-color: #fff;
 	-webkit-border-radius: 0;
+}
+#main{
+	position: relative;
+	width: 1000px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.job_menu{
+	width: 268px;
+	background: #fff;
+    color: #61687c;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(3,0,0,.04);
+	padding-top: 0;
+}
+.job_menu>ul{
+	height: 44px;
+	padding: 0 0;
+}
+.job_menu li{
+	padding: 8px 0 9px 20px;
+    width: 233px;
+    height: 27px;
+}
+.job_menu li>i{
+	float: right;
+    background-position: -25px 0;
+    margin-top: 5px;
+    width: 12px;
+	height: 16px;
+	font-style: normal;
+    font-size: 16px;
+    position: relative;
+    top: 2px;
+	display: inline-block;
+    background-image: url("https://static.zhipin.com/zhipin/v171/web/geek/images/icons.png");
+    background-repeat: no-repeat;
+}
+.job_menu li>b {
+    float: left;
+    color: #414a60;
+    font-size: 15px;
+	margin-top: 4px;
+}
+.job_menu a{
+    color: #61687c;
+    font-size: 13px;
+    display: inline-block;
+    line-height: 28px;
+    margin-left: 16px;
+}
+.job_menu ul.cur {
+    position: relative;
+    width: 268px;
+    z-index: 10;
+    background: rgb(92, 201, 180);
+    border-color: rgb(209, 212, 219) rgb(255, 255, 255) rgb(209, 212, 219) rgb(209, 212, 219);
 }
