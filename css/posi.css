@@ -6,6 +6,7 @@
 /* S search */
 .f_warpSearch{
     padding: 20px 0;
+    background: #fff;
 }
 .f_search{
     overflow: hidden;    
@@ -23,11 +24,11 @@
     width: 65px;
     line-height: 30px;
     padding: 6px 15px 8px;
-    background: url("../images/boos_posi/f_icons.gif") no-repeat 70px 18px;
+    background: url("../images/boss_posi/f_icons.gif") no-repeat 70px -29px;
 }
 
 .f_search .f_sel span.bg{
-    background-position:70px -29px;
+    background-position:70px 18px;
 }
 
 .f_search .f_sel i{
@@ -61,6 +62,7 @@
     padding: 0 15px;
 }
 
+
 .f_search  .f_btn{
     float: left;
     width: 90px;
@@ -78,52 +80,86 @@
     display: inline-block;
     width: 146px;
     height: 300px;
-    border: 1px solid #00d7c6;
     border-top: none;
+    outline: none;
     position: absolute;
+    overflow: hidden;
+    display: none;
+    background: #fff;
 }
 .f_cityOist{
     width: 146px;
-    margin-left: 200px;
+    margin-left: 146px;
     background: #f8f9fa;
 }
 
 .f_cityList ul,.f_cityOist ol{
     float: left;
-    width: 90px;
-    height: 100%;
-    overflow: hidden;
+    width: 141px; 
+    position: absolute; 
 }
 
-
 .f_cityList li,.f_cityOist li{
-    width: 70px;
+    width: 121px;
     line-height: 56px;
     padding-left: 20px;
 }
 /* .f_cityList li:hover{
     background: #f1f3f6;
 } */
-.f_cityList .f_sor{
-    float: left;
+.f_cityList .f_sor,.f_cityOist .f_sor{
+    float: right;
     height: 100%;
-    width:56px;
-    position: relative;
+    width: 5px;
+    display: none;
+    
 }
-.f_cityList .f_sor p{
+.f_cityList .f_sor p,.f_cityOist .f_sor p{
     position: absolute;
     height:50px;
     width: 5px;
     border-radius: 2px;
     background: #ccc;
-    top:0;
-    right: 0;
 }
 
 
 /* E cityList */
 
 
+/* S positype */
+.f_warpSearch .f_posiList{
+    width: 1000px;
+    height: 250px;
+    border: 1px solid red;
+    overflow: hidden;
+    position: relative;
+}
+.f_warpSearch .f_posiList ul{
+    width: 168px;
+    float: left;
+    margin-right: 10px;
+    position: absolute;
+}
+.f_warpSearch .f_posiList ul li{
+    width: 148px;
+    line-height: 42px;
+    padding-left: 20px;
+}
+.f_warpSearch .f_posiList .f_posi_sor{
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    display: none;
+
+}
+.f_posiList .f_posi_sor p{
+    position: absolute;
+    height:50px;
+    width: 5px;
+    border-radius: 2px;
+    background: #ccc;
+}
+/* E positype */
 
 
 
