@@ -31,6 +31,11 @@
     position: relative;
     padding: 0 82px;
 }
+.direcruit{
+    height: 855px;
+    padding-top: 70px;
+    background: #59cac2;
+}
 .app .img{
     background: url(../images/boss_app/figure-phone-app.png) center bottom no-repeat;
     padding-top: 70px;
@@ -40,6 +45,8 @@
     float: left;
     position: relative;
 }
+.direcruit .img{background: url(../images/boss_app/figure-phone-2.png) center bottom no-repeat;}
+
 .app .img .app-tip{
     position: absolute;
     width: 338px;
@@ -48,7 +55,25 @@
     left: 127px;
     background: url(../images/boss_app/app-tip.png) no-repeat;
 }
-
+.direcruit .img .app-tip{
+    background: url(../images/boss_app/chat-tip.png) no-repeat;
+    z-index: 99;
+}
+.direcruit .img .inner-p{
+    margin: 178px 0 0 100px;
+    width: 255px;
+    height: 335px;
+    overflow: hidden;
+    position: relative;
+}
+.direcruit .img .chat-inner{
+    background: url(../images/boss_app/chat-list.png) no-repeat;
+    position: absolute;
+    width: 255px;
+    height: 559px;
+    left: 0;
+    top: 0;
+}
 .app .text{
     background: url(../images/boss_app/app-title.png) no-repeat;
     margin-top: 210px;
@@ -57,6 +82,14 @@
     width: 488px;
     float: left;
     position: relative;
+}
+.direcruit .text{
+    background: url(../images/boss_app/text-title.png) no-repeat;
+    background-position: center -216px;
+    float: left;
+    width: 488px;
+    height: 210px;
+    margin-top: 336px;
 }
 .app .text a{
     width: 213px;
@@ -91,38 +124,64 @@
 
 .chat{
     background: #f5f7f9;
-    padding: 220px 200px 200px 230px;
+    padding: 220px 200px 100px 230px;
 }
 .chat .text{
     background: url(../images/boss_app/text-title.png) no-repeat;
     height: 114px;
 }
 .chat .fadein{
-    width: 980px;
-    margin-top: 92px;
-    /* margin-left: -100px; */
+    text-align: center;
+    width: 960px;
+    height: 210px;
+    position: relative;
 }
+
 .chat .fadein img{
-    margin-right: 190px;
-    display: block;
     float: left;
+    position: absolute;
 }
 .chat .fadein .fade-img1{
-    left: ;
-    top: ;
+    top: 100px;
+    left: -60px;
 }
 .chat .fadein .fade-img2{
-    left: ;
-    top: ;
+    top: 135px;
+    left: 240px;
 }
 .chat .fadein .fade-img3{
-    left: ;
-    top: ;
+    top: 135px;
+    left: 515px;
 }
 .chat .fadein .fade-img4{
-    left: ;
-    top: ;
-    margin-right: 0px;
+    top: 120px;
+    left: 775px;
+}
+
+.chat .footer{
+    padding-bottom: 70px;
+    position: relative;
+    height: 227px;
+}
+.chat .footer img{
+    display: block;
+    position: absolute;
+}
+.chat .footer:nth-child(1){
+    z-index: 1;
+    height: 336px;
+}
+.chat .footer img:nth-child(2){
+    top: 115px;
+    left: 43%;
+    height: 115px;
+    z-index: 99999;
+}
+.chat .footer img:nth-child(3){
+    bottom: 0;
+    left: 77px;
+    height: 152px;
+    z-index: 1;
 }
 
 
@@ -130,19 +189,82 @@
 
 
 
-.direcruit{
-    background: #59cac2;
-    height: 925px;
-}
 .company{
     background: #2e2f34 url(..//images/boss_app/bg-company.jpg) center no-repeat;
     background-size: cover;
-    height: 925px;
+    height: 735px;
+    padding-top: 180px;
 }
+.company .main{
+    width: 1170px;
+    height: 786px;
+    margin: 0 auto;
+}
+.company .text{
+    height: 160px;
+    background: url(../images/boss_app/text-title.png) center -507px no-repeat;
+}
+.company .img{
+    margin: 0 auto;
+    width: 866px;
+    height: 368px;
+    margin-top: 66px;
+    background: url(../images/boss_app/figure-computer.png) center bottom no-repeat;
+    position: relative;
+}
+.company .img img{
+    position: absolute;
+}
+.company .img img:nth-child(1){
+    top: 150px;
+    right: 170px;
+}
+.company .img img:nth-child(2){
+    top: 177px;
+    left: 0;
+}
+.company .img img:nth-child(3){
+    top: 58px;
+    left: 85px;
+}
+.company .img img:nth-child(4){
+    top: 58px;
+    right: 50px;
+}
+.company .img img:nth-child(5){
+    top: 256px;
+    left: 170px;
+}
+.company .img img:nth-child(6){
+    top: 238px;
+    right: 22px;
+}
+
+
+
+
+
 .decent{
+    width: 1170px;
     background: #fff;
     height: 925px;
+    padding: 248px 360px 180px 270px;
 }
+.decent .text{
+    height: 240px;
+    background: url(../images/boss_app/text-title.png) center -705px no-repeat;
+}
+.decent .img{
+    width: 340px;
+    float: right;
+    height: 666px;
+    background: url(../images/boss_app/figure-phone-3.png) no-repeat;
+}
+
+
+
+
+
 .media{
     background: ;
     height: ;
