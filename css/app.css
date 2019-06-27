@@ -245,27 +245,76 @@
 
 
 .decent{
-    width: 1170px;
     background: #fff;
-    height: 925px;
-    padding: 248px 360px 180px 270px;
+    height: 780px;
+    padding-top: 160px;
+    padding-left: 47px;
 }
 .decent .text{
+    display: inline-block;
+    width: 634px;
     height: 240px;
+    margin-top: 200px;
     background: url(../images/boss_app/text-title.png) center -705px no-repeat;
 }
 .decent .img{
-    width: 340px;
     float: right;
+    margin-right: 160px;
+    width: 340px;
     height: 666px;
     background: url(../images/boss_app/figure-phone-3.png) no-repeat;
+    position: relative;
+}
+.decent .img .show_cards{
+    position: absolute;
+    width: 255px;
+    height: 394px;
+    top: 150px;
+    left: 60px;
+}
+.decent .img .show_cards li{
+    display: block;
+    width: 230px;
+    height: 90px;
+    margin: 8px 0 0 12px;
+    background:url(../images/boss_app/cards-list.png) no-repeat;
+}
+.decent .img .show_cards li:nth-child(1){
+    animation: cardShow1 2.1s ease .2s;
+}
+.decent .img .show_cards li:nth-child(2){
+    animation: cardShow2 1.8s ease .2s;
+    background-position: 0 -100px;
+}
+.decent .img .show_cards li:nth-child(3){
+    animation: cardShow3 1.5s ease .2s;
+    background-position: 0 -200px;
+}
+.decent .img .show_cards li:nth-child(4){
+    animation: cardShow4 1.2s ease .2s;
+    background-position: 0 -316px;
+    transform: perspective(500px) rotateX(-5deg) scale(1.14) translateY(-30px);
+    margin-top: -10px;
+}
+.decent .img .show_cards li:nth-child(5){
+    animation: cardShow5 .9s ease .2s;
+    background-position: 0 -433px;
+    margin-top: -80px;
+    transform: perspective(500px) rotateX(-10deg) scale(1.23) translateY(-15px);
+}
+.decent .img .show_cards li:nth-child(6){
+    animation: cardShow6 .6s ease .2s;
+    background-position: 0 -541px;
+    margin-top: -81px;
+    box-shadow: 0 -2px 15px rgba(0,0,0,.1);
+    transform: perspective(500px) rotateX(-10deg) scale(1.32) translateY(0);
+
 }
 
 
 
 
-
-/* .media{
-    background: ;
-    height: ;
-} */
+.media{
+    background: #ccc;
+    height:300px;
+}
