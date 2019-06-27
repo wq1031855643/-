@@ -248,7 +248,7 @@
     background: #fff;
     height: 925px;
     padding-top: 160px;
-    padding-left: 60px;
+    padding-left: 50px;
 }
 .decent .text{
     margin-top: 200px;
@@ -262,13 +262,15 @@
     display: inline-block;
     height: 666px;
     background: url(../images/boss_app/figure-phone-3.png) no-repeat;
+    margin-right: 150px;
+    float: right;
 }
 
 
 
 
 
-.media{
+/* .media{
     background: ;
     height: ;
-}
+} */
