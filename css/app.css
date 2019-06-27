@@ -245,18 +245,21 @@
 
 
 .decent{
-    width: 1170px;
     background: #fff;
     height: 925px;
-    padding: 248px 360px 180px 270px;
+    padding-top: 160px;
+    padding-left: 60px;
 }
 .decent .text{
+    margin-top: 200px;
+    width:634px;
     height: 240px;
+    display: inline-block;
     background: url(../images/boss_app/text-title.png) center -705px no-repeat;
 }
 .decent .img{
     width: 340px;
-    float: right;
+    display: inline-block;
     height: 666px;
     background: url(../images/boss_app/figure-phone-3.png) no-repeat;
 }
