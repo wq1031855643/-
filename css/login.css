@@ -8,7 +8,7 @@ body,html{
     color: #414a60;
     font-size: 14px;
     background:#5dd5c8 url('../images/z_login/z_newbg.png')center bottom no-repeat;
-
+   overflow: hidden;
  }
  .z_wrap_login{
      width:740px;
@@ -21,6 +21,15 @@ body,html{
      background:white;
      border-radius: 10px;
  }
+ .z_wrap_login2{
+   width:740px;
+   height:514px;
+   margin:4px 0 0 214px;
+   background:white;
+   border-radius: 10px;
+}
+
+
  .z_header{
      float: right;
      height:20px;
@@ -29,6 +38,15 @@ body,html{
      color:#fff;
      opacity: .7;
  }
+ .z_header2{
+   height:20px;
+   line-height:20px;
+   color:#fff;
+   opacity: .7;
+   margin:60px 0 0 920px;
+   padding:0;
+   width:203px;
+}
  .z_header .z_call {
     padding-right: 3px;
  }
@@ -147,6 +165,26 @@ body,html{
     height:42px;
     border:1px solid #e3e7ed;
     line-height:42px;
+ }
+ .z_openLi{
+    position: relative;
+ }
+ .z_openLi ul{
+   position: absolute;
+   top: 2px;
+   left: -1px;
+   width: 176px;
+   max-height: 292px;
+   border: 1px #e3e7ed solid;
+   border-top: 0;
+   background-color: #fff;
+   overflow: auto;
+   z-index:20
+ }
+ .z_openLi ul li{
+   line-height: 42px;
+   padding: 0 15px;
+   cursor: pointer;
  }
  .z_book{
     position: absolute;
