@@ -57,12 +57,25 @@ define(['jquery','jqmsw'],function () {
     })
 
     $(".f_cityList,.f_cityOist").mouseover(function(){
-        
-        if($(this).children().eq(0).height() > 300){
-            $(this).children().eq(1).css("display","block");
+        var sor = $(this).children().eq(1);
+        var lh = $(this).children().eq(0).height();
+        var sor_h = $(sor).height();
+        var ratio = lh / sor_h - 0.3;
+        if(lh > sor_h){
+            $(sor).css("display","block");
+            var p = $(sor).children()[0];
+            if(p.nodeName == "P"){
+                $(p).css("height", sor_h / ratio);
+            }
         }
+        if(this.className == "f_cityList"){
+            var o = $(".f_cityOist").children().eq(1).children()[0];
+            $(".f_cityOist").children().eq(0).css("top",0);
+            $(o).css("top",0);
+        }  
     })
-    $(".f_cityList,.f_cityOist").mouseout(function(){
+
+    $(".f_cityList,.f_cityOist").mouseout(function(e){
         $(this).children().eq(1).css("display","none");
     })
 
@@ -87,34 +100,31 @@ define(['jquery','jqmsw'],function () {
         var fh = $(sor).height();
         var pf = fh - ph;
         var un = uh - fh;
-        if(Math.floor(un / pf) < 2){
-            var lTop = parseInt($(sor_p).css("top")) + -delta * Math.floor(un / pf) + (-3 * delta);
-        }else{
-            var lTop = parseInt($(sor_p).css("top")) + -delta * Math.floor(un / pf);
-        }
+        var lTop = parseInt($(sor_p).css("top")) + -delta * un / pf;
         lTop = Math.abs(lTop);
         lTop = lTop < 0 ? 0 : lTop;
-        lTop = lTop > 250 ? 250 : lTop;
+        lTop = lTop > pf ? pf : lTop;
         $(sor_p).css("top",lTop);
-        $(this).css("top",-lTop * Math.floor(un / pf));
-        
+        $(this).css("top",-lTop  * un / pf);  
     })
 
 
     //模拟滚动条
     $(".f_sor p").mousedown("click",function(e){
         this.y = e.offsetY;
-        _this = this;
         var paren = $(this).parent();
         var fh =$(paren).siblings().height() / $(paren).height();
-            fh = Math.floor(fh)
+        this.height =  $(paren).height() - $(this).height();
+        _this = this;
         $(paren).parent().bind("mousemove",function(e){
             var y = e.pageY - $(this).offset().top    
             var lTop = y - _this.y;
             lTop = lTop < 0 ? 0 : lTop;
-            lTop = lTop > 250 ? 250 : lTop;
+            lTop = lTop > _this.height ? _this.height : lTop;
+            lTop = Math.abs(lTop);
             $(_this).css("top",lTop);
-            $(paren).siblings().css("top",-lTop*fh);
+            console.log(_this.height,fh)
+            $(paren).siblings().css("top",-lTop * fh);
             return false;
         })
         $(document).mouseup(function(){
@@ -143,7 +153,7 @@ define(['jquery','jqmsw'],function () {
             }
         })
     }
-    // ajaPosi();
+    ajaPosi();
 
     $(".f_posiList .f_posi_ul1").on("mousemove","li",function(e){
         var code = $(e.target).attr("code");
@@ -193,94 +203,82 @@ define(['jquery','jqmsw'],function () {
     })
 
 
-    $(".f_posiList").on("mouseover",function(e){
-        $('.f_posiList .f_posi_sor').css("display","none");
-        var pare = e.target.parentNode;
-        if(pare.className == "f_posi_ul2"){
-            $(".f_posi_ul3").css("display","block");
-        }
-        var dsor = $(pare).siblings();
-        if($(pare).height() > 252 && e.target != this){
-            $(dsor).css("display","block");
-        }else if(e.target.className == "f_posi_sor" || pare.className == "f_posi_sor"){
-            if(pare.className){
-                $(pare).css("display","block");
-            }else{
-                $(e.target).css("display","block");
-            }
-        }else{
-            $('.f_posiList .f_posi_sor').css("display","none");
-        }
-    })
 
-
-
-
-
-
-    $(".f_posiList").on("mousewheel",function(e,delta){
-        if(e.target.nodeName == "LI"){
-            var pare = e.target.parentNode;
-        }
-        if(e.target.nodeName == "UL"){
-            var pare = e.target;
-        }
-        if(pare){
-            //console.log(pare)
-            if(pare.className != "f_posiList"){
-                var sor = $(pare).siblings();
-               // console.log($(pare).siblings())
-                var sor_p = $(sor).children();
-                //console.log(sor_p)
-                var uh = $(pare).height();
-                var ph = $(sor_p).height();
-                var fh = $(sor).height();
-                var pf = fh - ph;
-                var un = uh - fh;
-                console.log(Math.floor(un / pf))
-                if(Math.floor(un / pf) < 2){
-                    var lTop = parseInt($(sor_p).css("top")) + -delta * Math.floor(un / pf) + (-3 * delta);
-                    //console.log($(sor_p).css("top"))
-                }else{
-                    var lTop = parseInt($(sor_p).css("top")) + -delta * Math.floor(un / pf);
-                 console.log(lTop)
+    $(".f_posi_ul1,.f_posi_ul2,.f_posi_ul3,.f_posi_d2").mouseover(function(){
+        var paren = $(this).children()[0];
+        if(this.className != "f_posi_d2"){
+            var parent = $(this).parent();
+            var sor = $(this).siblings().eq(0);
+            var lh = $(this).height();
+            var sor_h = $(sor).height();
+            var ratio = lh / sor_h - 0.3;
+            if(lh > sor_h){
+                $(sor).css("display","block");
+                var p = $(sor).children()[0];
+                if(p.nodeName == "P"){
+                    $(p).css("height", sor_h / ratio);
                 }
-                
-                lTop = Math.abs(lTop);
-                
-                lTop = lTop < 0 ? 0 : lTop;
-                lTop = lTop > 200 ? 200 : lTop;
-                $(sor_p).css("top",lTop);
-                $(pare).css("top",-lTop * Math.floor(un / pf));
-
-                // console.log(pare,$(pare).css("top",-lTop * Math.floor(un / pf)))
-
+            }
+        }
+        var chi = $(parent).siblings().children()
+        for(var i = 0,len = chi.length; i < len; i++){
+            if(chi[i].nodeName == "DIV"){
+                $(chi[i]).css("display","none");
+                if($(chi[i]).siblings().className !== ".f_posi_ul1"){
+                    $(chi[i]).children().eq(0).css("top",0);
+                    $(chi[i]).siblings().css("top",0);
+                }
             }
         }
     })
+    $(".f_posi_ul1,.f_posi_ul2,.f_posi_ul3").mousewheel(function(e,delta){
+        var sor = $(this ).siblings();
+        var sor_p = $(this ).siblings().children();
+        var uh = $(this).height();
+        var ph = $(sor_p).height();
+        var fh = $(sor).height();
+        var pf = fh - ph;
+        var un = uh - fh;
+        var lTop = parseInt($(sor_p).css("top")) + -delta * un / pf;
+        lTop = Math.abs(lTop);
+        lTop = lTop < 0 ? 0 : lTop;
+        lTop = lTop > pf ? pf : lTop;
+        $(sor_p).css("top",lTop);
+        $(this).css("top",-lTop  * un / pf);  
+    })
 
-    // $(".f_posiList").mousewheel(function(e,delta){
-    //     console.log(e.target)
-    //     var sor = $(this ).siblings();
-    //     var sor_p = $(this).siblings().children();
-    //     var uh = $(this).height();
-    //     var ph = $(sor_p).height();
-    //     var fh = $(sor).height();
-    //     var pf = fh - ph;
-    //     var un = uh - fh;
-    //     if(Math.floor(un / pf) < 2){
-    //         var lTop = parseInt($(sor_p).css("top")) + -delta * Math.floor(un / pf) + (-3 * delta);
-    //     }else{
-    //         var lTop = parseInt($(sor_p).css("top")) + -delta * Math.floor(un / pf);
-    //     }
-    //     lTop = Math.abs(lTop);
-    //     lTop = lTop < 0 ? 0 : lTop;
-    //     lTop = lTop > 250 ? 250 : lTop;
-    //     $(sor_p).css("top",lTop);
-    //     $(this).css("top",-lTop * Math.floor(un / pf));
-    //     console.log(lTop);
+    $(".f_posi_sor p").mousedown("click",function(e){
+        this.y = e.offsetY;
+        var paren = $(this).parent();
+        var fh =$(paren).siblings().height() / $(paren).height() + 0.2;
+        this.height =  $(paren).height() - $(this).height();
+        _this = this;
+        if( $(paren).siblings().height() > $(paren).height()){
+            $(paren).parent().bind("mousemove",function(e){
+                var y = e.pageY - $(this).offset().top    
+                var lTop = y - _this.y;
+                lTop = lTop < 0 ? 0 : lTop;
+                lTop = lTop > _this.height ? _this.height : lTop;
+                lTop = Math.abs(lTop);
+                $(_this).css("top",lTop);
+                console.log(_this.height,fh)
+                $(paren).siblings().css("top",-lTop * fh);
+                return false;
+            })
+            $(document).mouseup(function(){
+                $(paren).parent().unbind("mousemove");
+                return false;
+            })
+        }
         
-    // })
+    })
+
+
+
+    
+
+    
+
 
 
 })

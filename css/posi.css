@@ -116,7 +116,7 @@
 }
 .f_cityList .f_sor p,.f_cityOist .f_sor p{
     position: absolute;
-    height:50px;
+    
     width: 5px;
     border-radius: 2px;
     background: #ccc;
@@ -126,12 +126,14 @@
 /* E cityList */
 
 
+
 /* S positype */
 .f_warpSearch .f_posiList{
     height: 250px;
     border: 1px solid red;
     overflow: hidden;
     position: relative;
+    
 }
 .f_warpSearch .f_posiList>div{
     width: 168px;
@@ -162,7 +164,6 @@
 }
 .f_posiList .f_posi_sor p{
     position: absolute;
-    height:50px;
     width: 5px;
     border-radius: 2px;
     background: #ccc;
