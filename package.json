@@ -1,0 +1,23 @@
+{
+  "name": "1906",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wq1031855643/1906.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wq1031855643/1906/issues"
+  },
+  "homepage": "https://github.com/wq1031855643/1906#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

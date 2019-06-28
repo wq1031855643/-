@@ -128,11 +128,18 @@
 
 /* S positype */
 .f_warpSearch .f_posiList{
-    width: 1000px;
     height: 250px;
     border: 1px solid red;
     overflow: hidden;
     position: relative;
+}
+.f_warpSearch .f_posiList>div{
+    width: 168px;
+    height: 100%;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    border: #00d7c6 1px solid;
 }
 .f_warpSearch .f_posiList ul{
     width: 168px;
@@ -150,6 +157,7 @@
     height: 100%;
     position: absolute;
     display: none;
+    right: -11px;
 
 }
 .f_posiList .f_posi_sor p{

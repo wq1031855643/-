@@ -1,0 +1,174 @@
+*,a,li{margin: 0; padding: 0;
+    text-decoration: none;
+    list-style: none;
+    /* display: none */
+}
+/* body{
+    background: #999;
+} */
+.xw_wrap{
+    height: 49px;
+    background: #202329;
+    border-top: 1px solid #b6b4b6;
+
+}
+.xw_header{
+    width: 1000px;
+    height: 49px;
+    margin: 0 auto;
+}
+.xw_her_left{
+    float: left;
+}
+.xw_logo{
+    color: #5dd5c8;
+    float: left;
+    width: 110px;
+    height: 36px;
+    margin-top: 6px;
+    /* margin-right: 5px; */
+    background: url(https://static.zhipin.com/zhipin/v171/web/geek/images/logo-2x.png) 3px 7px no-repeat;
+    background-size: 105px 19px;
+}
+.xw_nav_left{
+    float: left;
+    line-height: 49px;
+   
+}
+.xw_nav_left li{
+    float: left;
+}
+.xw_nav_left li a{
+    margin-left: 23px;
+    
+    display: inline-block;
+    height: 49px;
+    /* transition: all 0.3s linear; */
+}
+.tra{
+    color: #fff;
+    transition: all 0.3s linear; 
+}
+.tra:hover{
+    color: #5dd5c8;
+}
+.xw_her_left li .xw_js-left{
+    color: #5dd5c8;
+}
+/* ----------------左右分割----------------- */
+.xw_her_right{
+    float: right;
+}
+.xw_enter,.xw_sign{
+    float: right;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    /* background: yellow; */
+    box-sizing:border-box;
+    border: 1px solid #5dd5c8;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 12px;
+    margin-left: 17px;
+    color: #fff;
+}
+.xw_nav_right{
+    float:right;
+}
+.xw_nav_right li{
+    float:right;
+    margin: 0 10px 0 10px;
+    line-height: 49px;
+    position: relative;
+}
+.xw_nav_right li a{
+    color: #fff;
+    /* transition: all 0.3s linear; */
+}
+.xw_her_right a:hover{
+    color: #5dd5c8;
+}
+.xw_her_right a .xw_spa{
+    color: #fff;
+}
+.xw_spa{
+    width: 30px;
+    height: 15px;
+    background: red;
+    font-size: 10px;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 7px;
+    position: absolute;
+    top: 7px;
+    left: 72px;
+}
+/* -------------------转换分割---------------------- */
+.xw_wrap-b{
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #b6b4b6;
+    /* display: none; */
+
+}
+.xw_header-b{
+    width: 1170px;
+    height: 60px;
+    margin: 0 auto;
+}
+.xw_logo-b{
+    color: #5dd5c8;
+    float: left;
+    width: 173px;
+    height: 36px;
+    margin-top: 10px;
+    /* margin-right: 5px; */
+    background: url(https://static.zhipin.com/zhipin/v171/web/news/images/logo-x.png) 3px 7px no-repeat;
+}
+.xw_nav_left-b{
+    float: left;
+    line-height: 60px;
+   
+}
+.xw_nav_left-b li a{
+    margin-left: 34px;
+    color: #000;
+    height: 60px;
+}
+.xw_enter-b,.xw_sign-b{
+    margin-top: 18px;
+    color: #9fa3b0;
+    
+    
+}
+.xw_her_right .xw_enter-b:hover{
+    background: #5dd5c8;
+    color: #fff;
+}
+.xw_her_right .xw_sign-b:hover{
+    background: #5dd5c8;
+    color: #fff;
+}
+.xw_nav_right-b li{
+    line-height: 60px;
+    margin: 0 20px 0 20px;
+
+}
+.xw_nav_right-b li a{
+    color: #000;
+}
+/* -------------------------以下是底部-------------------------- */
+.xw_footer{
+    height: 212px;
+    background: yellow;
+    border-bottom: 1px solid #465460;
+}
+.xw_siteinfo{
+    width: 1170px;
+    height: 212px;
+    background: red;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 28px 0 18px 0;
+}

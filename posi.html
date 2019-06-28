@@ -7,9 +7,10 @@
 <title>boos直聘</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/posi.css">
+<link rel="stylesheet" href="css/head.css">
 </head>
 <body>
-
+<div class="l_top"></div>
 <div class="f_warpSearch">
     <div class="f_contant">
         <div class="f_search">
@@ -39,160 +40,30 @@
             </div>
         </div>
         <div class="f_posiList">
-            <ul class="f_posi_ul1"></ul>
-            <ul class="f_posi_ul2"></ul>
-            <ul class="f_posi_ul3"></ul>
-            <div class="f_posi_sor">
-                <p></p>
+            <div style="outline: none">
+                <ul class="f_posi_ul1"></ul>
+                <div class="f_posi_sor">
+                    <p></p>
+                </div>
             </div>
+            <div style="outline: none">
+                <ul class="f_posi_ul2"></ul>
+                <div class="f_posi_sor">
+                    <p></p>
+                </div>
+            </div>
+            <div style="outline: none">
+                <ul class="f_posi_ul3"></ul>
+                <div class="f_posi_sor">
+                    <p></p>
+                </div>
+            </div> 
         </div>
     </div>
 </div>
 
 
-<script src="jquery-1.8.3/jquery-1.8.3.js" ></script>
-<script src="jquery-1.8.3/jquery.mousewheel.js"></script>
-<script src="js/f_library.js"></script>
-<script>
 
-//单击职位选择
-// $(".f_sel span").click(function(){
-//     if($(".f_cityList").css("display") == "none"){
-//         $(".f_cityList,.f_cityOist").css("display","block");
-//         aja(forArr);
-//         $(this).addClass("f_showCity bg");
-//     }else{
-//         $(".f_cityList,.f_cityOist").css("display","none");
-//         $(this).removeClass("f_showCity bg");
-//     } 
-// })
-
-function  ajaPosi(){
-    $.ajax({
-        url:"data/position.json",
-        type:'get',
-        dataType:'json',
-        success:function(json){
-            var jsonArr = json.zpData;
-            var str = "";
-            for(var i=0,len = jsonArr.length ; i < len ;i++){
-                str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
-            }
-            $(".f_posiList .f_posi_ul1").html(str);
-        }
-    })
-}
-ajaPosi();
-$(".f_posiList .f_posi_ul1").on("mousemove","li",function(e){
-    var code = $(e.target).attr("code");
-    $.ajax({
-        url:"data/position.json",
-        type:'get',
-        dataType:'json',
-        success:function(json){
-            var jsonArr = json.zpData;
-            for(var i=0,len = jsonArr.length ; i < len ;i++){
-                if(code == jsonArr[i].code){
-                    var str2 = "";
-                    var lenArr = jsonArr[i].subLevelModelList;
-                    for(var j=0,len=lenArr.length;j<len;j++){
-                        str2 += '<li code = '+ lenArr[j].code +'>'+ lenArr[j].name +'</li>'; 
-                    }
-                    $(".f_posiList .f_posi_ul2").html(str2);
-                }  
-            }  
-        }
-    })
-})
-$(".f_posiList .f_posi_ul2").on("mousemove","li",function(e){
-    var code = $(e.target).attr("code");
-    $.ajax({
-        url:"data/position.json",
-        type:'get',
-        dataType:'json',
-        success:function(json){
-            var jsonArr = json.zpData;
-            var str = "";
-            for(var i=0,len = jsonArr.length ; i < len ;i++){
-                var josnJrr = jsonArr[i].subLevelModelList;
-                for(var j=0,jen=josnJrr.length;j,j < jen; j++){
-                    if(code == josnJrr[j].code){
-                        var str = '';
-                        var u3Arr = josnJrr[j].subLevelModelList;
-                        for(var z=0,len=u3Arr.length;z<len;z++){
-                                str += '<li>'+ u3Arr[z].name +'</li>'; 
-                        }
-                        $(".f_posiList .f_posi_ul3").html(str);
-                    }  
-                }
-            }   
-        }
-    })
-})
-
-
-$(".f_posiList").on("mousemove",function(e){
-    var pare = e.target.parentNode;
-    if(pare.className == "f_posi_ul2"){
-        $(".f_posi_ul3").css("display","block");
-    }
-    if($(pare).height() > 252 && e.target != this){
-        $('.f_posiList .f_posi_sor').css("display","block");
-        if(pare.className == "f_posi_ul1"){
-            $(".f_posiList .f_posi_sor").css("left",168);
-            $(".f_posi_ul3").css("display","none");
-        }
-        if(pare.className == "f_posi_ul2"){
-            $(".f_posiList .f_posi_sor").css("left",336);
-        }
-        if(pare.className == "f_posi_ul3"){
-            $(".f_posiList .f_posi_sor").css("left",564);
-        }
-    }else if(e.target.className == "f_posi_sor" || pare.className == "f_posi_sor"){
-        $('.f_posiList .f_posi_sor').css("display","block");
-        console.log(1)
-    }else{
-        $('.f_posiList .f_posi_sor').css("display","none");
-    }
-})
-
-
-
-$(".f_posiList").on("mousewheel",function(e,delta){
-    var pare = e.target.parentNode;
-    console.log(pare);
-    if(pare.className != "f_posiList"){
-        var sor = $(pare).siblings();
-        var sor_p = $(pare ).siblings().children();
-        var uh = $(pare).height();
-        var ph = $(sor_p).height();
-        var fh = $(sor).height();
-        var pf = fh - ph;
-        var un = uh - fh;
-        if(Math.floor(un / pf) < 2){
-            var lTop = parseInt($(sor_p).css("top")) + -delta * Math.floor(un / pf) + (-3 * delta);
-        }else{
-            var lTop = parseInt($(sor_p).css("top")) + -delta * Math.floor(un / pf);
-        }
-        lTop = Math.abs(lTop);
-        lTop = lTop < 0 ? 0 : lTop;
-        lTop = lTop > 250 ? 250 : lTop;
-        $(sor_p).css("top",lTop);
-        $(pare).css("top",-lTop * Math.floor(un / pf));
-    }
-    console.log(uh,ph,fh);
-    
-    
-})
-
-
-
-
-
-
-
-
-</script>
-
+<script src="js/require.js" data-main="js/main"></script>
 </body>
 </html>
