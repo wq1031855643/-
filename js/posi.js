@@ -9,6 +9,7 @@ define(['jquery','jqmsw'],function () {
             type:'get',
             dataType:'json',
             success:function(json){
+                console.log(json);
                 var jsonArr = json.zpData.cityList;
                 var str = arr(jsonArr,code);
             }

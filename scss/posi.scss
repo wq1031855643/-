@@ -1,0 +1,251 @@
+.f_contant{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* S search */
+.f_warpSearch{
+    padding: 20px 0;
+    background: #fff;
+    color:#9fa3b0;
+    font-size: 13px;
+}
+.f_posi_rela{
+    position: relative;  
+}
+.f_search{
+    overflow: hidden;    
+}
+.f_search .f_sel{
+    height: 100%;
+    width: 674px;
+    float: left;
+    position: relative;
+    border:1px solid #00d7c6;
+}
+.f_search .f_sel span{
+    display: block;
+    float: left;
+    width: 66px;
+    line-height: 30px;
+    padding: 6px 15px 8px;
+    background: url("../images/boss_posi/f_icons.gif") no-repeat 70px -29px;
+}
+
+.f_search .f_sel span.bg{
+    background-position:70px 18px;
+}
+
+.f_search .f_sel i{
+    display:block;
+    width: 1px;
+    background: #f2f2f5;
+    height:28px;
+    position: relative;
+    top:8px; 
+    float: left;
+}
+
+.f_search .f_sel .f_text{
+    padding: 7px 15px 7px;
+    padding-right: 44px;
+    width: 323px;
+    height: 28px;
+    float: left;
+}
+.f_search .f_sel div{
+    width: 97px;
+    font-size: 14px;
+    height: 100%;
+    padding: 6px 0 8px;
+    float: left;
+    background: url("../images/boss_posi/f_icons.gif") no-repeat 82px -30px;
+}
+.f_search .f_sel div.bg{
+    background-position:82px 18px;
+}
+.f_search .f_sel div b{
+    width: 55px;
+    font-weight: normal;
+    display:block;
+    float: left;
+    border-left: 1px solid #f2f2f5;
+    padding: 4px 0 4px 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    
+}
+
+
+.f_search  .f_btn{
+    float: left;
+    width: 90px;
+    height: 45.6px;
+    background: #00d7c6;
+    cursor: pointer;  
+    color: #fff; 
+    font-size: 25px;
+}
+
+/* E search */
+
+
+/* S cityList */
+.f_cityList , .f_cityOist{
+    display: inline-block;
+    width: 146px;
+    height: 300px;
+    border-top: none;
+    outline: none;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    background: #fff;
+}
+.f_cityOist{
+    width: 146px;
+    margin-left: 146px;
+    background: #f8f9fa;
+}
+
+.f_cityList ul,.f_cityOist ol{
+    float: left;
+    width: 141px; 
+    position: absolute; 
+}
+
+.f_cityList li,.f_cityOist li{
+    width: 121px;
+    line-height: 56px;
+    padding-left: 20px;
+}
+.f_cityList .f_sor,.f_cityOist .f_sor{
+    float: right;
+    height: 100%;
+    width: 5px;
+    display: none;
+    
+}
+.f_cityList .f_sor p,.f_cityOist .f_sor p{
+    position: absolute;
+    width: 5px;
+    border-radius: 2px;
+    background: #ccc;
+}
+
+
+/* E cityList */
+
+
+
+/* S positype */
+.f_warpSearch .f_posiList{
+    height: 250px;
+    overflow: hidden;
+    position: absolute;
+    left: 464px;
+    display: none;
+    background: #fff;
+}
+.f_warpSearch .f_posiList>div{
+    width: 168px;
+    height: 100%;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    display: none;
+    outline: none;
+}
+.f_warpSearch .f_posiList ul{
+    width: 168px;
+    float: left;
+    margin-right: 10px;
+    position: absolute;
+}
+.f_warpSearch .f_posiList ul li{
+    width: 148px;
+    line-height: 42px;
+    padding-left: 20px;
+}
+.f_warpSearch .f_posiList .f_posi_sor{
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    display: none;
+    right: -11px;
+
+}
+.f_posiList .f_posi_sor p{
+    position: absolute;
+    width: 5px;
+    border-radius: 2px;
+    background: #ccc;
+    left: 2px;
+}
+/* E positype */
+
+
+/* S f_company_ul */
+
+.f_warpSearch .f_company_ul{
+    width: 766px;
+    font: 13px;
+    box-sizing: border-box;
+    background: #fff;
+    position: absolute;
+    top:52px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    padding: 25px 0 15px 55px;
+    display: none;
+}
+.f_warpSearch .f_company_ul li{
+    width: 150px;
+    margin-left: 5px;
+    line-height: 30px;
+    display: inline-block;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.f_warpSearch .f_company_ul li:hover{
+    background:#f6f6f8;
+}
+
+/* E f_company_ul */
+
+
+
+/* S condition */
+.f_warpSearch .f_condition{
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+/* E condition */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
