@@ -18,8 +18,14 @@ define(['jquery','jqmsw'],function () {
     //单击地区选择时，调用请求ajax函数，并获得相应数据
     function forArr(jsonArr){
         var str = "";
+        var code = localStorage.getItem("posiCityCode");
         for(var i=0,len = jsonArr.length ; i < len ;i++){
-            str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
+            if(jsonArr[i].code == code){
+                str += '<li code ='+ code +' style= "background:#f1f3f6">'+ jsonArr[i].name +'</li>'
+            }else{
+                str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
+            }
+            
         }
         $(".f_cityList ul").html(str);
     }
@@ -41,22 +47,32 @@ define(['jquery','jqmsw'],function () {
 
     //单击地区选择，调用forArr函数
     $(".f_sel span").click(function(){
-        if($(".f_cityList").css("display") == "none"){
+        if( $(".f_cityList").css("display") == "none"){
             $(".f_cityList,.f_cityOist").css("display","block");
             aja(forArr);
             $(this).addClass("f_showCity bg");
         }else{
             $(".f_cityList,.f_cityOist").css("display","none");
             $(this).removeClass("f_showCity bg");
-        } 
+        }
     })
+    
+
+
     //单击地区选择，调用forArr2函数
     $(".f_cityList ul").on("mouseover","li",function(){
         var code = $(this).attr("code");
         aja(forArr2,code);
     })
 
-    $(".f_cityList,.f_cityOist").mouseover(function(){
+    $(".f_cityList,.f_cityOist").mouseover(function(e){
+        if(e.target.nodeName == "LI"){
+            $(e.target).css("background","#f1f3f6").siblings().css("background","#fff");
+            if(this.className == "f_cityList"){
+                var code = ($(e.target).attr("code")) ;
+                localStorage.setItem("posiCityCode",code)
+            }
+        }
         var sor = $(this).children().eq(1);
         var lh = $(this).children().eq(0).height();
         var sor_h = $(sor).height();
@@ -102,7 +118,7 @@ define(['jquery','jqmsw'],function () {
         var un = uh - fh;
         var lTop = parseInt($(sor_p).css("top")) + -delta * un / pf;
         lTop = Math.abs(lTop);
-        lTop = lTop < 0 ? 0 : lTop;
+        lTop = lTop < 1 ? 0 : lTop;
         lTop = lTop > pf ? pf : lTop;
         $(sor_p).css("top",lTop);
         $(this).css("top",-lTop  * un / pf);  
@@ -119,7 +135,7 @@ define(['jquery','jqmsw'],function () {
         $(paren).parent().bind("mousemove",function(e){
             var y = e.pageY - $(this).offset().top    
             var lTop = y - _this.y;
-            lTop = lTop < 0 ? 0 : lTop;
+            lTop = lTop < 1 ? 0 : lTop;
             lTop = lTop > _this.height ? _this.height : lTop;
             lTop = Math.abs(lTop);
             $(_this).css("top",lTop);
@@ -144,16 +160,21 @@ define(['jquery','jqmsw'],function () {
             type:'get',
             dataType:'json',
             success:function(json){
+                var code = localStorage.getItem("posiTypeCode");
                 var jsonArr = json.zpData;
                 var str = "";
                 for(var i=0,len = jsonArr.length ; i < len ;i++){
-                    str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
+                    if(jsonArr[i].code == code){
+                        str += '<li code ='+ code +' style= "background:#f1f3f6">'+ jsonArr[i].name +'</li>'
+                    }else{
+                        str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
+                    }  
                 }
                 $(".f_posiList .f_posi_ul1").html(str);
             }
         })
     }
-    ajaPosi();
+    
 
     $(".f_posiList .f_posi_ul1").on("mousemove","li",function(e){
         var code = $(e.target).attr("code");
@@ -202,12 +223,20 @@ define(['jquery','jqmsw'],function () {
         })
     })
 
-
+    $(".f_posiList").on("mouseover","li",function(){
+        $(this).css("background","#f1f3f6").siblings().css("background","#fff");
+        if($(this).parent().attr("class") == "f_posi_ul1"){
+            var code = ($(this).attr("code")) ;
+            localStorage.setItem("posiTypeCode",code)
+        }
+    })
+    
 
     $(".f_posi_ul1,.f_posi_ul2,.f_posi_ul3,.f_posi_d2").mouseover(function(){
-        var paren = $(this).children()[0];
+        $(".f_posiList div").css("display","block");
+        var parent = $(this);//保证parent为div
         if(this.className != "f_posi_d2"){
-            var parent = $(this).parent();
+            parent = $(this).parent();//保证parent为div
             var sor = $(this).siblings().eq(0);
             var lh = $(this).height();
             var sor_h = $(sor).height();
@@ -217,17 +246,25 @@ define(['jquery','jqmsw'],function () {
                 var p = $(sor).children()[0];
                 if(p.nodeName == "P"){
                     $(p).css("height", sor_h / ratio);
+                    $(p).css("display","block")
                 }
+            }else{
+                $(sor).children().css("display","none");
             }
         }
         var chi = $(parent).siblings().children()
         for(var i = 0,len = chi.length; i < len; i++){
-            if(chi[i].nodeName == "DIV"){
+            if($(chi[i])[0].nodeName == "DIV"){
                 $(chi[i]).css("display","none");
-                if($(chi[i]).siblings().className !== ".f_posi_ul1"){
-                    $(chi[i]).children().eq(0).css("top",0);
-                    $(chi[i]).siblings().css("top",0);
-                }
+            }
+            if(this.className == "f_posi_ul2" || this.className == "f_posi_d2" ){
+                $(chi[2]).siblings().css("top",0);
+                $(chi[2]).children().eq(0).css("top",0);
+            }
+            if(this.className == "f_posi_ul1"){
+                $(chi[i]).children().eq(0).css("top",0);
+                $(chi[i]).siblings().css("top",0);
+                $(".f_posiList").children().eq(2).css("display","none");
             }
         }
     })
@@ -241,10 +278,10 @@ define(['jquery','jqmsw'],function () {
         var un = uh - fh;
         var lTop = parseInt($(sor_p).css("top")) + -delta * un / pf;
         lTop = Math.abs(lTop);
-        lTop = lTop < 0 ? 0 : lTop;
+        lTop = lTop < 1 ? 0 : lTop;
         lTop = lTop > pf ? pf : lTop;
         $(sor_p).css("top",lTop);
-        $(this).css("top",-lTop  * un / pf);  
+        $(this).css("top",-lTop  * un / pf);
     })
 
     $(".f_posi_sor p").mousedown("click",function(e){
@@ -257,11 +294,10 @@ define(['jquery','jqmsw'],function () {
             $(paren).parent().bind("mousemove",function(e){
                 var y = e.pageY - $(this).offset().top    
                 var lTop = y - _this.y;
-                lTop = lTop < 0 ? 0 : lTop;
+                lTop = lTop < 1 ? 0 : lTop;
                 lTop = lTop > _this.height ? _this.height : lTop;
                 lTop = Math.abs(lTop);
                 $(_this).css("top",lTop);
-                console.log(_this.height,fh)
                 $(paren).siblings().css("top",-lTop * fh);
                 return false;
             })
@@ -272,13 +308,79 @@ define(['jquery','jqmsw'],function () {
         }
         
     })
+    $(".f_posi_ul3").click(function(e){
+        if(e.target.nodeName == "LI"){
+           $(".f_positype b").html( $(e.target).html() );
+           $(".f_posiList").css("display","none");
+           $(".f_positype").removeClass("bg");
+        }
+
+    })
+    $(".f_positype").click(function(){
+        if( $(".f_posiList").css("display") == "none"){
+            $(this).addClass("bg");
+            ajaPosi();
+            $(".f_posiList").css("display","block");
+            $(".f_posi_ul1").parent().css("display","block");
+        }else{
+            $(this).removeClass("bg");
+            $(".f_posiList").css("display","none");
+        }
+    })
+
+// E positype
+
+
+// S f_company_ul
+
+    function companyAjax(){
+        $.ajax({
+            url:"data/oldindustry.json",
+            type:'get',
+            dataType:'json',
+            success:function(json){
+                var code = localStorage.getItem("companyCode");
+                var jsonArr = json.zpData;
+                var str = "<li>不限</li>";
+                for(var i=0,len = jsonArr.length ; i < len ;i++){
+                    if(code == jsonArr[i].code){
+                        str += '<li code ='+ code +' style="color:#00d7c6">'+ jsonArr[i].name +'</li>' 
+                    }else{
+                        str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
+                    }
+                        
+                }
+                $(".f_company_ul").html(str);
+            }
+          
+        })
+    }
+
+    $(".f_company").click(function(){
+        if( $(".f_company_ul").css("display") == "none"){
+            $(this).addClass("bg");
+            companyAjax();
+            $(".f_company_ul").css("display","block");
+        }else{
+            $(this).removeClass("bg");
+            $(".f_company_ul").css("display","none");
+        }
+    })
+
+    $(".f_company_ul").on("click","li",function(e){
+        var code = $(e.target).attr("code");
+        localStorage.setItem("companyCode",code);
+        $(e.target).css("color","#00d7c6");
+        $(".f_company b").html($(e.target).html());
+        $(".f_company_ul").css("display","none");
+        $(".f_company").removeClass("bg");
+
+    })
 
 
 
-    
 
-    
+// E f_company_ul
 
-
-
+//repuiry E
 })
