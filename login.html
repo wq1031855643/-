@@ -7,9 +7,23 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="z_iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/jquery.alertable.css">
+
 </head>
 
 <body>
+    <div class="weixinBox">
+    <div class="wechBox">
+        <div class="erweima">
+            <p>微信登录</p>
+            <img src="images/z_login/z_wxf.jpg" alt="">
+        </div>
+        <div class="z_wec_html">
+            请使用微信二维码扫码登录
+        </div>
+    </div>
+</div>
+
     <!-- 整体 -->
     <div class="z_wrap">
         <!--  客服电话 -->
@@ -47,55 +61,96 @@
             <div class="z_login_right">
                 <div class="z_main">
                     <form action="">
-                    <!-- 密码登录 -->
-                    <div class="z_sign_tab">
-                        <span class="z_link_pass cur">密码登录</span>
-                        <span class="z_link_sms">短信</span>
-                        <span class="z_link_scan">扫码登录</span>
-                    </div>
-                    <div class="z_phone">
-                        <i class="z_book"></i>
-                        <span class="z_wrap_sele">
-                            <em class="z_select">+86</em>
-                            <i class="z_icon_sele"></i>
-                        </span>
-                        <input type="text" class="z_inp_phone" placeholder="手机号"
-                        name="count">
-                        <div class="z_openLi">
-                            <!-- <ul>
+                        <!-- 密码登录 -->
+                        <div class="z_sign_tab">
+                            <span class="z_link_pass cur">密码登录</span>
+                            <span class="z_link_sms">短信登录</span>
+                            <span class="z_link_scan">扫码登录</span>
+                        </div>
+                        <!-- //密码登录 -->
+                        <div class="z_mainBox0">
+                        <!-- 电话 -->
+                        <div class="z_phone z_bor_phon">
+                            <i class="z_book"></i>
+                            <span class="z_wrap_sele">
+                                <em class="z_select">+86</em>
+                                <i class="z_icon_sele"></i>
+                            </span>
+                            <input type="text" class="z_inp_phone" placeholder="手机号" name="count">
+                            <div class="err_phone"></div>
+                            <div class="z_openLi">
+                                <!-- <ul>
                                 <li data-val="+86"><span class="num">+86</span>中国大陆</li>
                               </ul> -->
+                            </div>
+                        </div>
+                        <!-- 密码 -->
+                        <div class="z_phone z_bor_pass">
+                            <i class="z_pass_i"></i>
+                            <input type="password" name="password" placeholder="密码" class="z_ipt_pass">
+                        </div>
+                        <div class="z_phone  z_bg">
+                            <b>请按住滑块，拖动到最右边</b>
+                            <span class="z_boxMove">
+                                <i class="iconfont icon-shuangyoujiantou-"></i>
+                            </span>
+                            <div class="boxFlage"></div>
                         </div>
                     </div>
-                    <div class="z_phone">
-                        <i class="z_pass_i"></i>
-                        <input type="password" name="password" placeholder="密码" class="z_ipt_pass">
-                    </div>
-                    <div class="z_phone">
+                    <!-- //短信登录 -->
+                    <div class="z_mainBox1">
+                            <!-- 电话 -->
+                            <div class="z_phone z_bor_phon">
+                                <i class="z_book"></i>
+                                <span class="z_wrap_sele">
+                                    <em class="z_select">+86</em>
+                                    <i class="z_icon_sele"></i>
+                                </span>
+                                <input type="text" class="z_inp_phone" placeholder="手机号" name="count">
+                                <div class="err_phone"></div>
+                                <div class="z_openLi">
+                                    <!-- <ul>
+                                    <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                  </ul> -->
+                                </div>
+                            </div>
+                            <div class="z_phone  z_bg">
+                                <b>请按住滑块，拖动到最右边</b>
+                                <span class="z_boxMove">
+                                    <i class="iconfont icon-shuangyoujiantou-"></i>
+                                </span>
+                                <div class="boxFlage"></div>
+                            </div>
+                            <div class="z_phone z_inp_me" >
+                                <i class="z_mess_i"></i>
+                                <input type="text" class="z_inp_mess" placeholder="短信验证码" name="messCode">
+                                <button class="z_mess_btn">发送验证码</button>
+                            </div>
+                        </div>
+                        <!-- form 底部 登录 -->
+                        <div class="z_form_btn">
+                            <button type="submit" class="btn">登录</button>
+                        </div>
 
-                    </div>
-                    <!-- form 底部 登录 -->
-                    <div class="z_form_btn">
-                        <button type="submit" class="btn">登录</button>
-                    </div>
+                        <div class="z_weixin">
+                            <a href="#" class="z_link_wechat">微信登录</a>
 
-                    <div class="z_weixin">
-                        <a href="#" class="z_link_wechat">微信登录</a>
-                   
-                    <div class="z_right">
-                        没有账号
-                        <a href="#" class="z_link_sig">立即注册</a>
-                    </div>
+
+                            <div class="z_right">
+                                没有账号
+                                <a href="#" class="z_link_sig">立即注册</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
-            </div>
             </div>
 
         </div>
     </div>
-    
+
     <script src="jquery-1.8.3/jquery-1.8.3.min.js"></script>
     <script src="js/z_login.js"></script>
+    <script src="js/jquery.alertable.js"></script>
 </body>
 
 </html>
