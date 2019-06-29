@@ -24,7 +24,35 @@
     background-color: #f5f7f9;
 }
 
-
+/*******************************动画********************************/
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.fadeInDown {
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+.animation {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: .2s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-delay: .2s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+/*****************************************************************/
 .app{
     background: #62d5c8 url(../images/boss_app/app-bg.png) center bottom no-repeat;
     height: 803px;
@@ -44,15 +72,18 @@
     height: 660px;
     float: left;
     position: relative;
+    animation-name: fadeInLeft;
 }
-.direcruit .img{background: url(../images/boss_app/figure-phone-2.png) center bottom no-repeat;}
 
+.direcruit .img{background: url(../images/boss_app/figure-phone-2.png) center bottom no-repeat;}
 .app .img .app-tip{
     position: absolute;
     width: 338px;
     height: 100px;
     top: 256px;
     left: 127px;
+    animation: fadeInUp 1s ease 1.3s;
+    animation-fill-mode: both;
     background: url(../images/boss_app/app-tip.png) no-repeat;
 }
 .direcruit .img .app-tip{
@@ -118,10 +149,7 @@
     box-sizing: border-box;
     border-radius: 5px;
 }
-
-
-
-
+/****************************app direcruit***************************/
 .chat{
     background: #f5f7f9;
     padding: 220px 200px 100px 230px;
@@ -183,12 +211,7 @@
     height: 152px;
     z-index: 1;
 }
-
-
-
-
-
-
+/****************************chat***************************/
 .company{
     background: #2e2f34 url(..//images/boss_app/bg-company.jpg) center no-repeat;
     background-size: cover;
@@ -234,16 +257,12 @@
 .company .img img:nth-child(5){
     top: 256px;
     left: 170px;
-}
+} 
 .company .img img:nth-child(6){
     top: 238px;
     right: 22px;
 }
-
-
-
-
-
+/****************************company***************************/
 .decent{
     background: #fff;
     height: 780px;
@@ -310,9 +329,211 @@
     transform: perspective(500px) rotateX(-10deg) scale(1.32) translateY(0);
 
 }
-
-
+/****************************decent***************************/
 .media{
-    background: #ccc;
-    height:300px;
+    background: #f5f7f9;
+    padding-left: 60px;
+    padding-top: 150px;
 }
+.media .text{
+    height: 60px;
+    padding-bottom:100px;
+    background: url(../images/boss_app/text-title.png) center -1155px no-repeat;
+}
+.media .img a{
+    display: inline-block;
+    width: 159px;
+    height: 55px;
+    transition: none;
+    margin-right: 34px;
+    background:url(../images/boss_app/media-logos.png) no-repeat;
+}
+
+.media .img a:nth-child(1){
+    background-position: 0 0;
+}
+.media .img a:nth-child(2){
+    background-position: 0 -80px;
+}
+.media .img a:nth-child(3){
+    background-position: 0 -170px;
+}
+.media .img a:nth-child(4){
+    background-position: 0 -247px;
+}
+.media .img a:nth-child(5){
+    background-position: 0 -328px;
+}
+.media .img a:nth-child(6){
+    background-position: 0 -404px;
+}
+.media .img a:nth-child(7){
+    background-position: 0 -484px;
+}
+.media .img a:nth-child(8){
+    background-position: 0 -563px;
+}
+.media .img a:nth-child(9){
+    background-position: 0 -644px;
+}
+.media .img a:nth-child(10){
+    background-position: 0 -723px;
+}
+.media .img a:nth-child(11){
+    background-position: 0 -799px;
+}
+.media .img a:nth-child(12){
+    background-position: 0 -882px;
+}
+.media .img a:hover:nth-child(1){
+    background-position: -181px 0;
+}
+.media .img a:hover:nth-child(2){
+    background-position: -181px -80px;
+}
+.media .img a:hover:nth-child(3){
+    background-position: -181px -170px;
+}
+.media .img a:hover:nth-child(4){
+    background-position: -181px -247px;
+}
+.media .img a:hover:nth-child(5){
+    background-position: -181px -328px;
+}
+.media .img a:hover:nth-child(6){
+    background-position: -181px -404px;
+}
+.media .img a:hover:nth-child(7){
+    background-position: -181px -484px;
+}
+.media .img a:hover:nth-child(8){
+    background-position: -181px -563px;
+}
+.media .img a:hover:nth-child(9){
+    background-position: -181px -644px;
+}
+.media .img a:hover:nth-child(10){
+    background-position: -181px -723px;
+}
+.media .img a:hover:nth-child(11){
+    background-position: -181px -799px;
+}
+.media .img a:hover:nth-child(12){
+    background-position: -181px -882px;
+}
+.media .text2{
+    height: 60px;
+    margin-top: 160px;
+    background: url(../images/boss_app/text-title.png) center -1005px no-repeat;
+}
+
+/****************************media***************************/
+.media .lunbo{
+    width: 100%;
+    height:88px;
+    overflow: hidden;
+    margin-top: 135px;
+    margin-bottom:250px;
+    position: relative;
+}
+.lunbo ul{
+    width: 1615%;
+    position: relative;
+    height: 88px;
+
+    transition-duration: 0s;
+    transform: translate3d(0px, 0px, 0px);
+}
+.lunbo ul li{
+    float: left;
+    list-style: outside none none;
+    position: relative;
+    width: 117.143px;
+    margin-right: 10px;
+}
+.arrow {
+    position: absolute;
+    top: 35%;
+    color: green;
+    padding:0px 14px;
+    border-radius: 50%;
+    font-size: 50px;
+    z-index: 2;
+    display: none;
+}
+.arrow_left {
+    left: 10px;
+}
+.arrow_right {
+    right: 10px;
+}
+/* .container:hover .arrow {
+    display: block;
+}
+.container .arrow:hover {
+    background-color: rgba(0,0,0,0.2);
+} */
+/**********************************lunbo*************************************/
+
+#finish{
+    height: 136px;
+    background: #fff;
+}
+.xw_siteinfo {
+    width: 1170px;
+}
+.xw_msg-right {
+    margin-top: -160px;
+}
+/* -------------------转换分割---------------------- */
+.xw_wrap{
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #b6b4b6;
+    /* display: none; */
+
+}
+.xw_header{
+    width: 1170px;
+    height: 60px;
+    margin: 0 auto;
+}
+.xw_logo{
+    color: #5dd5c8;
+    float: left;
+    width: 173px;
+    height: 36px;
+    margin-top: 10px;
+    /* margin-right: 5px; */
+    background: url(https://static.zhipin.com/zhipin/v171/web/news/images/logo-x.png) 3px 7px no-repeat;
+}
+.xw_nav_left{
+    float: left;
+    line-height: 60px;
+}
+.xw_nav_left li a{
+    margin-left: 34px;
+    color: #000;
+    height: 60px;
+}
+.xw_enter,.xw_sign{
+    margin-top: 18px;
+    color: #9fa3b0;
+}
+.xw_her_right .xw_enter:hover{
+    background: #5dd5c8;
+    color: #fff;
+}
+.xw_her_right .xw_sign:hover{
+    background: #5dd5c8;
+    color: #fff;
+}
+.xw_nav_right li{
+    line-height: 60px;
+    margin: 0 20px 0 20px;
+
+}
+.xw_nav_right li a{
+    color: #000;
+}
+/*********************************footer*************************************/
