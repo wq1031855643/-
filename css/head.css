@@ -1,8 +1,4 @@
-*,a,li{margin: 0; padding: 0;
-    text-decoration: none;
-    list-style: none;
-    /* display: none */
-}
+
 .clearfix:after{
     content: ".";
     clear: both;
@@ -16,7 +12,7 @@
     height: 49px;
     background: #202329;
     border-top: 1px solid #b6b4b6;
-
+    overflow: hidden;
 }
 .xw_header{
     width: 1000px;
@@ -282,8 +278,26 @@
     position: absolute;
     bottom: 65px;
     right: 42px;
+    /* position: fixed; */
 }
 .xw_l-bottom .two:hover .xw_imgs{
     display: block;
 }
 /* -------------------------以上是底部-------------------------- */
+.xw_sideBar{
+    width: 371px;
+    height: 640px;
+    
+    position: absolute;
+    top: 50px;
+    right: 0;
+    /* margin-right: -50px; */
+}
+.xw_s-left{
+    width: 60px;
+    height: 640px;
+    background: brown;
+}
+.xw_s-right{
+
+}

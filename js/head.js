@@ -20,3 +20,12 @@ $('.xw_nav_left').on('click','a',function(){
 
     }
 })
+// 以上是头部
+// $('.xw_sideBar')
+$(window).scroll(function() {
+    if($(document).scrollTop()>=50){
+        $('.xw_sideBar').css('position','fixed').css('top',0);
+    }else{
+        $('.xw_sideBar').css('top',50);
+    }
+  });
