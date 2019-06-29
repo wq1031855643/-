@@ -27,7 +27,7 @@ body {
     margin-left: 70px;
     font-size: 13px;
 }
-#wrap .text .selected {
+#wrap .text .selected,#wrap .text a:hover {
     color: #00c2b3;
 }
 #wrap .text a {
@@ -40,9 +40,12 @@ body {
 
 
 
-
+#wrap .img{
+    margin-top: 13px;
+    padding: 0 22px;
+}
 .expect {
-    width: 956px;
+    width: 912px;
     height: 44px;
     margin: 10px auto 2px;
     padding: 0 22px;
@@ -61,7 +64,7 @@ body {
 .expect .checkbox{
     line-height: 44px;
 }
-.expect .checkbox input[type="checkbox"], .standard .radio input[type="radio"] {
+/* .expect .checkbox input[type="checkbox"], .standard .radio input[type="radio"] {
     position: absolute;
     z-index: -100;
     -webkit-appearance: none;
@@ -71,7 +74,7 @@ body {
     width: 0;
     height: 0;
     overflow: hidden;
-}
+} */
 .expect .checkbox input[type="checkbox"] ~ span, .standard .radio input[type="radio"] ~ span {
     display: inline-block;
     cursor: pointer;
