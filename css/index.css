@@ -253,14 +253,17 @@
 	width: 1000px;
 	max-width: 1000px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 .job_menu{
 	width: 268px;
 	background: #fff;
     color: #61687c;
     position: relative;
-    box-shadow: 5px 5px 15px rgba(3,0,0,.04);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .13);
 	padding-top: 0;
+	float: left;
+	border: 1px solid #E9E9E9;
 }
 .job_menu>ul{
 	height: 44px;
@@ -304,4 +307,29 @@
     z-index: 10;
     background: rgb(92, 201, 180);
     border-color: rgb(209, 212, 219) rgb(255, 255, 255) rgb(209, 212, 219) rgb(209, 212, 219);
+}
+.home_main{
+	float: left;
+    min-width: 697px;
+	position: relative;
+	height: 578px;
+}
+.home_main dl{
+	width: 710px;
+	margin-left: 10px;
+}
+.home_main dl dt{
+	overflow: hidden;
+	display: inline-block;
+}
+.home_main dl dd{
+	overflow: hidden;
+	float: right;
+}
+.home_main dl img{
+	vertical-align: top;
+	float: left;
+}
+.home_main dl a{
+	display: block;
 }
