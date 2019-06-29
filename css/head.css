@@ -3,8 +3,14 @@
     list-style: none;
     /* display: none */
 }
-body{
-    background: #999;
+.clearfix:after{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 1px;
 }
 .xw_wrap{
     height: 49px;
@@ -40,14 +46,14 @@ body{
 }
 .xw_nav_left li a{
     margin-left: 23px;
-    
     display: inline-block;
     height: 49px;
-    /* transition: all 0.3s linear; */
+    transition: color 0.3s linear;
+    font-size: 14px;
 }
 .tra{
     color: #fff;
-    transition: all 0.3s linear; 
+    /* transition: all 0.3s linear;  */
 }
 .tra:hover{
     color: #5dd5c8;
@@ -72,6 +78,8 @@ body{
     margin-top: 12px;
     margin-left: 17px;
     color: #fff;
+    font-size: 13px;
+    line-height: 23px;
 }
 .xw_nav_right{
     float:right;
@@ -84,6 +92,7 @@ body{
 }
 .xw_nav_right li a{
     color: #fff;
+    font-size: 14px;
     /* transition: all 0.3s linear; */
 }
 .xw_her_right a:hover{
@@ -102,7 +111,7 @@ body{
     border-radius: 7px;
     position: absolute;
     top: 7px;
-    left: 72px;
+    left: 61px;
 }
 /* -------------------转换分割---------------------- */
 .xw_wrap-b{
@@ -161,14 +170,120 @@ body{
 /* -------------------------以下是底部-------------------------- */
 .xw_footer{
     height: 212px;
-    background: yellow;
+    background: #fff;
     border-bottom: 1px solid #465460;
 }
 .xw_siteinfo{
-    width: 1170px;
+    width: 1000px;
     height: 212px;
-    background: red;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 28px 0 18px 0;
+    position: relative;
 }
+.xw_friendlink{
+    float: left;
+    width: 192px;
+}
+.xw_friendlink dt{
+    width: 192px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #414a60;
+    margin-bottom: 10px;
+}
+.xw_friendlink dd{
+    white-space:nowrap;
+    height: 24px;
+    color: #8d92a1;
+    line-height: 24px;
+    font-size: 12px;
+}
+.xw_friendlink dd a{
+    white-space:nowrap;
+    color: #8d92a1;
+}
+.xw_friendlink dd a:hover{
+    color: #5dd5c8;
+}
+.xw_bossom{
+    float: left;
+    position: absolute;
+    bottom: 10px;
+}
+.xw_bossom span{
+    height: 26px;
+    line-height: 26px;
+    color: #8d92a1;
+    font-size: 12px;
+    margin-right: 10px;
+}
+.xw_bossom a{
+    line-height: 26px;
+    display: inline-block;
+    font-size: 12px;
+    color: #414a60;
+    margin-right: 10px;
+    transition:all 0.3s;
+}
+.xw_bossom a:hover{
+    color: #5dd5c8;
+}
+.siteinfolegal img{
+    width: 16px;
+    height: 16px;
+
+}
+.xw_msg-right{
+    float: right;
+}
+.xw_r-top{
+    float: right;
+}
+
+.xw_r-top img{
+    float: right;
+    display: block;
+    width: 88px;
+    height: 16px;
+    margin: 6px 0 7px 0;
+}
+.xw_r-top p{
+    text-align: right;
+    font-size: 13px;
+    color: #8d92a1;
+    line-height: 26px;
+
+}
+.xw_l-bottom a{
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #eaebee;
+    float: right;
+    margin-left: 23px;
+    margin-top: 20px;
+}
+.xw_l-bottom a:hover{
+    border: 1px solid #414a60;
+}
+.xw_l-bottom a i{
+    font-size: 30px;
+    line-height: 44px;
+    color: #999;
+}
+.xw_imgs{
+    width: 100px;
+    height: 100px;
+    display: none;
+    position: absolute;
+    bottom: 65px;
+    right: 42px;
+}
+.xw_l-bottom .two:hover .xw_imgs{
+    display: block;
+}
+/* -------------------------以上是底部-------------------------- */
