@@ -191,11 +191,11 @@ body,html{
    top: 2px;
    left: -1px;
    width: 176px;
-   max-height: 292px;
+   height: 292px;
+   overflow: auto;
    border: 1px #e3e7ed solid;
    border-top: 0;
    background-color: #fff;
-   overflow: auto;
    z-index:20
  }
  .z_openLi ul li{

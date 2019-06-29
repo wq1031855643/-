@@ -23,7 +23,7 @@ $('.z_wrap_sele').bind('click',function () {
     });
     $.ajax({
         type:'get',
-        url:'data/code.json',
+        url:'data/code.json?_='+new Date().getTime(),
         dataType:'json',
         success:function (json) {
             var str = '';
@@ -32,7 +32,9 @@ $('.z_wrap_sele').bind('click',function () {
             for(var i=0, ln = json.length;i<ln;i++){
                 str += '<li data-val='+json[i].num+'><span class="num">'+json[i].num+'</span>'+json[i].county+'</li>'
             }
-            $ul.html(str);
+            $('.z_mainBox0').find('.z_openLi').find('ul').html(str)
+            $('.z_mainBox1').find('.z_openLi').find('ul').html(str)
+        
         }
     });
     $(document).bind('click',function(){
