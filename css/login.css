@@ -578,3 +578,138 @@ body,html{
    background: url('../images/z_login/z_icon-help-geek.png') no-repeat center center;
     background-size: 100% 100%;
 }
+
+/* 注册css样式 */
+.z_purpose_row{
+   white-space: nowrap;
+   font-size: 0;
+}
+.z_purpose_row span{
+   display: inline-block;
+    width: 153px;
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 14px;
+    border: 1px #e3e7ed solid;
+    cursor: pointer;
+}
+.curr{
+   box-shadow: 1px 2px 3px #d7f4f1;
+   border-color: #59cac2;
+   color: #5dd5c8;
+}
+.space{
+   margin: 24px 0 41px;
+   line-height: 22px;
+   color: #00c2b3;
+   font-size: 16px;
+   font-weight: 400;
+}
+.z_txt_tip{
+   padding: 24px 0 0 0;
+   color: #9fa3b0;
+   text-align: center;
+   overflow: hidden;
+}
+.agree-policy{
+   vertical-align: top;
+   margin: 7px 3px 0 0;
+}
+.z_agree{
+   display: inline-block;
+   margin-right: 6px;
+   color: #8d92a1;
+}
+.z_link_reg{
+   color: #18c3b1;
+}
+.z_switch{
+   position: absolute;
+   z-index: 1005;
+   left: -82px;
+   top: 6px;
+   width: 42px;
+   height: 42px;
+   background: no-repeat;
+   background-size: 42px 84px;
+   cursor: pointer;
+   background-image: url('../images/z_login/z_btn_ewm.png');
+}
+.z_switch_tip{
+   width: 120px;
+   height:30px;
+   line-height: 30px;
+   text-align: center;
+   font-size: 13px;
+   color: #9fa3af;
+   position: absolute;
+   left: 42px;
+   top: 8px;
+   box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+   cursor: default;
+   pointer-events: none;
+   background-color: #fff;
+}
+.z_switch:hover{
+   background-position: 0 -42px;
+}
+.z_icon_triangle{
+   background: url('../images/z_login/z_arrow_left.png') no-repeat center;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   margin: auto 0;
+   left: -10px;
+   height:30px;
+   width: 10px;
+   background-size: 20px 20px;
+}
+.z_inner_box{
+   text-align: center;
+   position: relative;
+   width: 324px;
+   padding-top: 68px;
+   margin: 0 auto;
+   display: none;
+}
+.z_inner_box h4{
+   margin: 20px 0 40px;
+   line-height: 22px;
+   color: #00c2b3;
+   font-size: 16px;
+   font-weight: 400;
+}
+.z_img_box{
+   display: block;
+   width: 200px;
+   height: 200px;
+   margin: 0 auto;
+   position: relative;
+}
+.z_img_box img{
+   width:200px;
+   height:200px;
+}
+.z_reg_tip{
+   margin-top: 30px;
+   color: #61687c;
+   line-height: 22px;
+   width:324px;
+}
+.z_txt_t{
+   line-height: 22px;
+    padding: 84px 0 30px;
+   padding-top: 62px;
+   color: #0b0c0e;
+   text-align: center;
+   overflow: hidden;
+}
+.z_height{
+   height:540px;
+}
+.ph{
+   background: url('../images/z_login/z_btn-phone.png') no-repeat;
+
+   background-size: 42px 84px;
+}
