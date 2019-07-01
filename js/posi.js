@@ -382,6 +382,140 @@ define(['jquery','jqmsw'],function () {
 
 
 // E f_company_ul
+ 
+// S f_screening
+    $(".f_screening").on("mouseover",'span',function(){
+        $(this).siblings().addClass("f_action");
+    })
+    $(".f_screening").on("click",'li,em',function(){
+        if(this.nodeName == "LI"){
+            var str = "<em></em>" + $(this).html();
+            $(this).parent().parent().removeClass("f_action");
+            $(this).parent().parent().siblings().html(str);
+            $(this).parent().parent().siblings().addClass("f_spanColor");
+        }
+        if(this.nodeName == "EM"){
+            window.location.reload();
+        }
+        
+    })
+    $(".f_screening .f_scr_div div").mouseover(function(e){
+        if(e.target.nodeName == "DIV"){
+            $(this).removeClass("f_action");
+        }
+        
+    })
+
+// E f_screening
+
+
+// S f_main_left
+    $.ajax({
+        url:"data/jobDescription.json",
+        type:'get',
+        dataType:'json',
+        success:function(jsonArr){
+            var str = '';
+            for(var i = 0,len = jsonArr.length; i < len; i++){
+                str += '<li><div class="f_primary"><h3>'+ jsonArr[i].jobName+'<span>'+ jsonArr[i].pay+'</span></h3><p>'+ jsonArr[i].address +'<em></em>'+ jsonArr[i].year+'<em></em>'+jsonArr[i].education+'</p></div><div class="f_company_nama"><h3>'+jsonArr[i].companyName+'</h3><p>'+jsonArr[i].tmt+'<em></em>'+jsonArr[i].financing+'<em></em>'+jsonArr[i].peopleNum+'</p></div><div class="f_contact"><h3><img src="'+jsonArr[i].img +'">'+jsonArr[i].recruiter+'<em></em>'+jsonArr[i].type+'</h3></div><a>立即沟通</a></li>'
+            }
+            $('.f_main_left').html(str);
+            
+        }
+    })
+
+    $(".f_main_left").on("mouseover","li",function(){
+        $(this).children('a').addClass('btn');
+        $(this).children('.f_contact').css("display","none");
+    })
+    $(".f_main_left").on("mouseout","li",function(){
+        $(this).children('a').removeClass("btn");
+        $(this).children('.f_contact').css("display","block");
+    })
+
+//E f_main_left
+
+//S f_main_right
+
+    // S phone 
+    $(".f_phone .f_select").on("click","li,em",function(){
+        if(this.nodeName == "EM"){
+            $(this).addClass('f_emaction');
+            $(this).siblings().eq(0).css("display","block");
+        }
+        if(this.nodeName == "LI"){
+            var val = $(this).attr("data-val")
+            $(this).parent().css("display","none");
+            $(this).parent().siblings().eq(0).removeClass('f_emaction');
+            $(this).parent().siblings().eq(0).html(val);
+        }
+        
+    })
+    $('.f_phone [type="tel"]').focus(function(){
+        $('.f_phone').addClass("f_phoneAction");
+    })
+    $('.f_phone [type="tel"]').blur(function(){
+        $('.f_phone').removeClass("f_phoneAction");
+    })
+    // E phone 
+
+    // S f_validation 
+    $(".f_slider").mousedown(function(){
+        if(this.falg){
+            $(this).stop(true);
+            this.falg = false;
+        }
+        this.width = $(this).width();
+        var _this = this;
+        $(".f_validation").bind('mousemove',function(e){
+            var e = e || event;
+            var x = parseInt( e.pageX - $(this).offset().left );
+            if(x > $(this).width() - _this.width){
+                x = $(this).width()-_this.width;
+                _this.falg = true;
+            }
+            $(_this).css("left",x)
+            return false;
+        })
+        
+        $(document).bind("mouseup",function(){
+            $(".f_validation").unbind('mousemove');
+            $(document).unbind('mouseup');
+            if(!_this.falg){
+                _this.falg = true;
+                $(_this).animate({"left":0} , 500 , 'swing',function(){
+                    _this.falg = false;
+                });
+            }else{
+                $(_this).html('&#xe614');
+                $(_this).css("background","#fff");
+                $(_this).parent().addClass("f_validationAction");
+                $(_this).siblings().html("");
+                setTimeout(function(){
+                    $(_this).parent().removeClass("f_validationAction");
+                    $(_this).siblings().html("验证通过");
+                },1500)
+                
+            }
+            return false;
+        })
+    })
+    // E f_validation 
+
+    // S f_sms
+    $(".f_sms input").focus(function(){
+        $(this).parent().addClass("f_smsAction");
+    })
+    $(".f_sms input").blur(function(){
+        $(this).parent().removeClass("f_smsAction");
+    })
+
+
+    // Ef_sms
+
+
+
+//E f_main_right
 
 //repuiry E
 })

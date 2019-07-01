@@ -4,10 +4,11 @@ require.config({
 		'hm': 'headMod',
 		'jquery':"jquery-1.8.3",
 		'jqmsw':"jquery.mousewheel",
-		'posi':'posi'
+		'posi':'posi',
+		'head':"head"
 	}
 });
 
-require(["hm",'jquery','jqmsw','posi'], function(hm) {
+require(["hm",'jquery','jqmsw','posi','head'], function(hm) {
 	hm.creatHead();
 });

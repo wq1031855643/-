@@ -5,10 +5,11 @@
 
 /* S search */
 .f_warpSearch{
-    padding: 20px 0;
+    padding-top: 20px;
     background: #fff;
     color:#9fa3b0;
     font-size: 13px;
+    cursor: pointer;
 }
 .f_posi_rela{
     position: relative;  
@@ -29,7 +30,7 @@
     width: 66px;
     line-height: 30px;
     padding: 6px 15px 8px;
-    background: url("../images/boss_posi/f_icons.gif") no-repeat 70px -29px;
+    background: url("../images/boss_posi/f_icons.png") no-repeat 70px -29px;
 }
 
 .f_search .f_sel span.bg{
@@ -59,7 +60,7 @@
     height: 100%;
     padding: 6px 0 8px;
     float: left;
-    background: url("../images/boss_posi/f_icons.gif") no-repeat 82px -30px;
+    background: url("../images/boss_posi/f_icons.png") no-repeat 82px -30px;
 }
 .f_search .f_sel div.bg{
     background-position:82px 18px;
@@ -101,6 +102,7 @@
     overflow: hidden;
     display: none;
     background: #fff;
+    z-index: 3;
 }
 .f_cityOist{
     width: 146px;
@@ -146,6 +148,7 @@
     left: 464px;
     display: none;
     background: #fff;
+    z-index: 3;
 }
 .f_warpSearch .f_posiList>div{
     width: 168px;
@@ -197,6 +200,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,.1);
     padding: 25px 0 15px 55px;
     display: none;
+    z-index: 3;
 }
 .f_warpSearch .f_company_ul li{
     width: 150px;
@@ -217,14 +221,413 @@
 /* S condition */
 .f_warpSearch .f_condition{
     position: relative;
-    overflow: hidden;
+    font-size: 12px;
+    .f_condCity{
+        display: block;
+        border-bottom: 1px solid #eef0f5;
+        a{
+            display: inline-block;
+            background: #fff;
+            padding: 0 11px;
+            border: 1px #fff solid;
+            margin: 0;
+            height: 36px;
+            line-height: 36px;
+            
+        }
+        a:hover{
+            color: #fc6c38;
+        }
+        .f_disabled{
+            outline: none;
+            cursor: default;
+            color: #555;
+        }
+        .f_disabled:hover{
+            color: #555;
+
+        }
+        .Color{
+            color: #9fa3b0;
+        }
+        .Color:hover{
+            color: #9fa3b0;
+        }
+        .f_right_icon{
+            display: inline-block;
+            vertical-align: middle;
+            width: 12px;
+            height: 16px;
+            background: url('../images/boss_posi/f_icons.png') no-repeat 0 -86px;
+            //background-size: 100%;
+        }
+    }
+}
+
+.f_condition .f_condition-area{
+    border-bottom: 1px solid #eef0f5;
+    a{
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+        color: #414a60;
+        padding: 0 11px;
+    }
+    a:hover{
+        color: #fc6c38;
+    }
+    .f_disabledA{
+        color: #9fa3b0;
+        outline: none;
+        cursor: default;
+    }
+    .f_disabledA:hover{
+        color: #9fa3b0;
+    }
+}
+.f_condition .f_screening{
+    height:30px;
+    padding: 5px 0 3px;
+    span{
+        display: block;
+        width: 70px;
+        height: 30px;
+        padding-left: 15px;
+        overflow: hidden;
+        
+        em{
+            background: url("../images/boss_posi/f_icons.png") no-repeat left -139px;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+        }
+    }
+    .f_spanColor{
+        color: #fc6c38; 
+    }
+    .f_scr_div{
+        float:left;
+        width: 140px;
+        
+        background: url("../images/boss_posi/f_icons.png") no-repeat 80px 12px;
+        line-height: 26px;
+        color: #414a60;
+        position:relative;
+        div{
+            position: absolute;
+            top:30px;
+            padding: 0 6px;
+            display: none;
+            ul{
+                width: 130px;
+                border: 1px #e3e7ed solid;
+                box-shadow: 0 3px 6px rgba(6,0,1,.05);
+                background-color: #fff; 
+            }
+            ul li{
+                padding: 0 15px;
+                line-height: 40px;
+                color: #414a60;
+            }
+            ul li:hover{
+                background:#f2f5f9;
+            }
+            
+        }
+        .f_action{
+            display: block;
+        }
+    } 
+}
+
+/* E condition */
+
+/* S f_main */
+
+/* S f_main_left */
+.f_main .f_main_left{
+    float: left;
+    width: 726px;
+    cursor:pointer;
+    background:#fff;
+    margin-top: 20px;
+    li{
+        overflow: hidden;
+        padding: 22px 30px;
+        font-size: 12px;
+        .f_primary{
+            width: 270px;
+            float: left;
+            margin-right: 15px;
+            h3{
+                color:#00d7c6;
+                span{
+                    color: #fc6c38; 
+                    margin-left: 8px;
+                }
+            }  
+        }
+        .f_company_nama{
+            width: 210px;
+            margin-right: 15px;
+            float: left;
+            h3:hover{
+                color:#00d7c6;
+            }
+        }
+        .f_contact{
+            float: left;
+            width: 156px; 
+            h3{
+                font-size: 13px;
+                color: #414a60;
+                img{
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 40px;
+                    vertical-align: middle;
+                    margin: -3px 10px 0 0;
+                }
+                em{
+                    display: inline-block;
+                    width: 1px;
+                    height: 12px;
+                    vertical-align: middle;
+                    background: #e0e0e0;
+                    margin: 0 10px; 
+                }
+            }
+        }
+        div h3{
+            font-size: 16px;
+            font-weight: 400;
+            height: 26px;
+            line-height: 26px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        div p{
+            margin-top: 2px;
+            font-size: 12px;
+            color: #9fa3b0;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        div p em{
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            vertical-align: middle;
+            background: #e0e0e0;
+            margin: 0 10px;
+        }
+        a{
+            float: right;
+            display: none;
+            margin-right: 30px;
+        }
+        a.btn{
+            min-width: 112px;
+            display: inline-block;
+            box-sizing: content-box;
+            height: 36px;
+            line-height: 36px;
+            border: 1px #5dd5c8 solid;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+            background: #5dd5c8;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    li:hover{
+        background-color: #f8f9fb;
+    }
+}
+
+
+/* E f_main_left */
+
+/* S f_main_right */
+.f_main .f_main_right{
+    width: 250px;
+    float: right;
+    margin-top: 20px;
+    .f_login{
+        background-color: #5dd5c8;
+        h3{
+            text-align: center;
+            padding: 20px 0 24px;
+            color: #fff;
+            font-size: 18px;
+        }
+        form{
+            outline: none;
+            line-height: 26px;
+            color: #414a60;
+            font-size: 14px;
+            margin: 0 20px;
+            .f_phone{
+                position: relative;
+                line-height: 26px;
+                color: #414a60;
+                font-size: 14px;
+                padding: 8px 0;
+                margin-bottom: 30px;
+                border: 1px solid #fff;
+                background:#fff url('../images/boss_posi/f_icons-sign.png') no-repeat 8px 12px;
+                padding-left: 33px;
+                .f_select{
+                    em{
+                        display: inline-block;
+                        padding-right: 20px;
+                        background: url('../images/boss_posi/f_icons.png') no-repeat right -222px;
+                        cursor: pointer;
+                    }
+                    em.f_emaction{
+                        background-position: right -182px;
+                    }
+                    ul{
+                        position: absolute;
+                        background:#fff;
+                        left: 0;
+                        top:40px;
+                        width: 176px;
+                        z-index: 3;
+                        display: none;
+                        li{
+                            line-height: 42px;
+                            padding: 0 15px;
+                            cursor: pointer;
+                           
+                           span{
+                            float: right;
+                           }
+                                
+                        }
+                    }
+                    [type='tel']{
+                        width: 95px;
+                        padding: 0 14px;
+                        border-color: #e3e7ed;
+                        vertical-align: middle;
+                    }
+                }
+                
+            }
+            .f_phoneAction{
+                background-position: 8px -174px;
+                box-shadow: 1px 2px 3px #d7f4f1;
+                border-color: #00c2b3;
+            }
+            /* 滑块 */
+            .f_validation{
+                text-align: center;
+                width: 100%;
+                line-height: 42px;
+                min-height: 42px;
+                background-color: #eef0f5;
+                color: #61687c;
+                position: relative;
+                font-size: 12px;
+                user-select: none;
+                margin-bottom: 30px;
+                span.f_slider{
+                    background:url("../images/boss_posi/f_icons.png") no-repeat 22px -72px,url("../images/boss_posi/f_icons.png") no-repeat 17px -72px;
+                    display: inline-block;
+                    background-color: #fff;
+                    width: 46px;
+                    height: 40px;
+                    position: absolute;
+                    top:1px;
+                    left: 0;
+                    cursor:move;
+                    color: #00c2b3;
+                }
+            }
+            .f_validationAction{
+                background:#fff url("../images/boss_posi/witing.gif") no-repeat 80px 1px;
+                background-size: 45px;
+                
+            }
+            .f_sms{
+                position: relative;
+                line-height: 26px;
+                color: #414a60;
+                font-size: 14px;
+                padding: 8px 0;
+                margin-bottom: 30px;
+                border: 1px solid #fff;
+                background:#fff url('../images/boss_posi/f_icons-sign.png') no-repeat 8px -130px;
+                padding-left: 33px;
+                input{
+                    width:85px;
+                    border-right: 1px solid #ccc;
+                }
+                span{
+                    width:92px;
+                    color: #5dd5c8;
+                    font-size: 14px;
+                }
+            }
+            .f_smsAction{
+                background-position: 8px -315px;
+            }
+            .f_btn{
+                
+                background-color: #fff;
+                color: #00c2b3;
+                width: 100%;
+                font-size: 16px;
+                height: 42px;
+                line-height: 42px;
+                border: none;
+                cursor: pointer;
+                text-align: center;
+            }
+            .f_agreement{
+                padding: 10px 0 20px;
+                font-size: 12px;
+                color: rgba(255,255,255,.7);
+                text-align: center;
+                position: relative;
+                input{
+                    position: absolute;
+                    left: 8px;
+                    margin-top: 8px;
+                }
+            }
+        }
+        
+
+
+
+
+    }
 }
 
 
 
 
 
-/* E condition */
+
+
+
+
+
+
+
+
+
+
+/* E f_main_right */
+
+/* E f_main */
+
 
 
 
