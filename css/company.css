@@ -1,13 +1,80 @@
+html{
+    height: 100%;
+}
 body {
     line-height: 26px;
     color: #414a60;
     font-size: 14px;
+    height: 100%;
 }
+
+
+.mask{
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: black;
+    position: fixed;
+    top: 0;
+    display: none;
+}
+.mBody{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    padding-left: 25px;
+    margin-left: -450px;
+    padding-left: 25px;
+    margin-top: -250px;
+    display: none;
+    background: #fff;
+    z-index: 9999;
+}
+h5{
+    font-size: 16px;
+    color: #424a5e;
+    line-height: 50px;
+    font-weight: 400;
+}
+.mdu{
+    height: 500px;
+}
+.mdu ul{
+    float: left;
+}
+.m_Ul{
+    float: left;
+    width: 150px;
+    padding-top: 10px;
+    height: 490px;
+    background-color: #f9fafb;
+    overflow-y: scroll;
+}
+.m_Ul li{
+    color: #61687c;
+    line-height: 20px;
+    padding: 10px 0;
+    position: relative;
+    cursor: pointer;
+}
+.m_Ul0{
+    width: 700px;
+    padding: 10px 22px 22px 22px;
+}
+.m_Ul0 li{
+    display: inline-block;
+    float: left;
+    line-height: 40px;
+    width: 25%;
+    cursor: pointer;
+}
+/***************************modal end*****************************/
 #wrap{
     background: #f5f7f9;
 }
 .main{
-    width: 956px;
+    width: 1000px;
     margin: 0 auto;
     padding: 30px 22px;
     background-color: #fff;
@@ -27,10 +94,10 @@ body {
     margin-left: 70px;
     font-size: 13px;
 }
-#wrap .text .selected,#wrap .text a:hover {
+#wrap .text .selected,#wrap .text a:hover,.m_Ul .selected,.m_Ul li:hover,.m_Ul li:hover{
     color: #00c2b3;
 }
-#wrap .text a {
+#wrap .text a{
     display: inline-block;
     margin-right: 6px;
     padding: 1px 8px 0;
