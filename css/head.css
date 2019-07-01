@@ -1,4 +1,6 @@
-
+body{
+    background: #999;
+}
 .clearfix:after{
     content: ".";
     clear: both;
@@ -8,6 +10,7 @@
     visibility: hidden;
     font-size: 1px;
 }
+/* -------------------------以下是头部-------------------------- */
 .xw_wrap{
     height: 49px;
     background: #202329;
@@ -163,6 +166,7 @@
 .xw_nav_right-b li a{
     color: #000;
 }
+/* -------------------------以上是头部-------------------------- */
 /* -------------------------以下是底部-------------------------- */
 .xw_footer{
     height: 212px;
@@ -229,7 +233,6 @@
 .siteinfolegal img{
     width: 16px;
     height: 16px;
-
 }
 .xw_msg-right{
     float: right;
@@ -284,20 +287,381 @@
     display: block;
 }
 /* -------------------------以上是底部-------------------------- */
+/* -------------------------以下是侧边栏-------------------------- */
 .xw_sideBar{
-    width: 371px;
-    height: 640px;
-    
     position: absolute;
     top: 50px;
     right: 0;
-    /* margin-right: -50px; */
 }
 .xw_s-left{
     width: 60px;
     height: 640px;
-    background: brown;
+    background: #fff;
+    /* position: absolute */
+    display: inline-block;
+    float: left;
 }
-.xw_s-right{
+.xw_s-left ul{
+    width: 60px;
+    /* height: 75px; */
+    padding-top: 15px;
+}
+.xw_s-left ul li{
+    width: 60px;
+    height: 45px;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-top: 3px;
+    font-size: 12px;
+    color: #414a60;
+    cursor: pointer;
+}
+.xw_s-left li:hover{
+    color:  #54cbc4;
+}
+/* css:hover时的处理 */
+.xw_s-left li:nth-child(1):hover i{
+    background-position: 21px -61px;
+}
+.xw_s-left li:nth-child(2):hover i{
+    background-position: 21px -124px;
+}
+.xw_s-left li:nth-child(3):hover i{
+    background-position: 21px -146px;
+}
+.xw_s-left li:nth-child(4):hover i{
+    background-position: 21px -188px;
+}
+.xw_s-left .xw_hover:hover .xw_lii-e{
+    background-position: 21px -210px;
+}
+.xw_s-left ul li i,.xw_lii-e{
+    width: 21px;
+    height: 21px;
+    display: block;
+    background-size: 42px auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+/* 为每一个i添加背景图 */
+.xw_lii-a{
+    background: url(https://static.zhipin.com/zhipin/v173/web/geek/images/siderbar.png)  0px -61px;
+}
+.xw_lii-b{
+    background: url(https://static.zhipin.com/zhipin/v173/web/geek/images/siderbar.png)  0px -124px;
+}
+.xw_lii-c{
+    background: url(https://static.zhipin.com/zhipin/v173/web/geek/images/siderbar.png)  0px -146px;
+}
+.xw_lii-d{
+    background: url(https://static.zhipin.com/zhipin/v173/web/geek/images/siderbar.png)  0px -188px;
+}
+.xw_s-left ol{
+    margin-top:172px;
 
+}
+.xw_s-left ol li{
+    width: 60px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #414a60;
+    text-align: center;
+    padding: 10px 0px 10px 0px ;
+    cursor: pointer;
+}
+.xw_lii-e{
+    background: url(https://static.zhipin.com/zhipin/v173/web/geek/images/siderbar.png)  0px -210px;
+    background-size: 42px auto;
+}
+.xw_sideBar .js-move{
+    color: #54cbc4;
+}
+
+/* 以下是右边 */
+.xw_s-right{
+    width: 310px;
+    height: 640px;
+    background: #fbfbfd url(https://static.zhipin.com/zhipin/v173/web/geek/images/not-login.png) no-repeat center 220px;
+    background-size: 90px 72px;
+    display: inline-block;
+    float: left;
+    position: relative;
+    border-left: 1px solid #eee;
+    display: none;
+}
+.xw_s-right-top{
+    width: 264px;
+    height: 20px;
+    padding: 30px 22px 20px 20px;
+    font-size: 14px;
+    color: #414a60;
+}
+.xw_s-right-top a{
+    float: right;
+    font-size: 12px;
+    color: #9fa3b0;
+}
+.xw_s-right-bottom{
+    width: 310px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    /* border: 1px solid #fff; */
+
+}
+.xw_s-right-bottom p{
+    height: 15px;
+    font-size: 15px;
+    line-height: 15px;
+    color: #9fa3b0;
+    padding: 102px 0 26px 0;
+}
+.xw_s-right-bottom a{
+    display: inline-block;
+    width: 112px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    background: #5dd5c8;
+    color: #fff;
+}
+.xw_s-right-bottom a:hover{
+    background: #00d7c6;
+}
+.xw_code,.xw_app{
+    position: relative;
+}
+.xw_wechat-app{
+    position: absolute;
+    left: -210px;
+    top: -128px;
+    width: 196px;
+    height: 196px;
+    background: #fff;
+    /* display: none; */
+    font-size: 12px;
+    border: 1px solid #8d92a1;
+    text-align: 14px;
+}
+.xw_wechat{
+    display: none;
+}
+.xw_app-b{
+    display: none;
+}
+
+.xw_wechat-app div{
+    width: 0;
+    height: 0;
+    border: 12px solid rgba(0, 0, 0, 0);
+    border-left-color: darkgray;
+    position: absolute;
+    right: -24px;
+    top: 132px;
+    
+}
+.xw_wechat-app img{
+    display: block;
+    width: 134px;
+    height: 134px;
+    margin: 16px auto 0px;
+    
+}
+/* -------------------------以上是侧边栏-------------------------- */
+/* -------------------------以下是意见反馈-------------------------- */
+.xw_dim{
+    width: 100%;
+    height: 100%;
+    background: rgba(37,40,48,.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.xw_feedback{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -265px;
+    margin-top: -251px;
+    background: #fff;
+}
+.xw_f-top{
+    width: 530px;
+    height: 70px;
+    /* background: #00d7c6; */
+    box-sizing:border-box;
+    padding: 26px 0 16px 30px;
+}
+.xw_f-top h3{
+    display: inline-block;
+    color: #62687a;
+    font-size: 18px;
+}
+.xw_f-top h3 span{
+    color: #fc6c38;
+    font-size: 13px;
+}
+
+
+.xw_f-center{
+    width: 530px;
+    height: 368px;
+    /* background: darkblue; */
+    box-sizing:border-box;
+    padding: 0 30px;
+}
+
+.xw_f-center-a span{
+    float: left;
+    color: #62687a;
+    font-size: 14px;
+    line-height: 26px;
+    margin-right: 14px;
+}
+#content{
+    width: 368px;
+    height: 98px;
+    padding: 10px 12px;
+    resize:none;
+    /* border: 1px solid #f00; */
+    
+}
+#content:focus{
+    border: 1px solid #00d7c6;
+    box-shadow: 0px 0px 2px #00d7c6;
+}
+.xw_f-center-a p{
+    padding-left: 73px;
+    font-size: 12px;
+    color: #d1d4db;
+    line-height: 17px;
+
+}
+.xw_f-center-b p{
+    font-size: 14px;
+    color: #62687a;
+    line-height: 26px;
+}
+.xw_f-center-b span{
+    padding-left: 3px;
+    color: #9fa3af;
+    font-size: 13px;
+}
+.xw_f-center-b a{
+    display: block;
+    width: 108px;
+    height: 108px;
+    background: #fff url(https://static.zhipin.com/zhipin/v173/web/geek/images/icon-add.png) no-repeat center;
+    border: 1px solid #e3e7ed;
+    position: relative;
+    margin:10px 0 20px 73px;
+    
+}
+.xw_f-center-b a input{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    
+}
+
+.xw_f-center-c span{
+    color: #62687a;
+    font-size: 14px;
+    line-height: 26px;
+    margin-right: 17px;
+}
+.xw_f-center-c input{
+    width: 241px;
+    height: 32px;
+    padding-left: 40px;
+    border: 1px solid #eee;
+    background: #fff url(https://static.zhipin.com/zhipin/v173/web/geek/images/icons-sign.png) 11px -39px no-repeat;
+    
+}
+.xw_f-center-c input:focus{
+    border: 1px solid #00d7c6;
+    box-shadow: 0px 0px 2px #00d7c6;
+}
+.xw_f-center-c{
+    font-size: 0;
+/* overflow: hidden; */
+}
+.xw_f-center-c b{
+    display: inline-block;
+    width: 110px;
+    height: 32px;
+    background: darkseagreen;
+    border: 1px solid darkgreen;
+    font-size: 18px;
+    /* margin-top: 3px; */
+    vertical-align: top;
+    line-height: 32px;
+    text-align: center;
+    color: #fc6c38;
+    user-select:none;
+
+}
+.xw_f-center-c p{
+    font-size: 12px;
+    color: #fc6c38;
+    padding-left: 73px;
+    /* visibility: hidden; */
+}
+.xw_f-bottom{
+    width: 530px;
+    height: 64px;
+    /* background: darkgreen; */
+    box-sizing:border-box;
+    padding:0 30px;
+}
+.xw_f-bottom a{
+    display: inline-block;
+    width: 42px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 25px;
+    border: #00d7c6 solid 1px;
+    float: right;
+    margin-left: 20px;
+}
+.xw_f-bottom a:nth-child(1){
+    color: #fff;
+    background: #00d7c6;
+}
+.xw_f-bottom a:nth-child(1):hover{
+    background: #6adbcf;
+}
+
+.xw_f-bottom a:nth-child(2){
+    color: #00d7c6;
+    /* box-sizing:border-box; */
+}
+.xw_f-bottom a:nth-child(2):hover{
+    box-shadow: 00px 00px 0px 1px #00d7c6 inset; 
+    text-shadow:0px 0px 1px #00d7c6;   
+}
+.xw_close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 20px;
+    color: #d1d4db;
+    transition: background 0.3s;
+}
+.xw_close:hover{
+    background: #d1d4db;
+    color: #414a60;
+    cursor:pointer;
 }
