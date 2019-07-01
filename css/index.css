@@ -69,7 +69,7 @@
 
 .l_seach_box {
 	position: relative;
-	z-index: 999;
+	z-index: 9999;
 }
 
 .l_seach {
@@ -90,7 +90,7 @@
 	box-shadow: 0 0 6px 0 rgba(0, 0, 0, .13);
 	background: #fff;
 	display: inline-block;
-	border: 1px solid #fff;
+	border: 1px solid #dedede;
 }
 
 .l_search-form-con:hover {
@@ -188,7 +188,7 @@
 }
 
 .l_select_tree {
-	height: 250px;
+	height: 0;
 	width: 506px;
 	display: block;
 	position: absolute;
@@ -255,6 +255,47 @@
 	margin: 0 auto;
 	overflow: hidden;
 }
+.menu_sub{
+	position: absolute;
+    background: #fff;
+    padding: 20px 30px 20px 10px;
+    width: 648px;
+    top: 8px;
+    margin-top: -10px;
+    left: 270px;
+    z-index: 9999;
+    box-shadow: 0 1px 6px rgba(6,0,1,.1);
+	border: 1px solid #E9E9E9;
+	display: none;
+}
+.menu_title{
+	padding-left: 20px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.menu_sub h4{
+	float: left;
+    width: 104px;
+    color: #8d92a1;
+    font-size: 13px;
+    padding-top: 5px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+.menu_sub div{
+	margin-left: 130px;
+    border-bottom: solid 1px #f5f6f9;
+    padding: 0 0 10px 1px;
+}
+.menu_sub a{
+	margin-left: 0;
+    margin-right: 25px;
+	color: #61687c;
+    font-size: 13px;
+    display: inline-block;
+    line-height: 28px;
+}
 .job_menu{
 	width: 268px;
 	background: #fff;
@@ -269,12 +310,13 @@
 	height: 44px;
 	padding: 0 0;
 }
-.job_menu li{
+.job_menu>ul>li{
 	padding: 8px 0 9px 20px;
-    width: 233px;
+    width: 95%;
     height: 27px;
+	box-sizing: border-box;
 }
-.job_menu li>i{
+.job_menu>ul>li>i{
 	float: right;
     background-position: -25px 0;
     margin-top: 5px;
@@ -288,20 +330,20 @@
     background-image: url("https://static.zhipin.com/zhipin/v171/web/geek/images/icons.png");
     background-repeat: no-repeat;
 }
-.job_menu li>b {
+.job_menu>ul>li>b {
     float: left;
     color: #414a60;
     font-size: 15px;
 	margin-top: 4px;
 }
-.job_menu a{
+.job_menu>ul>li>a{
     color: #61687c;
     font-size: 13px;
     display: inline-block;
     line-height: 28px;
     margin-left: 16px;
 }
-.job_menu ul.cur {
+.job_menu>ul.cur {
     position: relative;
     width: 268px;
     z-index: 10;
