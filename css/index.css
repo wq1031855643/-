@@ -254,6 +254,7 @@
 	max-width: 1000px;
 	margin: 0 auto;
 	overflow: hidden;
+	height: 1500px;
 }
 .menu_sub{
 	position: absolute;
@@ -350,6 +351,15 @@
     background: rgb(92, 201, 180);
     border-color: rgb(209, 212, 219) rgb(255, 255, 255) rgb(209, 212, 219) rgb(209, 212, 219);
 }
+.show_all{
+	margin-top: 0;
+    padding: 11px 0 11px 20px;
+    width: 233px;
+    border-top: dashed 1px #ecedef;
+    color: #00c2b3;
+	cursor: pointer;
+}
+
 .home_main{
 	float: left;
     min-width: 697px;

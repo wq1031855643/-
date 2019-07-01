@@ -8,5 +8,5 @@ require.config({
 require(["hm"], function(hm) {
 	hm.creatHead();
 	hm.creatFooter();
+	// hm.creatSide();
 });
-

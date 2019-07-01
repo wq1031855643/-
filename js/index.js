@@ -18,7 +18,7 @@ window.onload = function() {
 				list = response.data.zpData; //第一级职位数据
 				var position2 = perms.data;
 				var str = "";
-				for (var i = 0; i < position2.length; i++) {
+				for (var i = 0; i < 12; i++) {
 					if ((position2[i].pList).length == 3) {
 						str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[2] + "</a></li><div class='menu_sub'></div></ul>"
 					} else if ((position2[i].pList).length == 2) {
@@ -28,6 +28,7 @@ window.onload = function() {
 					}
 					job_menu.innerHTML += str;
 				}
+				job_menu.innerHTML += '<div class="show_all" style="display: block;">显示全部职位</div>';
 				
 				$(".job_menu ul").on("mouseover",function(){
 					$(this).addClass("cur");
@@ -40,7 +41,8 @@ window.onload = function() {
 						showMemuSub($(this).attr("id"),$(this));
 					}
 					return false;
-				})
+				});
+				
 				$(".job_menu ul").on("mouseout",function(){
 					$(this).find(".menu_sub").empty();
 					$(this).find(".menu_sub").toggle();
@@ -48,7 +50,27 @@ window.onload = function() {
 					$(this).find("a").css("color","#61687c");
 					$(this).find("b").css("color","#414a60");
 					return false;
-				})
+				});
+				
+				$(".show_all").on("mouseover",function(){
+					$(this).toggle();
+					for (var i = 12; i < position2.length; i++) {
+						if ((position2[i].pList).length == 2) {
+							str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
+						}  else {
+							str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a></li><div class='menu_sub'></div></ul>"
+						}
+						job_menu.innerHTML += str;
+					}
+					return false;
+				});
+				
+				$(".show_all").on("mouseout",function(){
+					alert(1)
+					$(".show_all").empty();
+					$(".show_all").toggle();
+					return false;
+				});
 			}
 		}))
 		.catch(function(error) {
