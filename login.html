@@ -61,7 +61,7 @@
             <!-- 右侧主内容 -->
             <div class="z_login_right">
                 <div class="z_main">
-                    <form action="">
+                  
                         <!-- 密码登录 -->
                         <div class="z_sign_tab">
                             <span class="z_link_pass cur">密码登录</span>
@@ -69,15 +69,16 @@
                             <span class="z_link_scan">扫码登录</span>
                         </div>
                         <!-- //密码登录 -->
-                        <div class="z_mainBox0">
                             <!-- 电话 -->
+                            <form action="" class="z_mainBox0">
                             <div class="z_phone z_bor_phon">
                                 <i class="z_book"></i>
                                 <span class="z_wrap_sele">
                                     <em class="z_select">+86</em>
                                     <i class="z_icon_sele"></i>
                                 </span>
-                                <input type="text" class="z_inp_phone" placeholder="手机号" name="count">
+                                <input type="text" class="z_inp_phone" placeholder="手机号" name="count"
+                                    >
                                 <div class="err_phone"></div>
                                 <div class="z_openLi">
                                     <!-- <ul>
@@ -97,9 +98,22 @@
                                 </span>
                                 <div class="boxFlage"></div>
                             </div>
-                        </div>
-                        <!-- //短信登录 -->
-                        <div class="z_mainBox1">
+                            <div class="z_form_btn">
+                                <button type="submit" class="btn">登录</button>
+                            </div>
+    
+                            <div class="z_weixin">
+                                <a href="#" class="z_link_wechat">微信登录</a>
+    
+    
+                                <div class="z_right">
+                                    没有账号
+                                    <a href="#" class="z_link_sig">立即注册</a>
+                                </div>
+                            </div>
+                        </form>
+                         <!-- //短信登录 -->
+                            <form action="" class="z_mainBox1">
                             <!-- 电话 -->
                             <div class="z_phone z_bor_phon">
                                 <i class="z_book"></i>
@@ -127,7 +141,6 @@
                                 <input type="text" class="z_inp_mess" placeholder="短信验证码" name="messCode">
                                 <button class="z_mess_btn">发送验证码</button>
                             </div>
-                        </div>
                         <!-- form 底部 登录 -->
                         <div class="z_form_btn">
                             <button type="submit" class="btn">登录</button>
@@ -143,9 +156,38 @@
                             </div>
                         </div>
                     </form>
+
+                    <!-- 二维码 -->
+                   <div class="z_qrcode-box z_mainBox2">
+                    <p>
+                        <span>使用 BOSS直聘 APP 扫码登录</span>
+                        <em>扫码帮助</em>
+                    </p>
+                    <div class="z_img">
+                        <img src="../project/images/z_login/z_wxf.jpg" alt="">
+                    </div>
+                    <div class="z_bott">
+                        没有账号
+                        <a href="#" class="z_link_si">立即注册</a>
+                    </div>
+               <div class="z_qrc_right"></div>
+                   <div class="sign-scan-help animation">
+      
+                    <h4>扫码帮助</h4>
+                    <ul class="scan-help-tab">
+                      <li class="active">我是BOSS</li>
+                      <li>我是牛人</li>
+                    </ul>
+                    <div class="sub-title">我的&nbsp;&gt;&nbsp;登录网页版</div>
+                    <ul class="scan-help-content">
+                      <li class="help-boss active"></li>
+                      <li class="help-geek"></li>
+                    </ul>
+                  </div>
                 </div>
             </div>
-
+               
+        </div>
         </div>
     </div>
 

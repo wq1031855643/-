@@ -93,7 +93,7 @@ body,html{
     margin: 50px 0 0 40px;
  }
  .z_login_left ul li{
-     margin-bottom:71px;
+     margin-bottom:55px;
  }
  .z_login_left ul li span:last-of-type{
      display:block;
@@ -214,6 +214,7 @@ body,html{
  .z_phone .z_book1{
     background-position: 2px -185px;
  }
+
  .z_select{
     display: inline-block;
     font-style: normal;
@@ -246,6 +247,7 @@ body,html{
  .z_inp_phone{
     width: 209px;
     padding-left: 95px;
+    box-shadow: 0 0 0px 1000px white inset
  }
  .z_pass_i{
     position: absolute;
@@ -260,6 +262,11 @@ body,html{
     padding-left: 38px;
     width: 266px;
  }
+ .z_pass_i1{
+   background-position: 2px -277px;
+
+ }
+
  .z_boxMove{
    width: 46px;
    height: 42px;
@@ -438,4 +445,136 @@ body,html{
    background-color: #fff;
    background-position: 0 -356px;
 
+}
+
+.z_qrcode-box{
+   position: relative;
+    padding-bottom: 17px;
+    margin-top:-44px;
+}
+.z_qrcode-box p{
+   padding: 32px 0 38px;
+   text-align: center;
+   color: #9fa3af;
+}
+.z_qrcode-box p span{
+   vertical-align: middle;
+}
+.z_qrcode-box p em{
+   font-style: normal;
+   color: #3a76ff;
+   display: inline-block;
+   margin-left: 20px;
+   vertical-align: middle;
+}
+.z_qrcode-box p em::after{
+   content: '';
+   display: inline-block;
+   width: 14px;
+   height: 14px;
+   background: url('../images/z_login/z_icon-help.png') no-repeat center;
+   vertical-align: middle;
+   margin-left: 5px;
+   background-size: 100% 100%;
+   -webkit-background-size: 100% 100%;
+}
+.z_qrc_right{
+   position: absolute;
+   width: 44px;
+   height: 315px;
+   right: -43px;
+   top: 0;
+
+}
+.z_img{
+   display: block;
+   width: 200px;
+   height: 200px;
+   margin: 0 auto;
+   position: relative;
+   width: 200px;
+   height: 200px;
+   text-align: center;
+}
+.z_img img{
+   width:100%;
+}
+.z_bott{
+   color: #9fa3b0;
+   text-align: center;
+   overflow: hidden;
+   padding: 24px 0 0 0;
+}
+.z_bott a{
+   color: #18c3b1;
+}
+.sign-scan-help{
+   position: absolute;
+   left: 370px;
+   top: -107px;
+   width: 274px;
+   height: 514px;
+   margin-left: -10px;
+   background-color: #fff;
+   opacity: 0;
+   display:none;
+   border-radius: 10px;
+   filter: drop-shadow(0 6px 13px rgba(0,0,0,.1));
+}
+
+.sign-scan-help h4{
+   margin: 40px auto 24px;
+   color: #9fa3b0;
+   font-size: 18px;
+   font-weight: 400;
+   text-align: center;
+}
+.scan-help-tab{
+   position: relative;
+   z-index: 1;
+   width: 188px;
+   height: 29px;
+   margin: 0 auto;
+   border: 1px solid #53cac4;
+   font-size: 0;
+   border-radius: 20px;
+   overflow: hidden;
+}
+
+.scan-help-tab li{
+   width: 50%!important;
+    text-align: center;
+    vertical-align: middle;
+    color: #19b9b1;
+    font-size: 12px;
+    background-color: #fff;
+    cursor: pointer;
+    height: 29px;
+    line-height: 29px;
+    float: left;
+}
+.scan-help-tab .active{
+   background-color: #e5f8f7;
+}
+.sub-title{
+   margin: 26px auto 19px;
+   color: #61687c;
+   text-align: center;
+}
+.scan-help-content li{
+   display: none;
+   width: 208px;
+   height: 301px;
+   margin: 0 auto;
+}
+.scan-help-content .active{
+   display: block
+}
+.help-boss{
+   background: url('../images/z_login/z_icon-help-boss.png') no-repeat center center;
+   background-size: 100% 100%;
+}
+.help-geek{
+   background: url('../images/z_login/z_icon-help-geek.png') no-repeat center center;
+    background-size: 100% 100%;
 }
