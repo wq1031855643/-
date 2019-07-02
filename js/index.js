@@ -255,8 +255,12 @@ function showMemuSub(id,ul){
 
 function showJobs(data){
 	console.log(data);
-	var data = data.data;
-	for (var i = 0; i < data.length; i++) {
-		data[i]
+	var data = data.data.it;
+	var str = "";
+	var address = "";
+	for (var i = 0; i < 9; i++) {
+		address = (data[i].address).substring(0,2);
+		str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ data[i].jobName +'<span class="salary">'+ data[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ data[i].year +'<span class="vline"></span>'+ data[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ data[i].img +'" />'+ data[i].companyName +'<span class="user_text">'+ data[i].recruiter +'<span class="vline"></span>'+ data[i].type +'</span></p></a></div></li>';
+		$(".job_tab_ul").append(str);
 	}
 }

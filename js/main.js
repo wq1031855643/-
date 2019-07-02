@@ -2,7 +2,9 @@ require.config({
 	baseUrl: 'js',
 	paths: {
 		'hm': 'headMod',
-		'jquery': ['https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min', 'jquery-1.8.3.min']
+		'jquery': ['https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min', 'jquery-1.8.3.min'],
+		'jqmsw': 'jquery.mousewheel',
+		'posiMod': 'posiMod'
 	}
 });
 

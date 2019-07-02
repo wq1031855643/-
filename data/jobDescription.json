@@ -1,5 +1,5 @@
-[
-	{
+{
+	"it": [{
 		"jobName": "技术总监",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -124,8 +124,8 @@
 		"img": "https://img.bosszhipin.com/beijin/mcs/useravatar/20180327/28a18b629df1acfcab14a1b205e3bb77cfcd208495d565ef66e7dff9f98764da_s.jpg",
 		"recruiter": "叶先生",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"jr": [{
 		"jobName": "Java架构师",
 		"pay": "20-40K",
 		"address": "上海",
@@ -250,8 +250,8 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"fdc": [{
 		"jobName": "技术总监9",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -376,8 +376,8 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"jypx": [{
 		"jobName": "技术总监18",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -502,8 +502,8 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"qc": [{
 		"jobName": "技术总监12",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -628,8 +628,8 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"ylcm": [{
 		"jobName": "技术总监12",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -754,8 +754,8 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"yljk": [{
 		"jobName": "技术总监12",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -880,8 +880,8 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"flzx": [{
 		"jobName": "技术总监12",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -1006,8 +1006,8 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"wl": [{
 		"jobName": "技术总监12",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -1132,8 +1132,8 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	},
-	{
+	}],
+	"cgmy": [{
 		"jobName": "技术总监12",
 		"pay": "50-100K",
 		"address": "深圳 宝安区 福永",
@@ -1258,5 +1258,5 @@
 		"img": "https://img2.bosszhipin.com/mcs/useravatar/20150401/9efebd3de653f939b85afa36b872f9428bee7c70fa2377c34db570f82ca84ea5_s.jpg",
 		"recruiter": "柯小姐",
 		"type": "招聘者"
-	}
-]
+	}]
+}
