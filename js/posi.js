@@ -9,7 +9,6 @@ define(['jquery','jqmsw'],function () {
             type:'get',
             dataType:'json',
             success:function(json){
-                console.log(json);
                 var jsonArr = json.zpData.cityList;
                 var str = arr(jsonArr,code);
             }
@@ -55,7 +54,7 @@ define(['jquery','jqmsw'],function () {
         }else{
             $(".f_cityList,.f_cityOist").css("display","none");
             $(this).removeClass("f_showCity bg");
-        }
+        }  
     })
     
 
@@ -94,6 +93,7 @@ define(['jquery','jqmsw'],function () {
 
     $(".f_cityList,.f_cityOist").mouseout(function(e){
         $(this).children().eq(1).css("display","none");
+       
     })
 
     //地区单击事件
@@ -117,12 +117,16 @@ define(['jquery','jqmsw'],function () {
         var fh = $(sor).height();
         var pf = fh - ph;
         var un = uh - fh;
-        var lTop = parseInt($(sor_p).css("top")) + -delta * un / pf;
+        if(parseInt($(sor_p).css("top")) == 0 && delta > 0){
+            return false;
+        }
+        var lTop = parseFloat($(sor_p).css("top")) + -delta * un / pf;
         lTop = Math.abs(lTop);
         lTop = lTop < 1 ? 0 : lTop;
         lTop = lTop > pf ? pf : lTop;
         $(sor_p).css("top",lTop);
         $(this).css("top",-lTop  * un / pf);  
+        return false;
     })
 
 
@@ -277,12 +281,16 @@ define(['jquery','jqmsw'],function () {
         var fh = $(sor).height();
         var pf = fh - ph;
         var un = uh - fh;
-        var lTop = parseInt($(sor_p).css("top")) + -delta * un / pf;
+        if(parseInt($(sor_p).css("top")) == 0 && delta > 0){
+            return false;
+        }
+        var lTop = parseFloat($(sor_p).css("top")) + -delta * un / pf;
         lTop = Math.abs(lTop);
         lTop = lTop < 1 ? 0 : lTop;
         lTop = lTop > pf ? pf : lTop;
         $(sor_p).css("top",lTop);
         $(this).css("top",-lTop  * un / pf);
+        return false;
     })
 
     $(".f_posi_sor p").mousedown("click",function(e){
@@ -432,6 +440,41 @@ define(['jquery','jqmsw'],function () {
         $(this).children('a').removeClass("btn");
         $(this).children('.f_contact').css("display","block");
     })
+    $(".f_main_left").on("click","li",function(){
+        var str = $(this).children().eq(0).children("h3").html();
+        var val3 = $(this).children().eq(1).children("h3").html();
+        var strArr = str.split("<span>");
+        var val1 = strArr[0];
+        var val2 = strArr[1].split("</span>")[0];
+        var valArr = [val1,val2,val3];
+        if(localStorage.getItem('readArr')){
+            var readArr = localStorage.getItem('readArr').split(',');
+            for(var i = 0 ; i < valArr.length ; i++){
+                readArr.push(valArr[i]);
+            }
+            var heavyArr =[];
+            var heavyStr = "";
+            for(var i =0; i < readArr.length ; i++ ){
+                if((i + 1) % 3 == 0){
+                    heavyStr += readArr[i]
+                    heavyArr.push(heavyStr);
+                    heavyStr = '';
+                }else{
+                    heavyStr += readArr[i]+ ',';
+                }
+            }
+            var readArr = Array.from(new Set(heavyArr));
+        }else{
+            var readArr = [];
+            readArr.push(valArr);
+        }
+        while(readArr.length > 5){
+            heavyArr.shift();
+        }
+        localStorage.setItem("readArr",readArr);
+        f_read();
+        return false;
+    })
 
 //E f_main_left
 
@@ -509,13 +552,85 @@ define(['jquery','jqmsw'],function () {
     $(".f_sms input").blur(function(){
         $(this).parent().removeClass("f_smsAction");
     })
+    // E f_sms
 
+    // S f_btn
+        $(".f_btn").click(function(){
+            var phoneReg = /^1[3-9]\d{9}$/;
+            var sliderFalg =  $(".f_validation").is("f_validationAction");
+            var checkboxFalg = $(".f_agreement input").attr("checked")=='checked';
+            var phoneFlag = phoneReg.test($('.f_phone input').val());
+            if(sliderFalg && checkboxFalg && phoneFlag){
+                return false;
+            }else{
+                return false;
+            }
+        })
 
-    // Ef_sms
+    // E f_btn
+    // S f_read
 
-
-
+        function f_read(){
+            if(localStorage.getItem('readArr')){
+                var str = '';
+                var heavyStr = '';
+                var heavyArr = [];
+                var readArr = localStorage.getItem('readArr').split(',');
+                for(var i =0; i < readArr.length ; i++ ){
+                    if((i + 1) % 3 == 0){
+                        heavyStr += readArr[i]
+                        heavyArr =  heavyStr.split(',');
+                        str += '<li><h4>'+ heavyArr[0] +'<span>'+  heavyArr[1] +'</span></h4><p>'+  heavyArr[2] +'</p></li>';
+                        heavyStr = '';
+                    }else{
+                        heavyStr += readArr[i]+ ',';
+                    }
+                }
+                $(".f_read").children("ul").html(str);
+            } 
+        }
+        f_read();
+    // E f_read
 //E f_main_right
+
+// S f_feedback
+        $(".f_feedback").on('click','div',function(){
+            var left = parseInt($(this).css("background-position-x"));
+            if($(this).hasClass('f_select')){
+                left =  48 + left + 'px';
+                $(this).css("background-position-x", left);
+                $(this).removeClass('f_select');
+                $('.f_feedback .f_btn').addClass('f_ban');
+                return false;
+            }
+            var sibArr = $(this).siblings();
+            left =  -48 + left + 'px';
+            for(var i =0 ; i < sibArr.length ; i++){
+                if(sibArr.eq(i).hasClass('f_select')){
+                    var x = sibArr.eq(i).css("background-position-x");
+                    x = parseInt(x) + 48 + "px";
+                    sibArr.eq(i).css("background-position-x",x);
+                }
+            }
+            $(this).css("background-position-x", left);
+            $(this).addClass('f_select').siblings().removeClass('f_select');
+            $('.f_feedback .f_btn').removeClass('f_ban');
+           
+        })
+
+
+// E f_feedback
+
+
+
+
+
+
+
+
+
+
+
 
 //repuiry E
 })
