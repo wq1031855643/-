@@ -2,6 +2,7 @@ var tree1 = document.querySelector(".tree-1");
 var tree2 = document.querySelector(".tree-2");
 var tree3 = document.querySelector(".tree-3");
 var list = ""; //职位数据
+var newJobs = "";//最新职位数据
 
 window.onscroll = function(){
 	var l_seach_box = document.querySelector(".l_seach_box");
@@ -209,6 +210,99 @@ tree3.onclick = function(eve) {
 	}
 }
 
+$(".job_tab_box").on("click","span",function(){
+	$(".job_tab_box").find("span").removeClass("cur");
+	$(this).addClass("cur");
+	$(".job_tab_ul").empty();
+	var data = newJobs.data;
+	var str = "";
+	var address = "";
+	switch ($(this).attr("data-name")){
+		case "jr":
+			var jobs = data.jr;
+			for (var i = 0; i < jobs.length; i++) {
+				address = (jobs[i].address).substring(0,2);
+				str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+				$(".job_tab_ul").append(str);
+			}
+			break;
+			case "it":
+				var jobs = data.it;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+			case "fdc":
+				var jobs = data.fdc;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+			case "jypx":
+				var jobs = data.jypx;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+			case "qc":
+				var jobs = data.qc;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+			case "ylcm":
+				var jobs = data.ylcm;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+			case "yljk":
+				var jobs = data.yljk;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+			case "flzx":
+				var jobs = data.flzx;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+			case "wl":
+				var jobs = data.wl;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+			case "cgmy":
+				var jobs = data.cgmy;
+				for (var i = 0; i < jobs.length; i++) {
+					address = (jobs[i].address).substring(0,2);
+					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
+					$(".job_tab_ul").append(str);
+				}
+				break;
+		defalut:
+			break;
+	}
+})
+
 //吸顶效果函数
 function fixedTop(dom,height){
 	//获取浏览器滚走的距离 
@@ -254,7 +348,7 @@ function showMemuSub(id,ul){
 }
 
 function showJobs(data){
-	console.log(data);
+	newJobs = data;
 	var data = data.data.it;
 	var str = "";
 	var address = "";
