@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "<h3>原生JavaScript + html + css实现boss直聘网站</h3>",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wq1031855643/-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wq1031855643/-/issues"
+  },
+  "homepage": "https://github.com/wq1031855643/-#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.6.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
