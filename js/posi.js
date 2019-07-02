@@ -1,68 +1,62 @@
 
 define(['jquery','jqmsw'],function () {
 	
-
+    var JONS = '';
     //请求ajax函数
-    function  aja(arr,code){
         $.ajax({
             url:"data/city.json",
             type:'get',
             dataType:'json',
             success:function(json){
-                var jsonArr = json.zpData.cityList;
-                var str = arr(jsonArr,code);
+                JONS = json.zpData.cityList;
             }
         })
-    }
-
     //单击地区选择时，调用请求ajax函数，并获得相应数据
-    function forArr(jsonArr){
+    function forArr(JONS){
         var str = "";
         var code = localStorage.getItem("posiCityCode");
-        for(var i=0,len = jsonArr.length ; i < len ;i++){
-            if(jsonArr[i].code == code){
-                str += '<li code ='+ code +' style= "background:#f1f3f6">'+ jsonArr[i].name +'</li>'
+        for(var i=0,len = JONS.length ; i < len ;i++){
+            if(JONS[i].code == code){
+                str += '<li code ='+ code +' style= "background:#f1f3f6">'+ JONS[i].name +'</li>'
             }else{
-                str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
+                str += '<li code ='+ JONS[i].code +'>'+ JONS[i].name +'</li>'
             }
             
         }
         $(".f_cityList ul").html(str);
     }
     //鼠标移动到省会时，调用请求ajax函数，并获得相应数据
-    function forArr2(jsonArr,code){
+    function forArr2(JOSN,code){
         var str = "";
-        for(var i=0,len = jsonArr.length ; i < len ;i++){
-            if(code == jsonArr[i].code){
+        for(var i=0,len = JOSN.length ; i < len ;i++){
+            if(code == JOSN[i].code){
                 var str2 = "";
-                var lenArr = jsonArr[i].subLevelModelList;
+                var lenArr = JOSN[i].subLevelModelList;
                 for(var j=0,len=lenArr.length;j<len;j++){
                         str2 += '<li>'+ lenArr[j].name +'</li>'; 
                 }
-                str += '<li code ='+ jsonArr[i].code +'>'+ str2 +'</li>'
+                str += '<li code ='+ JOSN[i].code +'>'+ str2 +'</li>'
             }  
         }
         $(".f_cityOist ol").html(str);
     }
-
+    
     //单击地区选择，调用forArr函数
     $(".f_sel span").click(function(){
         if( $(".f_cityList").css("display") == "none"){
-            $(".f_cityList,.f_cityOist").css("display","block");
-            aja(forArr);
+            $(".f_cityList,.f_cityOist").show();
+            forArr(JONS);
             $(this).addClass("f_showCity bg");
         }else{
-            $(".f_cityList,.f_cityOist").css("display","none");
+            $(".f_cityList,.f_cityOist").hide();
             $(this).removeClass("f_showCity bg");
         }  
     })
-    
 
-
-    //单击地区选择，调用forArr2函数
+    //移入地区选择，调用forArr2函数
     $(".f_cityList ul").on("mouseover","li",function(){
         var code = $(this).attr("code");
-        aja(forArr2,code);
+        forArr2(JONS,code);
     })
 
     $(".f_cityList,.f_cityOist").mouseover(function(e){
@@ -157,76 +151,84 @@ define(['jquery','jqmsw'],function () {
 
 
 
-    //单击职位选择
-
-    function  ajaPosi(){
+    //职位ajax请求
+    var POSI = '';
         $.ajax({
             url:"data/position.json",
             type:'get',
             dataType:'json',
             success:function(json){
-                var code = localStorage.getItem("posiTypeCode");
-                var jsonArr = json.zpData;
-                var str = "";
-                for(var i=0,len = jsonArr.length ; i < len ;i++){
-                    if(jsonArr[i].code == code){
-                        str += '<li code ='+ code +' style= "background:#f1f3f6">'+ jsonArr[i].name +'</li>'
-                    }else{
-                        str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
-                    }  
-                }
-                $(".f_posiList .f_posi_ul1").html(str);
+                POSI = json.zpData;
             }
         })
+    //单击职位调用的函数
+    function posiArr(POSI){
+        var code = localStorage.getItem("posiTypeCode");
+        var str = "";
+        for(var i=0,len = POSI.length ; i < len ;i++){
+            if(POSI[i].code == code){
+                str += '<li code ='+ code +' style= "background:#f1f3f6">'+ POSI[i].name +'</li>'
+            }else{
+                str += '<li code ='+ POSI[i].code +'>'+ POSI[i].name +'</li>'
+            }  
+        }
+        $(".f_posiList .f_posi_ul1").html(str);
     }
-    
+    //职位单击事件
+    $(".f_positype").click(function(){
+        if( $(".f_posiList").css("display") == "none"){
+            $(this).addClass("bg");
+            posiArr(POSI);
+            $(".f_posiList").css("display","block");
+            $(".f_posi_ul1").parent().css("display","block");
+        }else{
+            $(this).removeClass("bg");
+            $(".f_posiList").css("display","none");
+        }
+    })
 
+    //职位移动事件函数
+    function mobile1(code,POSI){
+        for(var i=0,len = POSI.length ; i < len ;i++){
+            if(code == POSI[i].code){
+                var str2 = "";
+                var lenArr = POSI[i].subLevelModelList;
+                for(var j=0,len=lenArr.length;j<len;j++){
+                    str2 += '<li code = '+ lenArr[j].code +'>'+ lenArr[j].name +'</li>'; 
+                }
+                $(".f_posiList .f_posi_ul2").html(str2);
+            }  
+        }  
+    }
+    //职位移动事件
     $(".f_posiList .f_posi_ul1").on("mousemove","li",function(e){
         var code = $(e.target).attr("code");
-        $.ajax({
-            url:"data/position.json",
-            type:'get',
-            dataType:'json',
-            success:function(json){
-                var jsonArr = json.zpData;
-                for(var i=0,len = jsonArr.length ; i < len ;i++){
-                    if(code == jsonArr[i].code){
-                        var str2 = "";
-                        var lenArr = jsonArr[i].subLevelModelList;
-                        for(var j=0,len=lenArr.length;j<len;j++){
-                            str2 += '<li code = '+ lenArr[j].code +'>'+ lenArr[j].name +'</li>'; 
-                        }
-                        $(".f_posiList .f_posi_ul2").html(str2);
-                    }  
+        mobile1(code,POSI);
+    })
+    //职位移动事件函数2
+    function mobile2(code,POSI){
+        var str = "";
+        for(var i=0,len = POSI.length ; i < len ;i++){
+            var josnJrr = POSI[i].subLevelModelList;
+            for(var j=0,jen=josnJrr.length;j,j < jen; j++){
+                if(code == josnJrr[j].code){
+                    var str = '';
+                    var u3Arr = josnJrr[j].subLevelModelList;
+                    for(var z=0,len=u3Arr.length;z<len;z++){
+                            str += '<li>'+ u3Arr[z].name +'</li>'; 
+                    }
+                    $(".f_posiList .f_posi_ul3").html(str);
                 }  
             }
-        })
-    })
+        }   
+    }
+    //职位移动事件2
     $(".f_posiList .f_posi_ul2").on("mousemove","li",function(e){
         var code = $(e.target).attr("code");
-        $.ajax({
-            url:"data/position.json",
-            type:'get',
-            dataType:'json',
-            success:function(json){
-                var jsonArr = json.zpData;
-                var str = "";
-                for(var i=0,len = jsonArr.length ; i < len ;i++){
-                    var josnJrr = jsonArr[i].subLevelModelList;
-                    for(var j=0,jen=josnJrr.length;j,j < jen; j++){
-                        if(code == josnJrr[j].code){
-                            var str = '';
-                            var u3Arr = josnJrr[j].subLevelModelList;
-                            for(var z=0,len=u3Arr.length;z<len;z++){
-                                    str += '<li>'+ u3Arr[z].name +'</li>'; 
-                            }
-                            $(".f_posiList .f_posi_ul3").html(str);
-                        }  
-                    }
-                }   
-            }
-        })
+        mobile2(code,POSI);
     })
+
+    
 
     $(".f_posiList").on("mouseover","li",function(){
         $(this).css("background","#f1f3f6").siblings().css("background","#fff");
@@ -325,50 +327,40 @@ define(['jquery','jqmsw'],function () {
         }
 
     })
-    $(".f_positype").click(function(){
-        if( $(".f_posiList").css("display") == "none"){
-            $(this).addClass("bg");
-            ajaPosi();
-            $(".f_posiList").css("display","block");
-            $(".f_posi_ul1").parent().css("display","block");
-        }else{
-            $(this).removeClass("bg");
-            $(".f_posiList").css("display","none");
-        }
-    })
 
 // E positype
 
 
 // S f_company_ul
-
-    function companyAjax(){
-        $.ajax({
-            url:"data/oldindustry.json",
-            type:'get',
-            dataType:'json',
-            success:function(json){
-                var code = localStorage.getItem("companyCode");
-                var jsonArr = json.zpData;
-                var str = "<li>不限</li>";
-                for(var i=0,len = jsonArr.length ; i < len ;i++){
-                    if(code == jsonArr[i].code){
-                        str += '<li code ='+ code +' style="color:#00d7c6">'+ jsonArr[i].name +'</li>' 
-                    }else{
-                        str += '<li code ='+ jsonArr[i].code +'>'+ jsonArr[i].name +'</li>'
-                    }
-                        
-                }
-                $(".f_company_ul").html(str);
+    //保存公司行业信息
+    var COM = '';
+    $.ajax({
+        url:"data/oldindustry.json",
+        type:'get',
+        dataType:'json',
+        success:function(json){
+            COM = json.zpData; 
+        }
+    })
+    //定义单击公司行业调用函数
+    function company(){
+        var code = localStorage.getItem("companyCode");
+        var str = "<li>不限</li>";
+        for(var i=0,len = COM.length ; i < len ;i++){
+            if(code == COM[i].code){
+                str += '<li code ='+ code +' style="color:#00d7c6">'+ COM[i].name +'</li>' 
+            }else{
+                str += '<li code ='+ COM[i].code +'>'+ COM[i].name +'</li>'
             }
-          
-        })
+                
+        }
+        $(".f_company_ul").html(str);
     }
-
+    //定义单击公司行业事件
     $(".f_company").click(function(){
         if( $(".f_company_ul").css("display") == "none"){
             $(this).addClass("bg");
-            companyAjax();
+            company(COM);
             $(".f_company_ul").css("display","block");
         }else{
             $(this).removeClass("bg");
@@ -394,6 +386,7 @@ define(['jquery','jqmsw'],function () {
 // S f_screening
     $(".f_screening").on("mouseover",'span',function(){
         $(this).siblings().addClass("f_action");
+        $(this).parent().siblings().children('div').removeClass('f_action');
     })
     $(".f_screening").on("click",'li,em',function(){
         if(this.nodeName == "LI"){
@@ -405,7 +398,6 @@ define(['jquery','jqmsw'],function () {
         if(this.nodeName == "EM"){
             window.location.reload();
         }
-        
     })
     $(".f_screening .f_scr_div div").mouseover(function(e){
         if(e.target.nodeName == "DIV"){
@@ -621,13 +613,19 @@ define(['jquery','jqmsw'],function () {
 
 // E f_feedback
 
-
-
-
-
-
-
-
+// S window滚动事件
+    $(window).scroll(function(){
+        var top = parseInt($(document).scrollTop());
+        if(top > 400){
+            $('.f_condition').children("dl").hide();
+            $('.f_warpSearch').addClass('f_winGun');
+        }else{
+            $('.f_condition').children("dl").show();
+            $('.f_warpSearch').removeClass('f_winGun');
+        }
+        
+    });
+// E window滚动事件
 
 
 

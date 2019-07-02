@@ -259,7 +259,7 @@
             width: 12px;
             height: 16px;
             background: url('../images/boss_posi/f_icons.png') no-repeat 0 -86px;
-            //background-size: 100%;
+            
         }
     }
 }
@@ -839,7 +839,14 @@
 
 /* E f_feedback */ 
 
-
+/* S window 滚动属性*/
+.f_winGun{
+    width: 100%;
+    position: fixed;
+    top:0;
+    text-align: center;
+    z-index: 10;
+}
 
 
 
