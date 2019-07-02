@@ -1,2 +1,2 @@
 # -
-JavaScript + html + css + gulp实现boss直聘网站
+Jquery + html + css + gulp实现boss直聘网站
