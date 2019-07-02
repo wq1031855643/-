@@ -15,11 +15,13 @@ function boxtop(json){ //这是新闻上半段DOM元素
     }
     
 }
+
+console.log($('.xw_more'))
 var index=4; //这是新闻下半段DOM元素
 function boxbottom(json){
     cycle(json)
-    $('.xw_more').click(function(){
-        if(index < 33){
+    $('.xw_more').click(function(){//这是点击时再次加载
+         if(index < 33){
              cycle(json)
         }
     })

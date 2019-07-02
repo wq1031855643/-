@@ -74,7 +74,7 @@ $('.xw_app').hover(function(){
 })
 $('.xw_s-left ul li').click(function(e){
     $('.xw_s-right').css('display','block');
-    e.stopPropagation();
+    // e.stopPropagation();
 })
 $(document).click(function(e){
     $('.xw_s-right').css('display','none');
@@ -115,13 +115,6 @@ $('.xw_f-center-c input').blur(function(){
     // console.log($('.xw_f-center-c b').text())
     // console.log($('.xw_f-center-c input').val())
 })
-
-
-
-
-
-
-
 function getYZM(num){
 	var yzm = "";
 	//43aGtT 随机从ASCII码表中来
