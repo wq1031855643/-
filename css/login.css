@@ -128,6 +128,14 @@ body,html{
     background-size: 100% auto;
     background-position: 0 -45px;
  }
+ .z_login_left ul li:nth-of-type(4n+3) i{
+   float: left;
+   width: 25px;
+   height: 42px;
+   background: url('../images/z_login/z_sign-slide.png') no-repeat;
+   background-size: 100% auto;
+   background-position: 0 -99px;
+}
  .z_main{
     position: relative;
     width: 324px;
