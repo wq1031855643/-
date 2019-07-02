@@ -15,7 +15,7 @@ window.onload = function() {
 			// console.log(perms.data);
 			if (response.status == 200) {
 				var job_menu = document.querySelector(".job_menu");
-				list = response.data.zpData; //第一级职位数据
+				list = response.data.zpData;
 				var position2 = perms.data;
 				var str = "";
 				for (var i = 0; i < 12; i++) {
@@ -54,7 +54,6 @@ window.onload = function() {
 				});
 				
 				$(".show_all").on("mouseenter",function(){
-					console.log(1)
 					$(".job_menu").css("height","auto");
 					$(this).toggle();
 					for (var i = 12; i < position2.length; i++) {
@@ -70,11 +69,13 @@ window.onload = function() {
 				});
 				
 				$(".job_menu").on("mouseleave","ul",function(){
-					for (var i = 12; i < position2.length; i++) {
-						$(".job_menu").find("ul").eq(i).toggle();
-						$(".job_menu").css("height",height);
+					if ($(".show_all").css("display") == "none") {
+						for (var i = 12; i < position2.length; i++) {
+							$(".job_menu").find("ul").eq(i).toggle();
+							$(".job_menu").css("height",height);
+						}
+						$(".show_all").toggle();
 					}
-					$(".show_all").toggle();
 					return false;
 				});
 			}
@@ -221,7 +222,7 @@ function fixedTop(dom,height){
 	}
 }
 
-
+// main主体左边职位菜单
 function showMemuSub(id,ul){
 	var menu_sub = ul.find(".menu_sub");
 	var listchild = "";

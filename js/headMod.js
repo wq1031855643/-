@@ -12,8 +12,9 @@ define(function () {
 	}
 	
 	function creatSide(){
+		var side = document.querySelector("#side");
 			var str = '<div class="xw_sideBar"><li><i class="xw_lii-b"></i>沟通过</li><div class="xw_s-left"><ul><li class="js-move"><i class="xw_lii-a" style="background-position: 21px -61px;"></i>感兴趣</li><li><i class="xw_lii-c"></i>已投递</li><li><i class="xw_lii-d"></i>面试</li></ul><ol><li class="xw_hover"><i class="xw_lii-e"></i></li><li>反馈</li><li class="xw_code">微信<div class="xw_wechat-app xw_wechat"><div></div><img src="https://static.zhipin.com/v2/web/geek/images/wechat-qrcode.jpg" alt="#">关注BOSS直聘微信服务号</div></li><li class="xw_app">APP<div class="xw_wechat-app xw_app-b"><div></div><img src="https://static.zhipin.com/v2/web/geek/images/wechat-qrcode.jpg" alt="#">下载BOSS直聘APP</div></li></ol></div><div class="xw_s-right"><p class="xw_s-right-top"><span>感兴趣的职位</span> <a href="#">查看全部</a></p><div class="xw_s-right-bottom"><p>登录后查看感兴趣的职位</p><a href="#">去登录</a></div>        </div></div><div class="xw_feedback"><div class="xw_dim"><div class="xw_f-top"><h3>意见反馈 <span>（登录用户，提交反馈后可在App端查看客服回复的消息）</span> </h3></div><div class="xw_f-center"><div class="xw_f-center-a"><span>内容描述:</span><textarea name="content" id="content" placeholder="请简要描述你的问题和意见（必填）"></textarea><p>游客反馈，请在描述中留下联系电话</p></div><div class="xw_f-center-b"><p>问题截图：<span>最多3张，支持JPG，JPEG，PNG格式（选填）</span></p> <a href="javascript:;"><input type="file"></a> </div><div class="xw_f-center-c"><span>验证码：</span> <input type="text" placeholder="验证码"><b class="vcc">1111</b><p>请输入验证码</p></div></div><div class="xw_f-bottom"><a href="#">确定</a><a href="#">取消</a></div><div class="xw_close">x</div></div></div>';
-			document.body.innerHTML += str;
+			side.innerHTML += str;
 		}
 	return {
 	    creatHead: creatHead,
