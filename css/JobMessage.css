@@ -1,0 +1,197 @@
+#main {
+  position: relative; }
+
+.z_job {
+  height: auto;
+  padding: 24px 0;
+  background: #444c60 url("../images/z_job/detail-bg.jpg") center center no-repeat; }
+
+.z_job_main {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px; }
+
+.z_box {
+  border: none;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  color: #4a4160;
+  position: relative; }
+
+.clear:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 1px; }
+
+.z_job_left {
+  width: 650px;
+  float: left;
+  color: #4a4160; }
+  .z_job_left p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px; }
+
+.job_status {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 20px; }
+
+.z_name {
+  font-size: 32px;
+  line-height: 45px;
+  padding: 11px 0 8px;
+  color: #fff;
+  font-weight: 400; }
+  .z_name h1 {
+    vertical-align: middle;
+    font-size: 32px;
+    max-width: 380px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 35px;
+    overflow: hidden; }
+  .z_name .salary {
+    display: inline-block;
+    vertical-align: middle;
+    color: #fa6a43;
+    height: 42px;
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 600; }
+
+.dolt {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2px;
+  height: 2px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-style: normal; }
+
+.z_tag {
+  padding-top: 8px;
+  width: 500px;
+  position: relative;
+  display: inline-block; }
+
+.z_more {
+  height: 23px;
+  cursor: pointer;
+  position: absolute;
+  left: 445px;
+  top: 18px;
+  line-height: 16px;
+  display: none; }
+
+.link_more {
+  display: inline-block;
+  line-height: 14px;
+  padding: 0 12px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #5ed5c8;
+  color: #5ed5c8;
+  height: 23px;
+  border-radius: 13px;
+  margin-top: 0; }
+
+.job_tag {
+  display: inline-block;
+  padding-top: 8px;
+  height: 36px;
+  overflow: hidden; }
+  .job_tag span {
+    display: inline-block;
+    padding: 0 12px;
+    margin-right: 15px;
+    margin-bottom: 16px;
+    border: 1px solid #5ed5c8;
+    color: #5ed5c8;
+    height: 23px;
+    line-height: 23px;
+    border-radius: 13px;
+    margin-top: 0;
+    font-size: 12px; }
+
+.z_tagAll {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  z-index: 100;
+  width: 635px;
+  height: auto;
+  background: white;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  margin-right: 0;
+  overflow: initial; }
+  .z_tagAll span {
+    display: inline-block;
+    padding: 0 12px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #5ed5c8;
+    color: #5ed5c8;
+    height: 23px;
+    line-height: 23px;
+    border-radius: 13px;
+    margin-top: 0;
+    font-size: 12px; }
+
+.z_job_right {
+  width: 298px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -47px; }
+
+.z_btn {
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  box-sizing: border-box;
+  width: 296px;
+  margin-top: 0;
+  min-width: 112px;
+  border: 1px #5dd5c8 solid;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  background: #5dd5c8;
+  text-align: center;
+  cursor: pointer; }
+
+.z_op {
+  margin-top: 47px;
+  overflow: hidden; }
+  .z_op a {
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    color: #fa6a43; }
+
+.z_icon {
+  float: left; }
+
+.z_icon2 {
+  float: right; }
+
+.z_iconi {
+  background: url("../images/z_job/icon-resume.png") center center no-repeat;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: -2px;
+  width: 18px;
+  height: 15px;
+  margin-right: 8px; }
