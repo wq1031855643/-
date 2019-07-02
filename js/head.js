@@ -1,3 +1,4 @@
+// console.log($('.xw_nav_left'))
 $('.xw_nav_left').on('click','a',function(){
     $('.xw_nav_left').children().children().removeClass('xw_js-left');
     $(this).addClass('xw_js-left');
