@@ -46,7 +46,7 @@ require(["hm", "jquery"], function(hm, $) {
 	$(document).on("click", ".xw_s-left li", function() {
 		$(document).find('.xw_s-left li').children().removeAttr('style')
 		if ($(this).text() == "") {
-			$(document).fin('html,body').animate({
+			$(document).find('html,body').animate({
 				scrollTop: 0
 			}, 'slow');
 		} else {

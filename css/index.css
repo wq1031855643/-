@@ -253,7 +253,6 @@
 	width: 1000px;
 	max-width: 1000px;
 	margin: 0 auto;
-	overflow: hidden;
 }
 .menu_sub{
 	position: absolute;
@@ -407,4 +406,18 @@
 }
 .cur{
 	color: #00c2b3!important;
+}
+.job_tab_box>ul{
+	font-weight: 400;
+    display: block;
+	height: 393px;
+	width: 100%;
+    top: 47px;
+    left: 0;
+    background: #fff;
+}
+.job_tab_box>ul>li{
+	height: 131px;
+    width: 33.33333333%;
+    float: left;
 }

@@ -9,11 +9,12 @@ window.onscroll = function(){
 }
 
 window.onload = function() {
-	axios.all([getPosition(), getPosition2()])
-		.then(axios.spread(function(response, perms) {
+	axios.all([getPosition(), getPosition2(),getJobDescription()])
+		.then(axios.spread(function(response, perms, jobs) {
 			// console.log(response);
 			// console.log(perms.data);
 			if (response.status == 200) {
+				showJobs(jobs);
 				var job_menu = document.querySelector(".job_menu");
 				list = response.data.zpData;
 				var position2 = perms.data;
@@ -73,6 +74,7 @@ window.onload = function() {
 						for (var i = 12; i < position2.length; i++) {
 							$(".job_menu").find("ul").eq(i).toggle();
 							$(".job_menu").css("height",height);
+							$(".job_menu").css("background","#fff");
 						}
 						$(".show_all").toggle();
 					}
@@ -92,6 +94,10 @@ function getPosition() {
 
 function getPosition2() {
 	return axios.get('data/position2.json');
+}
+
+function getJobDescription() {
+	return axios.get('data/jobDescription.json');
 }
 
 $(".l_position_sel").on("click",function(eve){
@@ -222,7 +228,7 @@ function fixedTop(dom,height){
 	}
 }
 
-// main主体左边职位菜单
+// main主体左边职位展示菜单
 function showMemuSub(id,ul){
 	var menu_sub = ul.find(".menu_sub");
 	var listchild = "";
@@ -244,5 +250,13 @@ function showMemuSub(id,ul){
 			}
 		}
 		
+	}
+}
+
+function showJobs(data){
+	console.log(data);
+	var data = data.data;
+	for (var i = 0; i < data.length; i++) {
+		data[i]
 	}
 }
