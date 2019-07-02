@@ -29,8 +29,9 @@ window.onload = function() {
 					job_menu.innerHTML += str;
 				}
 				job_menu.innerHTML += '<div class="show_all" style="display: block;">显示全部职位</div>';
+				var height = $(".job_menu").height();
 				
-				$(".job_menu ul").on("mouseover",function(){
+				$(".job_menu").on("mouseenter","ul",function(){
 					$(this).addClass("cur");
 					$(this).find("a").css("color","#fff");
 					$(this).find("b").css("color","#fff");
@@ -43,7 +44,7 @@ window.onload = function() {
 					return false;
 				});
 				
-				$(".job_menu ul").on("mouseout",function(){
+				$(".job_menu").on("mouseleave","ul",function(){
 					$(this).find(".menu_sub").empty();
 					$(this).find(".menu_sub").toggle();
 					$(this).removeClass("cur");
@@ -52,9 +53,12 @@ window.onload = function() {
 					return false;
 				});
 				
-				$(".show_all").on("mouseover",function(){
+				$(".show_all").on("mouseenter",function(){
+					console.log(1)
+					$(".job_menu").css("height","auto");
 					$(this).toggle();
 					for (var i = 12; i < position2.length; i++) {
+						$(".job_menu").find("ul").eq(i).toggle();
 						if ((position2[i].pList).length == 2) {
 							str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
 						}  else {
@@ -65,9 +69,11 @@ window.onload = function() {
 					return false;
 				});
 				
-				$(".show_all").on("mouseout",function(){
-					alert(1)
-					$(".show_all").empty();
+				$(".job_menu").on("mouseleave","ul",function(){
+					for (var i = 12; i < position2.length; i++) {
+						$(".job_menu").find("ul").eq(i).toggle();
+						$(".job_menu").css("height",height);
+					}
 					$(".show_all").toggle();
 					return false;
 				});
@@ -207,6 +213,7 @@ function fixedTop(dom,height){
 		dom.style.top = 0;
 		dom.style.backgroundColor = "#fff";
 		dom.style.width = "100%";
+		dom.style.border = "solid 2px #f6f6f8";
 	}else{
 		//否则 定位回到初始状态
 		dom.style.position = "static";
