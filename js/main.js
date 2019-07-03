@@ -88,15 +88,18 @@ $('.xw_s-left ul li').click(function(e){
     $('.xw_s-right').css('display','block');
     e.stopPropagation();
 })
-// $(document).click(function(e){
-//     $('.xw_s-right').css('display','none');
-// })
+$(document).click(function(e){
+    var e=e||event;
+    if(e.clientX<$(window).width()-371){
+        $('.xw_s-right').css('display','none');
+    }
+    
+})
 $('.xw_s-left ol li').eq(1).click(function(){
     $('.xw_dim').css('display','block');
     $('.vcc').text(getYZM(6))
     // alert(1)
 })
-
 // 以上是侧边栏--------------------------------
 // 以下是问题反馈-------------------------------
 $('.xw_close').click(function(){
@@ -146,3 +149,84 @@ function getRand(min,max){
 }
 
 });
+// 以上是问题反馈-------------------------------
+// 以下是媒体合作-------------------------------
+
+var emailReg = /^\w{3,20}@[0-9a-zA-Z]{2,6}(\.[a-zA-Z]{2,3}){1,2}$/; //这是邮箱验证
+var phonelReg=/^1[3456789]\d{9}$/; //这是手机验证
+var emailnf=false;
+var phonenf=false;
+var namenf=false;
+var companynf=false;
+var postnf=false;
+$('.xw_submit').click(function(){
+    if(emailnf==false&&phonenf==false&&namenf==false&&companynf==false&&postnf==false){
+        return false;
+    }
+    $('.xw_media-wrap').hide()
+})
+$('.xw_shut').click(function(){
+    $('.xw_media-wrap').hide()
+})
+$('.xw_media-off').click(function(){
+    $('.xw_media-wrap').show()
+})
+$('#form').on('blur','p',function(){
+    var ipt=$('#form p');
+    for(var s=0;s<ipt.length;s++){
+        if(s==$('#form p').index($(this)[0])){
+            var aaa=$(this).children(":first").attr('placeholder')
+            if(aaa=='请输入你的邮箱'){
+                if($(this).children(":first").val()==''){
+                    $(this).children(":last").css('display','block').html('请填写邮箱地址'+'<i></i>');
+                    emailnf=false;
+                }else if(emailReg.test($(this).children(":first").val())){
+                    $(this).children(":last").css('display','none').html('请填写邮箱地址'+'<i></i>');
+                    emailnf=true;
+                }else{
+                    $(this).children(":last").css('display','block').html('请正确填写邮箱地址'+'<i></i>');
+                    emailnf=false;
+               }
+            }else if(aaa=='请输入你的手机号'){
+                if($(this).children(":first").val()==''){
+                    $(this).children(":last").css('display','block').html('请填写手机号'+'<i></i>');
+                    phonenf=false;
+                }else if(phonelReg.test($(this).children(":first").val())){
+                    $(this).children(":last").css('display','none').html('请填写手机号'+'<i></i>');
+                    phonenf=true;
+                }else{
+                    $(this).children(":last").css('display','block').html('请正确填写手机号'+'<i></i>');
+                    phonenf=false;
+                }
+            }else if(aaa=='请输入你的姓名'){
+                if($(this).children(":first").val()==''){
+                    $(this).children(":last").css('display','block').html('请输入您的姓名'+'<i></i>');
+                    namenf=false;
+                }else{
+                    $(this).children(":last").css('display','none').html('请输入您的姓名'+'<i></i>');
+                    namenf=true;
+                }
+            }else if(aaa=='请输入你的公司名称'){
+                console.log(4)
+                if($(this).children(":first").val()==''){
+                    $(this).children(":last").css('display','block').html('请输入您的公司名称'+'<i></i>');
+                    companynf=false;
+                }else{
+                    $(this).children(":last").css('display','none').html('请输入您的公司名称'+'<i></i>');
+                    companynf=true;
+                }
+            }else if(aaa=='请输入你的Title'){
+                console.log(5)
+                if($(this).children(":first").val()==''){
+                    $(this).children(":last").css('display','block').html('请输入您的职位名称'+'<i></i>');
+                    postnf=false;
+                }else{
+                    $(this).children(":last").css('display','none').html('请输入您的职位名称'+'<i></i>');
+                    postnf=true;
+                }
+            }
+        }
+
+    }
+    
+})

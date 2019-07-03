@@ -211,3 +211,111 @@
     text-align: center;
     cursor:pointer;
 }
+/* -------------------以下是媒体合作----------------- */
+.xw_media-wrap{
+    width: 100%;
+    height: 100%;
+    background: rgba(37,40,48,.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.xw_media-centre{
+    width: 490px;
+    height: 536px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -245px;
+    margin-top: -256px;
+    background: #fff;
+    border-radius: 5px;
+}
+.xw_media-centre h1{
+    width: 470px;
+    height: 56px;
+    font-size: 22px;
+    line-height: 56px;
+    border-bottom: 1px #eee solid;
+    padding-left: 20px;
+    
+}
+.xw_media-centre form{
+    width: 340px;
+    height: 417px;
+    /* background: darkblue; */
+    padding: 40px 75px 0;
+}
+.xw_media-centre form p{
+    position: relative;
+}
+.xw_media-centre form p input{
+    width: 297px;
+    height: 32px;
+    line-height: 32px;
+    padding: 10px 20px;
+    border: 1px #e2e2e2 solid;
+    border-bottom: 1px #fff solid;
+    font-size: 16px;
+    transition:box-shadow 0.3s;
+    position: relative;
+}
+.xw_media-centre form p .xw_finally{
+    border-bottom: 1px #e2e2e2 solid;
+}
+.xw_media-centre form p input:focus{
+    border: 1px #59cac2 solid;
+    box-shadow: 0px 0px 2px #59cac2;
+    z-index: 999;
+    
+}
+
+.xw_media-centre form p span{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 339px;
+    background: darkgoldenrod;
+    line-height: 52px;
+    min-width: 180px;
+    border: 1px #e2e2e2 solid;
+    padding: 0 15px 0 44px;
+    white-space: nowrap;
+    color: #ff5a5f;
+    background: #fff url(https://static.zhipin.com/zhipin/v175/web/news/images/sub-icons.png) 15px -80px no-repeat;
+    display: none;
+}
+.xw_media-centre form p span i{
+    border:10px solid rgba(0, 0, 0, 0);
+    border-right-color: #e2e2e2;
+    position: absolute;
+    top: 18px;
+    left: -20px;
+}
+.xw_media-centre form .xw_submit{
+    display: block;
+    width: 339px;
+    height: 52px;
+    margin-top: 48px;
+    background: #59cac2;
+    color: #fff;
+    font-size: 20px;
+}
+.xw_shut{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    /* background: #59cac2; */
+    color: #666;
+    font-size: 20px;
+    transition: color 0.3s;
+    cursor:pointer;
+}
+.xw_shut:hover{
+    color: #000;
+}
