@@ -1,4 +1,5 @@
-define(['jquery'], function () {
+require(['loginMod'],function(login){
+
         // ajax 请求公司数据
         $.ajax({
                 type: 'get',
@@ -32,8 +33,8 @@ define(['jquery'], function () {
         // 滚动 头部固定
         $(document).scroll(function () {
                 if($(document).scrollTop()>300){
-                        $('.z_scroll').slideDown(500,'linear')
-                }else{
+                        $('.z_scroll').slideDown(300,'linear')
+                }else if($(document).scrollTop()<300){
                         $('.z_scroll').hide()
                 }
         })
@@ -63,5 +64,25 @@ define(['jquery'], function () {
                        $('.company-info').find('.text').html(str2)
                }
        })
+        $('.z_icon3').bind('click',function(){
+                if($(document).find(".z_wrapall")[0]){
+                        $('.z_wrapall').parent().show()
+                }else{
+                        login.creatLogin()
+                        require(['z_login'])
+                }  
+        })
+        // $('.z_icon2').bind('click',function(){
+        //         localStorage.setItem('status','reg')
+        //         if($(document).find(".z_wrapall")[0]){
+        //                 $('.z_wrapall').parent().show()
+        //         }else{
+        //                 login.creatLogin()
+        //                 require(['z_login'])
+        //         }
+        // })
+       
+
+
 })
 

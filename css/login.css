@@ -2,13 +2,39 @@ body,html{
     height:100%;
     
 }
- .z_wrap {
-    height:100%;
-    line-height: 26px;
-    color: #414a60;
-    font-size: 14px;
-    background:#5dd5c8 url('../images/z_login/z_newbg.png')center bottom no-repeat;
+.z_close{
+   position: absolute;
+   cursor: pointer;
+   text-align: center;
+   transition: opacity .1s ease-in;
+   z-index: 200;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   font-size: 0;
+   color: #fff;
+   border-radius: 100%;
+   opacity: .9;
+   display: inline-block;
+    background-image: url('../images/z_login/z_icons.png');
+    background-repeat: no-repeat;
+    background-position: 6px -1430px;
+    top: 12px;
+    right: 12px;
+    background-color: transparent;
+}
+ .z_all_sign,.z_all_reg{
+   height:100%;
+   line-height: 26px;
+   color: #414a60;
+   font-size: 14px;
    overflow: hidden;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 1000;
  }
  .z_wrap_login{
      width:740px;
@@ -507,8 +533,8 @@ body,html{
    width:100%;
    background-color:#30323A;
    display:none;
-   z-index:10;
-   position: absolute;
+   z-index:1010;
+   position: fixed;
    top:0;left:0;
 }
 .z_Tips{

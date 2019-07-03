@@ -1,4 +1,4 @@
-
+$(function(){
 //屏幕缩小时， 位置固定
 window.onresize = resize;
 function resize() {
@@ -172,7 +172,7 @@ $('.z_sign_tab span').each(function (index, ele) {
 })
 // 提交
 var reg = /1[1-8]\d{9}/;  //手机号初步验证
-$('.z_wrap').each(function (index, ele) {
+$('.z_wrapall').each(function (index, ele) {
     var $index =index
     $(ele).find('form').each(function (index, ele) {
         $(ele).find('.btn').bind('click',function(){
@@ -258,7 +258,7 @@ $('.z_wrap').each(function (index, ele) {
 //发送验证码啊   大兄弟
 
 $('.z_mess_btn').bind('click',function(){
-    $('.z_wrap').each(function (index, ele) {
+    $('.z_wrapall').each(function (index, ele) {
         $(ele).find('form').each(function (index, ele) {
             if ($(ele).find('.z_inp_phone').val() == "") {
                 $(ele).find('.err_phone').html('请填写手机号').css('display', 'block')
@@ -346,8 +346,8 @@ if ($status == 'reg') {
     $('.z_all_sign').css('display', 'block')
 }
 //登录注册之间的切换
-
 $('.z_all_sign').find('.z_link_sig').bind('click', function () {
+    console.log(1)
     $('.z_all_sign').css('display', 'none');
     $('.z_all_reg').css('display', 'block')
 })
@@ -387,4 +387,8 @@ $('.ph').bind('click', function () {
     $('.z_inner_box').css('display', 'none')
     $('.z_wrap_login').removeClass('z_height')
 })
-
+//点击关闭登录注册
+$('.z_close').bind('click',function(){
+    $(this).parent().parent().parent().toggle()
+})
+})

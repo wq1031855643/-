@@ -224,7 +224,7 @@
         color: #fa6a43;
     }
 }
-.z_icon{
+.z_icon3{
 float: left;
 }
 .z_icon2{
@@ -263,12 +263,12 @@ float: left;
     min-height: 813px;
 }
 .z_detail_op{
-    float: left;
     width: 100%;
     padding-top: 34px;
     padding-bottom: 0;
 }
 .z_btns{
+    float: right;
     text-align: right;
     padding-top: 14px;
     position: relative;
@@ -355,6 +355,7 @@ float: left;
     margin-top: 5px;
     margin-bottom: 0;
     background: url('../images/z_job/line-sec.png') 0 45px no-repeat;
+
     }
     .text{
         word-break: break-all;
@@ -414,4 +415,372 @@ float: left;
 .level-3 {
     width: 24%;
     background: #72e7c6;
+}
+.level-4 {
+    width: 24%;
+    background: #85e3f4;
+}
+.level-5 {
+    width: 13%;
+    background: #3dccfc;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.prop_det{
+    margin-top: 52px;
+    font-size: 14px;
+    color: #8e93a2;
+    img{
+        display: inline-block;
+        vertical-align: middle;
+        width: 18px;
+        height: 20px;
+        border: none;
+    }
+}
+.pull-right {
+    float: right;
+    position: relative;   
+    
+}
+.name{
+    line-height: 26px;
+    color: #414a60;
+    font-size: 14px;
+}
+.level_list{
+    line-height: 26px;
+    color: #414a60;
+    font-size: 14px;
+    margin-top: 5px;
+    height: 66px;
+    li{
+        display: inline-block;
+        width: 235px;
+        margin-top: 5px;
+        span{
+            display: inline-block;
+            margin-right: 7px;
+            color: #8d92a1;
+        
+        }
+    }
+    .res-time{
+        width: 155px;
+        float: right;
+        font-size:13px;
+    }
+    .company-type{
+        width: 350px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .manage-state{
+        width: 230px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+.z_soild{
+    float: right;
+    width: 298px;
+    padding-bottom: 40px;
+}
+.sign-wrap {
+    position: static;
+    top: unset;
+    left: unset;
+    width: auto;
+    min-height: 0;
+    margin: 0 0 30px;
+}
+.sign-form {
+    width: auto;
+    height: auto;
+    background-color: #5dd5c8;
+    box-shadow: none;
+    border-radius: 0;
+}
+.title {
+    display: block;
+    padding: 20px 0 24px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+}
+.form-row {
+    position: relative;
+    margin: 0 0 30px;
+}
+.dropdown-select{
+    position: absolute;
+    top: 1px;
+    left: 28px;
+    height: 40px;
+    z-index: 1;
+    background: 0 0;
+}
+.z_ico{
+    display: inline-block;
+    background-image: url('../images/z_job/icons.png');
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    background-position: 2px -54px;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    cursor: pointer;
+    right: 5px;
+    top: 12px;
+}
+ .text-select {
+    display: inline-block;
+    font-style: normal;
+    cursor: pointer;
+    width: 37px;
+    padding: 7px 25px 7px 0;
+    border: 0;
+    text-align: right;
+}
+.ipt-wrap{
+    position: relative;
+    display: block;
+}
+.icon-sign-phone{
+    background-image: url('../images/z_job/icons-sign.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 9px;
+    top: 11px;
+    background-position: 2px 1px;
+}
+.ipt {
+    padding: 6px 12px 5px 7px;
+    min-height: 22px;
+    line-height: 22px;
+    border: 1px solid #e3e7ed;
+    font-size: 13px;
+    vertical-align: middle;
+    min-width: 300px;
+}
+.sign-form .ipt, .sign-form .sel {
+    width: 286px;
+    min-width: 0;
+    padding: 9px 18px;
+    border-color: #e3e7ed;
+    vertical-align: middle;
+}
+.ipt-phone {
+    padding-left: 95px;
+    width: 209px;
+}
+.show_ul{
+    display: none;
+    position: relative;
+    height: 0;
+    margin-right: 2px;
+    ul{
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px #e3e7ed solid;
+    border-top: 0;
+    background-color: #fff;
+    overflow: auto;
+    max-height: 208px;
+    li{
+        line-height: 42px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+    }
+    
+}
+.tip-error{
+    display: none;
+    position: absolute;
+    left: 3px;
+    top: 45px;
+    height: 18px;
+    padding: 0 0 0 27px;
+    background: url('../images/z_job/icons.png') no-repeat 0 -1059px;
+    background-size: 18px auto;
+    color: #fc703e;
+    text-align: left;
+    line-height: 18px;
+    background-position: 0 -1114px;
+    color: #ffeb9e;
+}
+.z_boxMove{
+    text-align: center;
+    width: 40px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 0;
+    cursor: move;
+    background: #fff;
+    z-index: 2;
+    width: 46px;
+    height: 40px;
+    line-height: 40px;
+    color: #737383;
+}
+.ipt-wrap {
+    position: relative;
+    display: block;
+}
+.sing-form {
+    width: auto;
+    height: auto;
+    background-color: #5dd5c8;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.sider-company{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3e7ed;
+    .title{
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 25px;
+    }
+}
+.company-info1 {
+    overflow: hidden;
+    line-height: 60px;
+    margin-bottom: 27px;
+   a img{
+        width: 60px;
+        height: 60px;
+        float: left;
+        margin-right: 18px;
+        border-radius: 10px;
+    }
+}
+.sider-company p {
+    line-height: 20px;
+    margin-bottom: 26px;
+    color: #414a60;
+    font-size: 14px;
+    i{
+        display: inline-block;
+    vertical-align: -4px;
+    width: 17px;
+    height: 17px;
+    margin-right: 25px;
+    }
+}
+.icon-stage{
+    width: 15px;
+    background: url('../images/z_job/icon-stage.png') center center no-repeat;
+    background-size: contain;
+}
+.icon-scale{
+    background: url('../images/z_job/icon-scale.png') center center no-repeat;
+    background-size: contain;
+}
+.icon-industry{
+    background: url('../images/z_job/icon-industry.png') center center no-repeat;
+    background-size: contain;
+}
+.icon-net{
+    background: url('../images/z_job/icon-net.png') center center no-repeat;
+    background-size: contain;
+}
+.sider-company .gray {
+    color: #d0d4da;
+}
+.salary-miniapp{
+    width: 298px;
+    height: 184px;
+    padding-top: 114px;
+    background: url('../images/z_job/salary-miniapp.jpg') no-repeat center top;
+    background-size: 100%;
+    img{
+        display: block;
+    width: 111px;
+    height: 111px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 8px #fff;
+    }
+}
+.five-graph-test {
+    padding: 20px 20px 28px 20px;
+    width: 259px;
+    height: 230px;
+    text-align: center;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.16);
+    h4{
+        text-align: left;
+    line-height: 20px;
+    }
+    i{
+        display: block;
+        width: 259px;
+        height: 112px;
+        background: url('../images/z_job/five-graph.png') no-repeat center;
+        background-size: contain;
+        margin-top: 11px;
+    }
+    p{
+        font-size: 12px;
+    color: #9fa3af;
+    line-height: 17px;
+    padding: 22px 0 10px;
+}
+    }
+
+.promotion-img {
+    margin-top: 15px!important;
+}
+.job_btn{
+    display: inline-block;
+    min-width: 112px;
+    box-sizing: content-box;
+    height: 36px;
+    line-height: 36px;
+    border: 1px #5dd5c8 solid;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    background: #5dd5c8;
+    text-align: center;
+    cursor: pointer;
+    width: 178px;
+    height: 34px;
+    line-height: 34px;
+}
+.promotion-job{
+    margin-top: 20px;
+    padding-bottom: 10px;
+    h3{
+
+        color: #424a5e;
+        font-size: 15px;
+        font-weight: 400;
+        padding: 7px 0 5px;
+    
+    .more2{
+        float: right;
+        font-size: 14px;
+        color: #9fa3b0;
+        background-position: right -1581px;
+        padding-right: 28px;
+        margin-right: -10px;
+    }
+}
+ul li{
+    border-bottom: 1px #f5f7f9 solid;
+    padding-bottom: 18px;
+}
 }

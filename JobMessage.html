@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/head5.css">
     <link rel="stylesheet" href="css/JobMessage.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="z_iconfont/iconfont.css">
 </head>
 
 <body>
@@ -50,7 +52,7 @@
                                 <a href="login.html" target="_blank" rel="noopener noreferrer" class="z_btn">立即沟通</a>
                             </div>
                             <div class="z_op">
-                                <a href="#" class="z_icon">
+                                <a href="#" class="z_icon3">
                                     <i class="z_iconi"></i>
                                     填写在线简历
                                 </a>
@@ -100,60 +102,181 @@
             <!-- 内容区域 -->
             <div class="z_jobMain">
                 <div class="z_inner">
-                    <div class="z_soild"></div>
-                    <div class="z_detail">
-                        <div class="z_detail_op">
-                            <div class="z_btns">
-                                <a href="#" target="_blank" rel="noopener noreferrer" class="z_link_share">微信扫码分享</a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" class="z_link_like">感兴趣</a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" class="z_link_report">举报</a>
+                    <!-- 右边区域 -->
+                    <div class="z_soild">
+                        <div class="sing-wrap">
+                            <div class="sing-form">
+                                <h3 class="title">各大行业职位任你选</h3>
+                                <form>
+                                    <div class="form-row row-select">
+                                        <span class="dropdown-select">
+                                            <i class="z_ico"></i>
+                                            <em class="text-select">+86</em>
+                                        </span>
+                                        <span class="ipt-wrap">
+                                            <i class="icon-sign-phone"></i>
+                                            <input type="text" placeholder="手机号" class="ipt ipt-phone required">
+                                        </span>
+                                        <div class="show_ul"></div>
+                                        <div class="tip-error"></div>
+                                    </div>
+                                    <div class="form-row">  
+                                            <b>请按住滑块，拖动到最右边</b>
+                                            <span class="z_boxMove">
+                                                <i class="iconfont icon-shuangyoujiantou-"></i>
+                                            </span>
+                                            <div class="tip-error"></div>
+                                        </div>
+                                    <div class="form-row">
+                                        <span class="ipt-wrap">
+                                            <i class="icon-sign-sms"></i>
+                                        </span>
+                                    </div>
+                                    <div class="form-row">
+                                            <i class="z_mess_i"></i>
+                                            <input type="text" class="z_inp_mess" placeholder="短信验证码" name="messCode">
+                                            <div class="z_mess_btn">发送验证码</div>
+                                            <div class="z_err_msg">请输入短信验证码</div>
+                                        </div>
+                                        <div class="z_btn">登录</div>
+                                </form>
                             </div>
                         </div>
-                        <div class="z_detail_figure">
-                            <img src="images/z_job/avatar_3.png" alt="">
+                        <div class="sider-company">
+                            <p class="tltle">公司基本信息</p>
+                            <div class="company-info1">
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <img src="./images/z_job/z_oppo.jpg" alt="">
+                                </a>
+                                <a href="#">oppo</a>
+                            </div>
+                            <p>
+                                <i class="icon-stage"></i>不需要融资
+                            </p>
+                            <p>
+                                <i class="icon-scale"></i>10000人以上
+                            </p>
+                            <p>
+                                <i class="icon-industry"></i>互联网
+                            </p>
+                            <p>
+                                <i class="icon-net"></i>http://www.oppo.com
+                            </p>
+                            <p class="gray">
+                              更新于：2019-07-03
+                            </p>
                         </div>
-                        <h2 class="z_peplo">张女士
-                            <i class="z_pe_icon"></i>
-                        </h2>
-                        <p class="z_gray">
-                            HR
-                            <em class="vdot">·</em>
-                            刚刚在线
-                        </p>
-                        <div class="detail_content">
-                            <div class="job_sec one">
-                                <div class="text"></div>
-                            </div>
-                            <div class="job_sec company-info">
-                                <div class="text"></div>
-                            </div>
-                            <div class="job_sec prop-item"> 
-                                <h3>竞争力分析</h3>
-                                <div class="title">综合竞争力评估</div>
-                                <div class="prop">
-                                    <div class="prop_cont">
+                        <div class="salary-miniapp">
+                            <img src="./images/z_job/wechat-qrcode.jpg" alt="">
+                        </div>
+                        <div class="five-graph-test promotion-img">
+                            <h4>五维职业性格测评</h4>
+                            <i></i>
+                            <p>专业分析职场优势</p>
+                            <a href="#" class="job_btn">立即测试</a>
+                        </div>
+                        <div class="promotion-job">
+                            <h3><a href="#" class="more2">更多相似职位</a>相似职位</h3>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+               
+                <!-- 左边区域 -->
+                <div class="z_detail">
+                    <div class="z_detail_op">
+                        <div class="z_btns">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="z_link_share">微信扫码分享</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="z_link_like">感兴趣</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="z_link_report">举报</a>
+                        </div>
+                   
+                    <div class="z_detail_figure">
+                        <img src="images/z_job/avatar_3.png" alt="">
+                    </div>
+                    <h2 class="z_peplo">张女士
+                        <i class="z_pe_icon"></i>
+                    </h2>
+                    <p class="z_gray">
+                        HR
+                        <em class="vdot">·</em>
+                        刚刚在线
+                    </p>
+                </div>
+                    <div class="detail_content">
+                        <div class="job_sec one">
+                            <div class="text"></div>
+                        </div>
+                        <div class="job_sec company-info">
+                            <div class="text"></div>
+                        </div>
+                        <div class="job_sec prop-item">
+                            <h3>竞争力分析</h3>
+                            <div class="title">综合竞争力评估</div>
+                            <div class="prop">
+                                <div class="prop_cont">
                                     <p class="text_posi">你在？位置</p>
                                     <span class="level-1"></span>
                                     <span class="level-2"><em>一般</em></span>
                                     <span class="level-3"><em>良好</em></span>
                                     <span class="level-4"><em>优秀</em></span>
                                     <span class="level-5"><em>极好</em></span>
-
                                 </div>
+                                <div class="prop_det">
+                                    <div class="pull_right"></div>
+                                    <div>个人综合排名：
+                                        <span>
+                                            在 <img src="./images/z_job/pic-blur.png" alt="">
+                                            人中排名第 <img src="./images/z_job/pic-blur.png" alt="">
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="job_sec">
+                            <h3>工商信息</h3>
+                            <div class="name">腾讯科技（深圳）有限公司</div>
+                            <div class="level_list">
+                                <li>
+                                    <span>法人代表：</span>
+                                    马化腾
+                                </li>
+                                <li>
+                                    <span>注册资金：</span>
+                                    200万美元
+                                </li>
+                                <li class="res-time">
+                                    <span>成立时间：</span>
+                                    2000-02-24
+                                </li>
+                                <li class="company-type">
+                                    <span>企业类型：</span>
+                                    有限责任公司（台港澳法人独资）
+                                </li>
+                                <li class="manage-state">
+                                    <span>经营状态：</span>
+                                    存续（在营、开业、在册）
+                                </li>
+                            </div>
                         </div>
 
-
-
                     </div>
+
+
+
                 </div>
             </div>
-
         </div>
+
     </div>
+    
+</div>
+    <div class="loginBox"></div>
+    <script src="js/jquery.js"></script>
     <script src="js/require.js" data-main="js/main"></script>
+    <script src="js/JobMessage.js"></script>
+    <script src="js/z_login.js"></script>
 </body>
 
 </html>

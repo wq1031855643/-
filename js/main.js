@@ -3,10 +3,10 @@ require.config({
 	paths: {
 		'hm': 'headMod',
 		'head':'head',
-		'Job':'JobMessage',
+		'jquery':'jquery',
 	}
 });
 
-require(["hm","head","Job"], function(hm) {
+require(["hm","head"], function(hm) {
 	hm.creatHead();
 });
