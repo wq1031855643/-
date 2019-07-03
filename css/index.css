@@ -305,18 +305,19 @@
 	position: absolute;
     top: 0;
     left: 0;
+	z-index: 99;
 }
-.job_menu>ul{
+.job_menu ul{
 	height: 44px;
 	padding: 0 0;
 }
-.job_menu>ul>li{
+.job_menu ul>li{
 	padding: 8px 0 9px 20px;
     width: 95%;
     height: 27px;
 	box-sizing: border-box;
 }
-.job_menu>ul>li>i{
+.job_menu ul>li>i{
 	float: right;
     background-position: -25px 0;
     margin-top: 5px;
@@ -330,20 +331,20 @@
     background-image: url("https://static.zhipin.com/zhipin/v171/web/geek/images/icons.png");
     background-repeat: no-repeat;
 }
-.job_menu>ul>li>b {
+.job_menu ul>li>b {
     float: left;
     color: #414a60;
     font-size: 15px;
 	margin-top: 4px;
 }
-.job_menu>ul>li>a{
+.job_menu ul>li>a{
     color: #61687c;
     font-size: 13px;
     display: inline-block;
     line-height: 28px;
     margin-left: 16px;
 }
-.job_menu>ul.cur {
+.job_menu ul.cur {
     position: relative;
     width: 268px;
     z-index: 10;
@@ -386,15 +387,15 @@
 .home_main dl a{
 	display: block;
 }
-.job_tab_box{
+.common_tab_box{
 	clear: both;
 }
-.job_tab_box>h3{
+.common_tab_box>h3{
 	height: 45px;
     position: relative;
 	border-bottom: 2px solid #63d4c7;
 }
-.job_tab_box>h3>span{
+.common_tab_box>h3>span{
 	float: left;
     display: inline-block;
     margin-right: 40px;
@@ -407,7 +408,7 @@
 .cur{
 	color: #00c2b3!important;
 }
-.job_tab_box>ul{
+.common_tab_box>ul{
 	font-weight: 400;
     display: block;
 	height: 393px;
@@ -440,7 +441,7 @@
     padding-top: 10px;
 	display: block;
 }
-.sub_li>a>p{
+.job_tab_box .sub_li>a>p{
 	height: 35px;
     line-height: 35px;
     color: #61687c;
@@ -516,4 +517,72 @@
 	display: inline-block;
     min-width: 112px;
     box-sizing: content-box;
+}
+
+.company_tab_box{
+    margin-top: 30px;
+}
+.company_tab_box>ul{
+	height: 416px;
+}
+.company_tab_box>ul>li{
+	height: 138px;
+    width: 25%;
+    float: left;
+}
+.common_tab_box .company_info{
+	height: 75px;
+    width: 205px;
+    margin: 0 auto 0 auto;
+    padding-top: 20px;
+    border-bottom: dashed 1px #ededed;
+}
+.common_tab_box img{
+	height: 55px;
+    width: 55px;
+    float: left;
+    border-radius: 10px;
+    border: solid 1px #f2f5fa;
+}
+.common_tab_box .company_text{
+	margin-left: 65px;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.common_tab_box .company_text h4{
+	height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.common_tab_box .company_text p{
+	height: 40px;
+    line-height: 41px;
+    color: #898e9d;
+    font-size: 12px;
+    display: inline-block;
+    white-space: nowrap;
+}
+.common_tab_box .about_info{
+	color: #8d92a1;
+    height: 42px;
+    line-height: 42px;
+    font-size: 12px;
+	display: block;
+	padding: 0;
+}
+.common_tab_box .about_info p{
+	width: 205px;
+    margin: 0 auto;
+}
+.common_tab_box .pull_right{
+	text-align: right;
+    float: right;
+}
+.text_blue{
+	color: #00c2b3;
 }

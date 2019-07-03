@@ -10,12 +10,13 @@ window.onscroll = function(){
 }
 
 window.onload = function() {
-	axios.all([getPosition(), getPosition2(),getJobDescription()])
-		.then(axios.spread(function(response, perms, jobs) {
-			// console.log(response);
+	axios.all([getPosition(), getPosition2(),getJobDescription(),getCompanyTab()])
+		.then(axios.spread(function(response, perms, jobs,companys) {
+			// console.log(companys);
 			// console.log(perms.data);
 			if (response.status == 200) {
 				showJobs(jobs);
+				showCompanys(companys);
 				var job_menu = document.querySelector(".job_menu");
 				list = response.data.zpData;
 				var position2 = perms.data;
@@ -31,7 +32,20 @@ window.onload = function() {
 					job_menu.innerHTML += str;
 				}
 				job_menu.innerHTML += '<div class="show_all" style="display: block;">显示全部职位</div>';
-				var height = $(".job_menu").height();
+				// job_menu.innerHTML += '<div class="all_job" style="display: none;"></div>';
+				
+				for (var i = 12; i < position2.length; i++) {
+					if ((position2[i].pList).length == 3) {
+						str = "<ul title='all' id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[2] + "</a></li><div class='menu_sub'></div></ul>"
+					} else if ((position2[i].pList).length == 2) {
+						str = "<ul title='all' id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
+					} else {
+						str = "<ul title='all' id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a></li><div class='menu_sub'></div></ul>"
+					}
+					// $(".all_job").append(str);
+					job_menu.innerHTML += str;
+				}
+				$(".job_menu").find("ul[title=all]").toggle();
 				
 				$(".job_menu").on("mouseenter","ul",function(){
 					$(this).addClass("cur");
@@ -56,28 +70,15 @@ window.onload = function() {
 				});
 				
 				$(".show_all").on("mouseenter",function(){
-					$(".job_menu").css("height","auto");
 					$(this).toggle();
-					for (var i = 12; i < position2.length; i++) {
-						$(".job_menu").find("ul").eq(i).toggle();
-						if ((position2[i].pList).length == 2) {
-							str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
-						}  else {
-							str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a></li><div class='menu_sub'></div></ul>"
-						}
-						job_menu.innerHTML += str;
-					}
+					$(".job_menu").find("ul[title=all]").toggle();
 					return false;
 				});
 				
 				$(".job_menu").on("mouseleave","ul",function(){
 					if ($(".show_all").css("display") == "none") {
-						for (var i = 12; i < position2.length; i++) {
-							$(".job_menu").find("ul").eq(i).toggle();
-							$(".job_menu").css("height",height);
-							$(".job_menu").css("background","#fff");
-						}
 						$(".show_all").toggle();
+						$(".job_menu").find("ul[title=all]").toggle();
 					}
 					return false;
 				});
@@ -99,6 +100,10 @@ function getPosition2() {
 
 function getJobDescription() {
 	return axios.get('data/jobDescription.json');
+}
+
+function getCompanyTab(){
+	return axios.get('data/companyTab.json');
 }
 
 $(".l_position_sel").on("click",function(eve){
@@ -347,6 +352,7 @@ function showMemuSub(id,ul){
 	}
 }
 
+//展示职位tab
 function showJobs(data){
 	newJobs = data;
 	var data = data.data.it;
@@ -356,5 +362,17 @@ function showJobs(data){
 		address = (data[i].address).substring(0,2);
 		str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ data[i].jobName +'<span class="salary">'+ data[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ data[i].year +'<span class="vline"></span>'+ data[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ data[i].img +'" />'+ data[i].companyName +'<span class="user_text">'+ data[i].recruiter +'<span class="vline"></span>'+ data[i].type +'</span></p></a></div></li>';
 		$(".job_tab_ul").append(str);
+	}
+}
+
+//展示公司tab
+function showCompanys(data){
+	console.log(data);
+	var data = data.data.rmqy;
+	console.log(data)
+	var str = "";
+	for (var i = 0; i < data.length; i++) {
+		str = '<li><div class="sub_li"><a class="company_info" href="#"><img src="'+ data[i].src +'" /><div class="company_text"><h4>'+ data[i].name +'</h4><p>'+ data[i].financing +'<span class="vline"></span>'+ data[i].business +'</p></div></a><a class="about_info" href="#"><p><span class="text_blue">'+ data[i].jobCount +'</span>个热招职位<span class="pull_right"><span class="text_blue">'+ data[i].bossCount +'</span>位boss在线</span></p></a></div></li>';
+		$(".company_tab_ul").append(str);
 	}
 }
