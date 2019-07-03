@@ -1,0 +1,75 @@
+/* .box{
+    position: relative;
+} */
+.data-left{
+    background: red;
+    width: 268px;
+    height: 577px;
+    /* margin: 20px auto; */
+    /* overflow: hidden; */
+}
+dl dd{
+    width: 228px;
+    height: 27px;
+    padding: 8px 20px 9px 20px;
+    background: darkcyan;
+    position: relative;
+}
+dl dd:hover{
+    background: darkolivegreen;
+}
+dl dd b{
+    /* float: left; */
+    color: #414a60;
+    font-size: 15px;
+}
+dl dd a{
+    color: #61687c;
+    font-size: 13px;
+    display: inline-block;
+    line-height: 28px;
+    margin-left: 16px;
+}
+dl dd i{
+    float: right;
+}
+/* -------------------------------------------------- */
+.data-right{
+    padding: 30px;
+    background: #fff;;
+    position: absolute;
+    top: 0px;
+    left: 268px;
+}
+.data-right ol li{
+    /* background: red; */
+    font-size: 0;
+    overflow: hidden;
+}
+.caption{
+    width: 700px;
+    /* background: darkgrey; */
+    line-height: 30px;
+}
+
+.type{
+    width: 100px;
+    display: inline-block;
+    /* background: darkgoldenrod; */
+    font-size: 12px;
+    line-height: 28px;
+    float: left;
+}
+.details{
+    width: 600px;
+    display: inline-block;
+    /* background: floralwhite; */
+    float: left;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #414a60;
+}
+.details a{
+    font-size: 10px;
+    margin-left: 20px;
+    color: #ccc;
+}

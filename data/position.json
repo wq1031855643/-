@@ -2659,7 +2659,7 @@
 		"rank": 0
 	}, {
 		"code": 150000,
-		"name": "人事/财务/行政",
+		"name": "人事",
 		"tip": null,
 		"subLevelModelList": [{
 			"code": 150100,
@@ -3267,7 +3267,7 @@
 		"rank": 0
 	}, {
 		"code": 170000,
-		"name": "传媒",
+		"name": "媒体",
 		"tip": null,
 		"subLevelModelList": [{
 			"code": 170100,
@@ -5411,7 +5411,7 @@
 		"rank": 0
 	}, {
 		"code": 250000,
-		"name": "采购/贸易",
+		"name": "采购贸易",
 		"tip": null,
 		"subLevelModelList": [{
 			"code": 250100,
@@ -6451,7 +6451,7 @@
 		"rank": 0
 	}, {
 		"code": 270000,
-		"name": "管培生",
+		"name": "实习生/管培生",
 		"tip": null,
 		"subLevelModelList": [{
 			"code": 270100,
