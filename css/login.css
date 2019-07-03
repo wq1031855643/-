@@ -504,10 +504,12 @@ body,html{
 .weixinBox{
    opacity: 0.9;
    height:100%;
+   width:100%;
    background-color:#30323A;
    display:none;
    z-index:10;
-   position: relative;
+   position: absolute;
+   top:0;left:0;
 }
 .z_Tips{
    display:none;

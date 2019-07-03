@@ -1,11 +1,55 @@
 #main{
     position: relative;
+    background-color: #fff;
 }
 .z_job{
     height: auto;
     padding: 24px 0;
     background: #444c60 url('../images/z_job/detail-bg.jpg') center center no-repeat;
 }
+.z_scroll{
+    display: none;
+    padding: 14px 0;
+    position: fixed;
+    top:0;
+    z-index: 10;
+    width:100%;
+    .z_info{
+        color:rgb(255, 255, 255);
+    }
+    .z_btn{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: 24px;
+    }
+    .z_name{
+        line-height: 45px;
+        font-size: 24px;
+        padding:0;
+    }
+    .z_tag{
+        margin-top: 9px;
+        height: 25px;
+        margin-bottom: 13px;
+       position: relative;
+    }
+    .job_tag{
+        padding:0;
+    }
+    .z_more{
+        top:8px;
+    }
+ }
+
+.z_link-mo{
+    font-size: 14px;
+    line-height: 14px;
+    color: #5dd5c8;
+    text-decoration: underline;
+    margin-left: 16px;
+}
+
 .z_job_main{
     width:1000px;
     margin:0 auto;
@@ -196,4 +240,178 @@ float: left;
     height: 15px;
     margin-right: 8px;
 
+}
+.z_jobMain{
+    margin-top: 20px;
+   
+}
+.z_inner{
+    width:1000px;
+    margin:0 auto;
+}
+.z_soild{
+    float: right;
+    width: 298px;
+    padding-bottom: 40px;
+}
+.z_detail{
+    position: relative;
+    padding-right: 25px;
+    border-right: 1px #f5f7f9 solid;
+    margin-right: 322px;
+    padding-bottom: 45px;
+    min-height: 813px;
+}
+.z_detail_op{
+    float: left;
+    width: 100%;
+    padding-top: 34px;
+    padding-bottom: 0;
+}
+.z_btns{
+    text-align: right;
+    padding-top: 14px;
+    position: relative;
+    a{
+        display: inline-block;
+        margin-left: 20px;
+        background: url('../images/z_job/icons-like-2.png') no-repeat;
+        color: #9fa3b0;
+        padding-left: 20px;
+        -webkit-transition: none;
+        transition: none;
+    }
+    .z_link_share{
+        position: relative;
+        background-position: 0 -138px;
+    }
+    .z_link_like{
+        background-position: 0 -73px;
+    }
+    .z_link_report{
+        background-position: 0 6px;
+    
+    }
+    .z_link_share:hover{
+        background-position: 0 -166px;
+        color: #5dd5c8;
+    }
+    .z_link_like:hover{
+        background-position: 0 -106px;
+        color: #5dd5c8;
+    }
+    .z_link_report:hover{
+        background-position: 0 -34px;
+        color: #5dd5c8;
+    }
+}
+.z_detail_figure{
+    float: left;
+    position: static;
+    img{
+        margin-right: 20px;
+        width: 73px;
+        height: 73px;
+        border-radius: 100%;
+    }
+}
+.z_peplo{
+    margin-top: 8px;
+    font-size: 20px;
+    color: #424a5e;
+    font-weight: 400;
+}
+.z_pe_icon{
+    display: inline-block;
+    background-image: url('../images/z_job/icons.png');
+    background-repeat: no-repeat;
+    background-position: 0 -1150px;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-left: 15px;
+}
+.z_gray{
+    margin-top: 8px;
+    color: #9fa3af;
+}
+.vdot{
+    display: inline-block;
+    font-style: normal;
+    padding: 0 10px 0 7px;
+}
+.detail_content{
+    clear: left;
+}
+.job_sec{
+    position: relative;
+    h3{
+        font-weight: 700;
+    font-size: 15px;
+    color: #424a5e;
+    line-height: 50px;
+    padding: 0 0 10px 0;
+    margin-top: 5px;
+    margin-bottom: 0;
+    background: url('../images/z_job/line-sec.png') 0 45px no-repeat;
+    }
+    .text{
+        word-break: break-all;
+    word-wrap: break-word;
+    color: #61687c;
+    line-height: 36px;
+    font-size:14px;
+}
+    
+}
+.title {
+    font-size: 14px;
+    color: #51586d;
+    line-height: 20px;}
+    .prop_cont{
+    position: relative;
+    margin-top: 20px;
+    height: 8px;
+    font-size: 0;
+    white-space: nowrap;
+    p{
+        position: absolute;
+        top: -28px;
+        left: 50%;
+        margin-left: -35px;
+        font-size: 14px;
+        color: #51586d;
+    }
+    span{
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+    }
+  em{
+    position: relative;
+    top: 12px;
+    left: -14px;
+    font-size: 14px;
+    color: #8e93a2;
+    line-height: 20px;
+    font-style: normal;
+  }
+}
+.level-1{
+    width: 13%;
+    background: #5dd5c8;
+    border-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.level-2{
+    width: 24%;
+    background: #62e1d3;
+    margin-left:1px;
+}
+.level-3 {
+    width: 24%;
+    background: #72e7c6;
 }
