@@ -1,175 +1,16 @@
 
-define(['jquery','jqmsw'],function () {
-	
-    var JONS = '';
-    //请求ajax函数
-        $.ajax({
-            url:"data/city.json",
-            type:'get',
-            dataType:'json',
-            success:function(json){
-                JONS = json.zpData.cityList;
-            }
-        })
-    //单击地区选择时，调用请求ajax函数，并获得相应数据
-    function forArr(JONS){
-        var str = "";
-        var code = localStorage.getItem("posiCityCode");
-        for(var i=0,len = JONS.length ; i < len ;i++){
-            if(JONS[i].code == code){
-                str += '<li code ='+ code +' style= "background:#f1f3f6">'+ JONS[i].name +'</li>'
-            }else{
-                str += '<li code ='+ JONS[i].code +'>'+ JONS[i].name +'</li>'
-            }
-            
-        }
-        $(".f_cityList ul").html(str);
-    }
-    //鼠标移动到省会时，调用请求ajax函数，并获得相应数据
-    function forArr2(JOSN,code){
-        var str = "";
-        for(var i=0,len = JOSN.length ; i < len ;i++){
-            if(code == JOSN[i].code){
-                var str2 = "";
-                var lenArr = JOSN[i].subLevelModelList;
-                for(var j=0,len=lenArr.length;j<len;j++){
-                        str2 += '<li>'+ lenArr[j].name +'</li>'; 
-                }
-                str += '<li code ='+ JOSN[i].code +'>'+ str2 +'</li>'
-            }  
-        }
-        $(".f_cityOist ol").html(str);
-    }
-    
-    //单击地区选择，调用forArr函数
-    $(".f_sel span").click(function(){
-        if( $(".f_cityList").css("display") == "none"){
-            $(".f_cityList,.f_cityOist").show();
-            forArr(JONS);
-            $(this).addClass("f_showCity bg");
-        }else{
-            $(".f_cityList,.f_cityOist").hide();
-            $(this).removeClass("f_showCity bg");
-        }  
-    })
-
-    //移入地区选择，调用forArr2函数
-    $(".f_cityList ul").on("mouseover","li",function(){
-        var code = $(this).attr("code");
-        forArr2(JONS,code);
-    })
-
-    $(".f_cityList,.f_cityOist").mouseover(function(e){
-        if(e.target.nodeName == "LI"){
-            $(e.target).css("background","#f1f3f6").siblings().css("background","#fff");
-            if(this.className == "f_cityList"){
-                var code = ($(e.target).attr("code")) ;
-                localStorage.setItem("posiCityCode",code)
-            }
-        }
-        var sor = $(this).children().eq(1);
-        var lh = $(this).children().eq(0).height();
-        var sor_h = $(sor).height();
-        var ratio = lh / sor_h - 0.3;
-        if(lh > sor_h){
-            $(sor).css("display","block");
-            var p = $(sor).children()[0];
-            if(p.nodeName == "P"){
-                $(p).css("height", sor_h / ratio);
-            }
-        }
-        if(this.className == "f_cityList"){
-            var o = $(".f_cityOist").children().eq(1).children()[0];
-            $(".f_cityOist").children().eq(0).css("top",0);
-            $(o).css("top",0);
-        }  
-    })
-
-    $(".f_cityList,.f_cityOist").mouseout(function(e){
-        $(this).children().eq(1).css("display","none");
-       
-    })
-
-    //地区单击事件
-
-    $(".f_cityList ul,.f_cityOist ol").click(function(e){
-        if(e.target.nodeName == "LI"){
-            var str = $(e.target).html();
-            $(".f_sel span").html(str);
-            $(".f_cityList,.f_cityOist").css("display","none");
-            $(".f_sel span").removeClass("f_showCity bg");
-        }
-    })
-
-
-    //地区滑轮滚动事件
-    $(".f_cityList ul,.f_cityOist ol").mousewheel(function(e,delta){
-        var sor = $(this ).siblings();
-        var sor_p = $(this ).siblings().children();
-        var uh = $(this).height();
-        var ph = $(sor_p).height();
-        var fh = $(sor).height();
-        var pf = fh - ph;
-        var un = uh - fh;
-        if(parseInt($(sor_p).css("top")) == 0 && delta > 0){
-            return false;
-        }
-        var lTop = parseFloat($(sor_p).css("top")) + -delta * un / pf;
-        lTop = Math.abs(lTop);
-        lTop = lTop < 1 ? 0 : lTop;
-        lTop = lTop > pf ? pf : lTop;
-        $(sor_p).css("top",lTop);
-        $(this).css("top",-lTop  * un / pf);  
-        return false;
-    })
-
-
-    //模拟滚动条
-    $(".f_sor p").mousedown("click",function(e){
-        this.y = e.offsetY;
-        var paren = $(this).parent();
-        var fh =$(paren).siblings().height() / $(paren).height();
-        this.height =  $(paren).height() - $(this).height();
-        _this = this;
-        $(paren).parent().bind("mousemove",function(e){
-            var y = e.pageY - $(this).offset().top    
-            var lTop = y - _this.y;
-            lTop = lTop < 1 ? 0 : lTop;
-            lTop = lTop > _this.height ? _this.height : lTop;
-            lTop = Math.abs(lTop);
-            $(_this).css("top",lTop);
-            console.log(_this.height,fh)
-            $(paren).siblings().css("top",-lTop * fh);
-            return false;
-        })
-        $(document).mouseup(function(){
-            $(paren).parent().unbind("mousemove");
-            return false;
-        })
-    })
-
-
-
 
     //职位ajax请求
     var POSI = '';
-        $.ajax({
-            url:"data/position.json",
-            type:'get',
-            dataType:'json',
-            success:function(json){
-                POSI = json.zpData;
-            }
-        })
     //单击职位调用的函数
     function posiArr(POSI){
         var code = localStorage.getItem("posiTypeCode");
         var str = "";
         for(var i=0,len = POSI.length ; i < len ;i++){
             if(POSI[i].code == code){
-                str += '<li code ='+ code +' style= "background:#f1f3f6">'+ POSI[i].name +'</li>'
+                str += '<li code ='+ code +' style= "background:#f1f3f6">'+ POSI[i].name +'</li>';
             }else{
-                str += '<li code ='+ POSI[i].code +'>'+ POSI[i].name +'</li>'
+                str += '<li code ='+ POSI[i].code +'>'+ POSI[i].name +'</li>';
             }  
         }
         $(".f_posiList .f_posi_ul1").html(str);
@@ -185,7 +26,7 @@ define(['jquery','jqmsw'],function () {
             $(this).removeClass("bg");
             $(".f_posiList").css("display","none");
         }
-    })
+    });
 
     //职位移动事件函数
     function mobile1(code,POSI){
@@ -233,10 +74,10 @@ define(['jquery','jqmsw'],function () {
     $(".f_posiList").on("mouseover","li",function(){
         $(this).css("background","#f1f3f6").siblings().css("background","#fff");
         if($(this).parent().attr("class") == "f_posi_ul1"){
-            var code = ($(this).attr("code")) ;
+            var code = ($(this).attr("code"));
             localStorage.setItem("posiTypeCode",code)
         }
-    })
+    });
     
 
     $(".f_posi_ul1,.f_posi_ul2,.f_posi_ul3,.f_posi_d2").mouseover(function(){
@@ -253,13 +94,13 @@ define(['jquery','jqmsw'],function () {
                 var p = $(sor).children()[0];
                 if(p.nodeName == "P"){
                     $(p).css("height", sor_h / ratio);
-                    $(p).css("display","block")
+                    $(p).css("display","block");
                 }
             }else{
                 $(sor).children().css("display","none");
             }
         }
-        var chi = $(parent).siblings().children()
+        var chi = $(parent).siblings().children();
         for(var i = 0,len = chi.length; i < len; i++){
             if($(chi[i])[0].nodeName == "DIV"){
                 $(chi[i]).css("display","none");
@@ -274,7 +115,7 @@ define(['jquery','jqmsw'],function () {
                 $(".f_posiList").children().eq(2).css("display","none");
             }
         }
-    })
+    });
     $(".f_posi_ul1,.f_posi_ul2,.f_posi_ul3").mousewheel(function(e,delta){
         var sor = $(this ).siblings();
         var sor_p = $(this ).siblings().children();
@@ -293,7 +134,7 @@ define(['jquery','jqmsw'],function () {
         $(sor_p).css("top",lTop);
         $(this).css("top",-lTop  * un / pf);
         return false;
-    })
+    });
 
     $(".f_posi_sor p").mousedown("click",function(e){
         this.y = e.offsetY;
@@ -303,7 +144,7 @@ define(['jquery','jqmsw'],function () {
         _this = this;
         if( $(paren).siblings().height() > $(paren).height()){
             $(paren).parent().bind("mousemove",function(e){
-                var y = e.pageY - $(this).offset().top    
+                var y = e.pageY - $(this).offset().top;   
                 var lTop = y - _this.y;
                 lTop = lTop < 1 ? 0 : lTop;
                 lTop = lTop > _this.height ? _this.height : lTop;
@@ -311,14 +152,14 @@ define(['jquery','jqmsw'],function () {
                 $(_this).css("top",lTop);
                 $(paren).siblings().css("top",-lTop * fh);
                 return false;
-            })
+            });
             $(document).mouseup(function(){
                 $(paren).parent().unbind("mousemove");
                 return false;
-            })
+            });
         }
         
-    })
+    });
     $(".f_posi_ul3").click(function(e){
         if(e.target.nodeName == "LI"){
            $(".f_positype b").html( $(e.target).html() );
@@ -326,7 +167,7 @@ define(['jquery','jqmsw'],function () {
            $(".f_positype").removeClass("bg");
         }
 
-    })
+    });
 
 // E positype
 
@@ -341,18 +182,17 @@ define(['jquery','jqmsw'],function () {
         success:function(json){
             COM = json.zpData; 
         }
-    })
+    });
     //定义单击公司行业调用函数
     function company(){
         var code = localStorage.getItem("companyCode");
         var str = "<li>不限</li>";
         for(var i=0,len = COM.length ; i < len ;i++){
             if(code == COM[i].code){
-                str += '<li code ='+ code +' style="color:#00d7c6">'+ COM[i].name +'</li>' 
+                str += '<li code ='+ code +' style="color:#00d7c6">'+ COM[i].name +'</li>';
             }else{
-                str += '<li code ='+ COM[i].code +'>'+ COM[i].name +'</li>'
-            }
-                
+                str += '<li code ='+ COM[i].code +'>'+ COM[i].name +'</li>';
+            }        
         }
         $(".f_company_ul").html(str);
     }
@@ -366,7 +206,7 @@ define(['jquery','jqmsw'],function () {
             $(this).removeClass("bg");
             $(".f_company_ul").css("display","none");
         }
-    })
+    });
 
     $(".f_company_ul").on("click","li",function(e){
         var code = $(e.target).attr("code");
@@ -376,7 +216,7 @@ define(['jquery','jqmsw'],function () {
         $(".f_company_ul").css("display","none");
         $(".f_company").removeClass("bg");
 
-    })
+    });
 
 
 
@@ -404,35 +244,83 @@ define(['jquery','jqmsw'],function () {
             $(this).removeClass("f_action");
         }
         
-    })
+    });
 
 // E f_screening
 
 
 // S f_main_left
+    var cardNUM = 0;
+    var cardJSON = [];
+    //页面初始化
     $.ajax({
         url:"data/jobDescription.json",
         type:'get',
         dataType:'json',
         success:function(jsonArr){
-            var str = '';
-            for(var i = 0,len = jsonArr.length; i < len; i++){
-                str += '<li><div class="f_primary"><h3>'+ jsonArr[i].jobName+'<span>'+ jsonArr[i].pay+'</span></h3><p>'+ jsonArr[i].address +'<em></em>'+ jsonArr[i].year+'<em></em>'+jsonArr[i].education+'</p></div><div class="f_company_nama"><h3>'+jsonArr[i].companyName+'</h3><p>'+jsonArr[i].tmt+'<em></em>'+jsonArr[i].financing+'<em></em>'+jsonArr[i].peopleNum+'</p></div><div class="f_contact"><h3><img src="'+jsonArr[i].img +'">'+jsonArr[i].recruiter+'<em></em>'+jsonArr[i].type+'</h3></div><a>立即沟通</a></li>'
+            for (var key in jsonArr){
+                for(var j = 0 ; j < jsonArr[key].length ; j++){
+                    cardJSON.push(jsonArr[key][j]);
+                }
             }
-            $('.f_main_left').html(str);
-            
+            f_cardAjax(cardJSON,cardNUM);
         }
-    })
+    });
+    function f_cardAjax(cardJSON,cardNUM){
+        $(document).scrollTop(0);
+        var str = '';
+        var len = cardNUM + 30;
+        var jen = cardJSON.length;
+        for(var i = cardNUM; i < len && i < jen; i++){
+            str += '<li><div class="f_primary"><h3>'+ cardJSON[i].jobName+'<span>'+ cardJSON[i].pay+'</span></h3><p>'+ cardJSON[i].address +'<em></em>'+ cardJSON[i].year+'<em></em>'+cardJSON[i].education+'</p></div><div class="f_company_nama"><h3>'+cardJSON[i].companyName+'</h3><p>'+cardJSON[i].tmt+'<em></em>'+cardJSON[i].financing+'<em></em>'+cardJSON[i].peopleNum+'</p></div><div class="f_contact"><h3><img src="'+cardJSON[i].img +'">'+cardJSON[i].recruiter+'<em></em>'+cardJSON[i].type+'</h3></div><a>立即沟通</a></li>';
+        }
+        $('.f_main_left').html(str);
+        
+        
+    }
 
-    $(".f_main_left").on("mouseover","li",function(){
+    //分页处理
+    $('.f_page').on('click','a',function(){
+        var flag = true;
+        if($(this).is('.f_prev')){
+            if(cardNUM < 30){
+                cardNUM = cardNUM + 30;
+            }else{
+                $('.f_page').children(".f_aselect").removeClass('f_aselect').prev().addClass('f_aselect');
+            }
+            cardNUM = cardNUM - 30;
+            flag = false;
+        }
+        if($(this).is('.f_next')){
+            cardNUM = cardNUM + 30;
+            if(cardNUM >= cardJSON.length){
+                cardNUM = cardNUM - 30;
+            }else{
+                    $('.f_page').children(".f_aselect").removeClass('f_aselect').next().addClass('f_aselect');
+            }
+            flag = false;
+        }
+        if(flag){
+            $(this).addClass('f_aselect').siblings().removeClass('f_aselect');
+            cardNUM = ($(this).html() - 1 ) * 30;
+        }
+        setTimeout(function(){
+            f_cardAjax(cardJSON,cardNUM);
+        },500)
+        
+    });
+
+
+
+    $(".f_card_left").on("mouseover","li",function(){
         $(this).children('a').addClass('btn');
         $(this).children('.f_contact').css("display","none");
     })
-    $(".f_main_left").on("mouseout","li",function(){
+    $(".f_card_left").on("mouseout","li",function(){
         $(this).children('a').removeClass("btn");
         $(this).children('.f_contact').css("display","block");
     })
-    $(".f_main_left").on("click","li",function(){
+    $(".f_card_left").on("click","li",function(){
         var str = $(this).children().eq(0).children("h3").html();
         var val3 = $(this).children().eq(1).children("h3").html();
         var strArr = str.split("<span>");
@@ -464,101 +352,13 @@ define(['jquery','jqmsw'],function () {
             heavyArr.shift();
         }
         localStorage.setItem("readArr",readArr);
-        f_read();
+        f_card();
         return false;
-    })
+    });
 
 //E f_main_left
 
 //S f_main_right
-
-    // S phone 
-    $(".f_phone .f_select").on("click","li,em",function(){
-        if(this.nodeName == "EM"){
-            $(this).addClass('f_emaction');
-            $(this).siblings().eq(0).css("display","block");
-        }
-        if(this.nodeName == "LI"){
-            var val = $(this).attr("data-val")
-            $(this).parent().css("display","none");
-            $(this).parent().siblings().eq(0).removeClass('f_emaction');
-            $(this).parent().siblings().eq(0).html(val);
-        }
-        
-    })
-    $('.f_phone [type="tel"]').focus(function(){
-        $('.f_phone').addClass("f_phoneAction");
-    })
-    $('.f_phone [type="tel"]').blur(function(){
-        $('.f_phone').removeClass("f_phoneAction");
-    })
-    // E phone 
-
-    // S f_validation 
-    $(".f_slider").mousedown(function(){
-        if(this.falg){
-            $(this).stop(true);
-            this.falg = false;
-        }
-        this.width = $(this).width();
-        var _this = this;
-        $(".f_validation").bind('mousemove',function(e){
-            var e = e || event;
-            var x = parseInt( e.pageX - $(this).offset().left );
-            if(x > $(this).width() - _this.width){
-                x = $(this).width()-_this.width;
-                _this.falg = true;
-            }
-            $(_this).css("left",x)
-            return false;
-        })
-        
-        $(document).bind("mouseup",function(){
-            $(".f_validation").unbind('mousemove');
-            $(document).unbind('mouseup');
-            if(!_this.falg){
-                _this.falg = true;
-                $(_this).animate({"left":0} , 500 , 'swing',function(){
-                    _this.falg = false;
-                });
-            }else{
-                $(_this).html('&#xe614');
-                $(_this).css("background","#fff");
-                $(_this).parent().addClass("f_validationAction");
-                $(_this).siblings().html("");
-                setTimeout(function(){
-                    $(_this).parent().removeClass("f_validationAction");
-                    $(_this).siblings().html("验证通过");
-                },1500)
-                
-            }
-            return false;
-        })
-    })
-    // E f_validation 
-
-    // S f_sms
-    $(".f_sms input").focus(function(){
-        $(this).parent().addClass("f_smsAction");
-    })
-    $(".f_sms input").blur(function(){
-        $(this).parent().removeClass("f_smsAction");
-    })
-    // E f_sms
-
-    // S f_btn
-        $(".f_btn").click(function(){
-            var phoneReg = /^1[3-9]\d{9}$/;
-            var sliderFalg =  $(".f_validation").is("f_validationAction");
-            var checkboxFalg = $(".f_agreement input").attr("checked")=='checked';
-            var phoneFlag = phoneReg.test($('.f_phone input').val());
-            if(sliderFalg && checkboxFalg && phoneFlag){
-                return false;
-            }else{
-                return false;
-            }
-        })
-
     // E f_btn
     // S f_read
 
@@ -608,7 +408,7 @@ define(['jquery','jqmsw'],function () {
             $(this).addClass('f_select').siblings().removeClass('f_select');
             $('.f_feedback .f_btn').removeClass('f_ban');
            
-        })
+        });
 
 
 // E f_feedback
@@ -629,6 +429,3 @@ define(['jquery','jqmsw'],function () {
 
 
 
-
-//repuiry E
-})

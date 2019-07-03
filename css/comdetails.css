@@ -1,0 +1,376 @@
+.f_warpcompny {
+  background: #444c5f;
+  padding-top: 28px; }
+
+.f_compny {
+  width: 1000px;
+  margin: 0 auto; }
+  .f_compny img {
+    width: 103px;
+    height: 103px;
+    border-radius: 13px;
+    float: none;
+    display: inline-block;
+    vertical-align: middle; }
+  .f_compny .f_info {
+    margin-left: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 14px;
+    line-height: 26px; }
+    .f_compny .f_info .f_name {
+      font-size: 32px;
+      line-height: 45px;
+      padding: 0 0 5px 0; }
+      .f_compny .f_info .f_name .f_icon_brand {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        margin-top: -3px;
+        margin-left: 15px;
+        background: url("../images/boss_comdetails/icon_banner.png") no-repeat; }
+    .f_compny .f_info p {
+      line-height: 20px;
+      padding: 0;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .f_compny .f_info p .f_dolt {
+        display: inline-block;
+        vertical-align: middle;
+        width: 2px;
+        height: 2px;
+        margin: 0 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.7); }
+  .f_compny .f_tag_container {
+    color: #5ed5c8;
+    position: relative; }
+    .f_compny .f_tag_container .f_show span {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      padding: 0 12px;
+      border: 1px solid #5ed5c8;
+      border-radius: 12px;
+      height: 24px;
+      cursor: pointer; }
+  .f_compny .f_hied {
+    width: 600px;
+    background: #fff;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 2;
+    display: none; }
+    .f_compny .f_hied span {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      padding: 0 12px;
+      border: 1px solid #5ed5c8;
+      border-radius: 12px;
+      color: #5ed5c8;
+      height: 24px;
+      cursor: pointer; }
+  .f_compny .f_company_stat {
+    float: right;
+    color: #fff;
+    padding-top: 0;
+    text-align: right; }
+    .f_compny .f_company_stat span {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center; }
+    .f_compny .f_company_stat a {
+      color: #fff; }
+    .f_compny .f_company_stat b {
+      line-height: 50px;
+      color: #fff;
+      padding: 0;
+      display: block;
+      font-size: 36px;
+      font-weight: 400; }
+    .f_compny .f_company_stat em {
+      height: 50px;
+      background: #636b7c;
+      margin: 0 35px;
+      display: inline-block;
+      width: 1px;
+      vertical-align: middle; }
+    .f_compny .f_company_stat .f_op {
+      margin-top: 20px; }
+      .f_compny .f_company_stat .f_op a {
+        color: #fa6a43;
+        line-height: 20px; }
+        .f_compny .f_company_stat .f_op a i {
+          display: inline-block;
+          vertical-align: -2px;
+          width: 18px;
+          height: 15px;
+          margin-right: 8px;
+          background: url("../images/boss_comdetails/icon-resume.png") no-repeat;
+          background-size: 18px; }
+        .f_compny .f_company_stat .f_op a i.f_file {
+          margin-left: 25px;
+          background: url("../images/boss_comdetails/icon-upload.png") no-repeat;
+          background-size: 17px; }
+  .f_compny .f_tab a {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    color: #fff;
+    margin-right: 45px;
+    padding: 10px 0;
+    border-bottom: 3px transparent solid; }
+  .f_compny .f_tab .f_aclick {
+    color: #18c3b1;
+    border-bottom: 3px #62d5c8 solid; }
+
+.f_warphot {
+  background: #f2f2f5;
+  padding: 25px 0 18px;
+  overflow: hidden; }
+  .f_warphot .f_hot {
+    width: 1000px;
+    margin: 0 auto; }
+    .f_warphot .f_hot h3 {
+      font-weight: 400;
+      font-size: 16px;
+      padding-bottom: 20px; }
+      .f_warphot .f_hot h3 a {
+        float: right;
+        font-size: 14px;
+        color: #9fa3b0;
+        background: url("../images/boss_comdetails/f_icons.png") no-repeat right -84px;
+        padding-right: 18px;
+        margin-right: -10px; }
+    .f_warphot .f_hot li {
+      display: inline-block;
+      width: 283px;
+      padding: 19px 20px 17px;
+      border: 1px #fff solid;
+      background: #fff;
+      font-size: 14px; }
+      .f_warphot .f_hot li .f_list_name {
+        color: #414a60;
+        font-size: 16px;
+        padding-bottom: 10px; }
+        .f_warphot .f_hot li .f_list_name .f_salary {
+          color: #fc703e;
+          float: right; }
+      .f_warphot .f_hot li .f_gray {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #9fa3af; }
+
+.f_main {
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.f_main_left {
+  float: left;
+  width: 638px;
+  padding: 20px;
+  padding-right: 25px;
+  font-size: 14px; }
+  .f_main_left h3 {
+    font-weight: 700;
+    line-height: 50px;
+    padding: 0 0 10px 0;
+    margin-top: 5px;
+    margin-bottom: 0;
+    background: url("../images/boss_comdetails/line-sec.png") no-repeat left 45px; }
+  .f_main_left .f_textHied {
+    max-height: 180px;
+    overflow: hidden;
+    position: relative;
+    color: #61687c;
+    line-height: 36px; }
+    .f_main_left .f_textHied .f_textAbos {
+      padding-right: 18px;
+      position: absolute;
+      display: block;
+      right: 0;
+      bottom: 0;
+      background: url("../images/boss_comdetails/f_icons.png") no-repeat right -215px; }
+    .f_main_left .f_textHied .f_textAbosHeid {
+      background-position-y: -177px; }
+  .f_main_left .f_select {
+    overflow: visible;
+    max-height: none; }
+  .f_main_left .f_productIntro ul {
+    line-height: 26px;
+    color: #414a60;
+    font-size: 14px; }
+    .f_main_left .f_productIntro ul li {
+      min-height: 60px;
+      overflow: hidden;
+      padding: 14px 0; }
+      .f_main_left .f_productIntro ul li img {
+        float: left;
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background-color: #f7f7f7; }
+      .f_main_left .f_productIntro ul li a {
+        display: inline-block;
+        line-height: 24px;
+        padding-bottom: 7px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 80px; }
+        .f_main_left .f_productIntro ul li a em {
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          vertical-align: middle;
+          background: #e0e0e0;
+          margin: 0 10px; }
+      .f_main_left .f_productIntro ul li a:hover {
+        color: #18c3b1; }
+  .f_main_left .f_industrial h4 {
+    font-size: 16px;
+    margin-bottom: 13px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #424a5e; }
+    .f_main_left .f_industrial h4 span {
+      float: right;
+      font-size: 14px;
+      color: #9fa3b0; }
+  .f_main_left .f_recom {
+    max-height: 120px;
+    overflow: hidden;
+    position: relative; }
+    .f_main_left .f_recom div {
+      line-height: 26px;
+      margin-bottom: 20px;
+      font-size: 12px; }
+    .f_main_left .f_recom h3 {
+      color: #4a4e52;
+      font-size: 15px;
+      font-weight: normal;
+      background: none; }
+    .f_main_left .f_recom a {
+      color: #9fa3b0;
+      margin-right: 26px;
+      display: inline-block; }
+    .f_main_left .f_recom label {
+      padding-right: 25px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #9fa3b0;
+      cursor: pointer;
+      background: url("../images/boss_comdetails/f_icons.png") no-repeat right -223px; }
+    .f_main_left .f_recom label.bg {
+      background-position-y: -184px; }
+  .f_main_left .f_recomAction {
+    max-height: none;
+    overflow: visible; }
+
+.f_main_right {
+  width: 280px;
+  padding-right: 14px;
+  float: right; }
+  .f_main_right h3 {
+    font-weight: 700;
+    line-height: 50px;
+    padding: 0 0 10px 0;
+    margin-top: 5px;
+    margin-bottom: 0;
+    background: url("../images/boss_comdetails/line-sec.png") no-repeat left 45px; }
+  .f_main_right .f_info-user {
+    padding-bottom: 10px;
+    line-height: 26px;
+    color: #414a60; }
+    .f_main_right .f_info-user img {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      vertical-align: top; }
+    .f_main_right .f_info-user p {
+      display: inline-block;
+      margin-left: 20px; }
+    .f_main_right .f_info-user .f_name {
+      display: block;
+      font-size: 20px;
+      padding-bottom: 10px; }
+    .f_main_right .f_info-user .f_job-title {
+      display: block;
+      font-size: 16px; }
+  .f_main_right .f_fold_text {
+    overflow: hidden;
+    position: relative;
+    max-height: 108px;
+    color: #61687c;
+    line-height: 36px;
+    padding: 10px; }
+    .f_main_right .f_fold_text .f_textAbos {
+      color: #555;
+      cursor: pointer;
+      padding-right: 18px;
+      padding-left: 22px;
+      position: absolute;
+      display: inline;
+      right: 0;
+      bottom: 0;
+      background: url("../images/boss_comdetails/f_icons.png") no-repeat right -215px;
+      z-index: 100; }
+    .f_main_right .f_fold_text .f_textAbosHeid {
+      background-position-y: -177px; }
+  .f_main_right .f_select {
+    overflow: visible;
+    max-height: none; }
+  .f_main_right .f_envt img {
+    display: block;
+    width: 298px;
+    height: 165px;
+    background-color: #f7f7f7; }
+  .f_main_right .f_zhaoping img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    border-radius: 100%; }
+  .f_main_right .f_zhaoping ul {
+    padding-top: 13px;
+    padding-bottom: 10px; }
+    .f_main_right .f_zhaoping ul li {
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px #f5f7f9 solid; }
+      .f_main_right .f_zhaoping ul li .f_text {
+        color: #61687c;
+        line-height: 36px;
+        margin-left: 70px; }
+        .f_main_right .f_zhaoping ul li .f_text .f_zpname {
+          position: relative;
+          line-height: 24px;
+          font-size: 16px;
+          padding-bottom: 5px; }
+          .f_main_right .f_zhaoping ul li .f_text .f_zpname em {
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            vertical-align: middle;
+            background: #e0e0e0;
+            margin: 0 10px; }
+        .f_main_right .f_zhaoping ul li .f_text .f_gray {
+          font-size: 14px;
+          line-height: 28px;
+          color: #61687c; }
+
+.f_fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999; }
