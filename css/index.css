@@ -16,6 +16,7 @@
 	float: left;
 	height: 118px;
 	margin: 2px 35px 0 0;
+	clear: both;
 }
 
 .l_step_form {
@@ -585,4 +586,64 @@
 }
 .text_blue{
 	color: #00c2b3;
+}
+
+.hotcity_tab_box{
+	margin-top: 25px;
+    margin-bottom: -20px;
+    width: 1000px;
+    overflow: hidden;
+}
+.hotcity_tab_box>h3{
+	border: 0;
+	height: 45px;
+    position: relative;
+}
+.slider_city{
+	overflow: hidden;
+    height: 170px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.city_page_btn{
+	position: absolute;
+    z-index: 20;
+    top: 28px;
+    width: 40px;
+    height: 120px;
+    cursor: pointer;
+}
+.slider_city .prev{
+	display: none;
+    left: 0;
+    background: rgba(0,0,0,.3) url(https://static.zhipin.com/zhipin/v175/web/geek/images/city-prev.png) center center no-repeat;
+}
+.slider_city .next{
+	right: 0;
+    background: rgba(0,0,0,.3) url(https://static.zhipin.com/zhipin/v175/web/geek/images/city-next.png) center center no-repeat;
+}
+.hotcity_tab_box ul{
+	width: 1515px;
+    border: none;
+}
+.slider_city li{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 1515px;
+    position: relative;
+}
+.hotcity_tab_box ul a{
+	display: block;
+    float: left;
+    height: 77px;
+    width: 160px;
+    margin: 0 8px 8px 0;
+    position: relative;
+}
+.hotcity_tab_box ul a img{
+	display: block;
+    width: 160px;
+    height: 77px;
 }
