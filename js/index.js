@@ -2,16 +2,17 @@ var tree1 = document.querySelector(".tree-1");
 var tree2 = document.querySelector(".tree-2");
 var tree3 = document.querySelector(".tree-3");
 var list = ""; //职位数据
-var newJobs = "";//最新职位数据
+var newJobs = ""; //最新职位数据
+var companyList = ""; //公司tab列表数据
 
-window.onscroll = function(){
+window.onscroll = function() {
 	var l_seach_box = document.querySelector(".l_seach_box");
-	fixedTop(l_seach_box,300);//吸顶效果
+	fixedTop(l_seach_box, 300); //吸顶效果
 }
 
 window.onload = function() {
-	axios.all([getPosition(), getPosition2(),getJobDescription(),getCompanyTab()])
-		.then(axios.spread(function(response, perms, jobs,companys) {
+	axios.all([getPosition(), getPosition2(), getJobDescription(), getCompanyTab()])
+		.then(axios.spread(function(response, perms, jobs, companys) {
 			// console.log(companys);
 			// console.log(perms.data);
 			if (response.status == 200) {
@@ -23,59 +24,68 @@ window.onload = function() {
 				var str = "";
 				for (var i = 0; i < 12; i++) {
 					if ((position2[i].pList).length == 3) {
-						str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[2] + "</a></li><div class='menu_sub'></div></ul>"
+						str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
+							.pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[2] +
+							"</a></li><div class='menu_sub'></div></ul>"
 					} else if ((position2[i].pList).length == 2) {
-						str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
+						str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
+							.pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
 					} else {
-						str = "<ul id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a></li><div class='menu_sub'></div></ul>"
+						str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
+							.pList[0] + "</a></li><div class='menu_sub'></div></ul>"
 					}
 					job_menu.innerHTML += str;
 				}
 				job_menu.innerHTML += '<div class="show_all" style="display: block;">显示全部职位</div>';
 				// job_menu.innerHTML += '<div class="all_job" style="display: none;"></div>';
-				
+
 				for (var i = 12; i < position2.length; i++) {
 					if ((position2[i].pList).length == 3) {
-						str = "<ul title='all' id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[2] + "</a></li><div class='menu_sub'></div></ul>"
+						str = "<ul title='all' id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" +
+							position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[
+								2] + "</a></li><div class='menu_sub'></div></ul>"
 					} else if ((position2[i].pList).length == 2) {
-						str = "<ul title='all' id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
+						str = "<ul title='all' id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" +
+							position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] +
+							"</a></li><div class='menu_sub'></div></ul>"
 					} else {
-						str = "<ul title='all' id='"+ position2[i].code +"'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i].pList[0] + "</a></li><div class='menu_sub'></div></ul>"
+						str = "<ul title='all' id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" +
+							position2[i].pList[0] + "</a></li><div class='menu_sub'></div></ul>"
 					}
 					// $(".all_job").append(str);
 					job_menu.innerHTML += str;
 				}
 				$(".job_menu").find("ul[title=all]").toggle();
-				
-				$(".job_menu").on("mouseenter","ul",function(){
+
+				$(".job_menu").on("mouseenter", "ul", function() {
 					$(this).addClass("cur");
-					$(this).find("a").css("color","#fff");
-					$(this).find("b").css("color","#fff");
+					$(this).find("a").css("color", "#fff");
+					$(this).find("b").css("color", "#fff");
 					if ($(this).find(".menu_sub").children().length > 1) {
 						return;
-					}else{
+					} else {
 						$(this).find(".menu_sub").toggle();
-						showMemuSub($(this).attr("id"),$(this));
+						showMemuSub($(this).attr("id"), $(this));
 					}
 					return false;
 				});
-				
-				$(".job_menu").on("mouseleave","ul",function(){
+
+				$(".job_menu").on("mouseleave", "ul", function() {
 					$(this).find(".menu_sub").empty();
 					$(this).find(".menu_sub").toggle();
 					$(this).removeClass("cur");
-					$(this).find("a").css("color","#61687c");
-					$(this).find("b").css("color","#414a60");
+					$(this).find("a").css("color", "#61687c");
+					$(this).find("b").css("color", "#414a60");
 					return false;
 				});
-				
-				$(".show_all").on("mouseenter",function(){
+
+				$(".show_all").on("mouseenter", function() {
 					$(this).toggle();
 					$(".job_menu").find("ul[title=all]").toggle();
 					return false;
 				});
-				
-				$(".job_menu").on("mouseleave","ul",function(){
+
+				$(".job_menu").on("mouseleave", "ul", function() {
 					if ($(".show_all").css("display") == "none") {
 						$(".show_all").toggle();
 						$(".job_menu").find("ul[title=all]").toggle();
@@ -102,13 +112,13 @@ function getJobDescription() {
 	return axios.get('data/jobDescription.json');
 }
 
-function getCompanyTab(){
+function getCompanyTab() {
 	return axios.get('data/companyTab.json');
 }
 
-$(".l_position_sel").on("click",function(eve){
+$(".l_position_sel").on("click", function(eve) {
 	var li = "";
-	$(".l_select_tree").css("height","250px");
+	$(".l_select_tree").css("height", "250px");
 	var e = eve || event;
 	if ((tree1.childNodes).length > 1) {
 		tree1.style.display = "block";
@@ -119,7 +129,7 @@ $(".l_position_sel").on("click",function(eve){
 		}
 		tree1.style.display = "block";
 	}
-	
+
 	//阻止事件冒泡
 	if (e && e.stopPropagation) {
 		// this code is for Mozilla and Opera
@@ -215,112 +225,100 @@ tree3.onclick = function(eve) {
 	}
 }
 
-$(".job_tab_box").on("click","span",function(){
+$(".job_tab_box").on("click", "span", function() {
 	$(".job_tab_box").find("span").removeClass("cur");
 	$(this).addClass("cur");
 	$(".job_tab_ul").empty();
 	var data = newJobs.data;
 	var str = "";
 	var address = "";
-	switch ($(this).attr("data-name")){
+	switch ($(this).attr("data-name")) {
 		case "jr":
 			var jobs = data.jr;
-			for (var i = 0; i < jobs.length; i++) {
-				address = (jobs[i].address).substring(0,2);
-				str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-				$(".job_tab_ul").append(str);
-			}
+			forJobs(jobs);
 			break;
-			case "it":
-				var jobs = data.it;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-			case "fdc":
-				var jobs = data.fdc;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-			case "jypx":
-				var jobs = data.jypx;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-			case "qc":
-				var jobs = data.qc;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-			case "ylcm":
-				var jobs = data.ylcm;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-			case "yljk":
-				var jobs = data.yljk;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-			case "flzx":
-				var jobs = data.flzx;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-			case "wl":
-				var jobs = data.wl;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-			case "cgmy":
-				var jobs = data.cgmy;
-				for (var i = 0; i < jobs.length; i++) {
-					address = (jobs[i].address).substring(0,2);
-					str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ jobs[i].jobName +'<span class="salary">'+ jobs[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ jobs[i].year +'<span class="vline"></span>'+ jobs[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ jobs[i].img +'" />'+ jobs[i].companyName +'<span class="user_text">'+ jobs[i].recruiter +'<span class="vline"></span>'+ jobs[i].type +'</span></p></a></div></li>';
-					$(".job_tab_ul").append(str);
-				}
-				break;
-		defalut:
+		case "it":
+			var jobs = data.it;
+			forJobs(jobs);
 			break;
+		case "fdc":
+			var jobs = data.fdc;
+			forJobs(jobs);
+			break;
+		case "jypx":
+			var jobs = data.jypx;
+			forJobs(jobs);
+			break;
+		case "qc":
+			var jobs = data.qc;
+			forJobs(jobs);
+			break;
+		case "ylcm":
+			var jobs = data.ylcm;
+			forJobs(jobs);
+			break;
+		case "yljk":
+			var jobs = data.yljk;
+			forJobs(jobs);
+			break;
+		case "flzx":
+			var jobs = data.flzx;
+			forJobs(jobs);
+			break;
+		case "wl":
+			var jobs = data.wl;
+			forJobs(jobs);
+			break;
+		case "cgmy":
+			var jobs = data.cgmy;
+			forJobs(jobs);
+			break;
+			defalut:
+				break;
+	}
+})
+
+$(".company_tab_box").on("click", "span", function() {
+	$(".company_tab_box").find("span").removeClass("cur");
+	$(this).addClass("cur");
+	$(".company_tab_ul").empty();
+	var data = companyList.data;
+	console.log(companyList);
+	switch ($(this).attr("data-name")) {
+		case "rmqy":
+			var coms = data.rmqy;
+			forCompanys(coms);
+			break;
+		case "hyjt":
+			var coms = data.hyjt;
+			forCompanys(coms);
+			break;
+		case "xrgs":
+			var coms = data.xrgs;
+			forCompanys(coms);
+			break;
+		case "ssgs":
+			var coms = data.ssgs;
+			forCompanys(coms);
+			break;
+			defalut:
+				break;
 	}
 })
 
 //吸顶效果函数
-function fixedTop(dom,height){
+function fixedTop(dom, height) {
 	//获取浏览器滚走的距离 
 	var sTop = document.documentElement.scrollTop || document.body.scrollTop;
 	//与168比较
-	if(sTop > height){
+	if (sTop > height) {
 		//当浏览器滚动到168的距离时让导航nav固定定位，top为0
 		dom.style.position = "fixed";
 		dom.style.top = 0;
 		dom.style.backgroundColor = "#fff";
 		dom.style.width = "100%";
 		dom.style.border = "solid 2px #f6f6f8";
-	}else{
+	} else {
 		//否则 定位回到初始状态
 		dom.style.position = "static";
 		dom.style.backgroundColor = "#f6f6f8";
@@ -328,51 +326,68 @@ function fixedTop(dom,height){
 }
 
 // main主体左边职位展示菜单
-function showMemuSub(id,ul){
+function showMemuSub(id, ul) {
 	var menu_sub = ul.find(".menu_sub");
 	var listchild = "";
 	var listchild_child = "";
 	var str = "";
 	var titleStr = "";
 	for (var i = 0; i < list.length; i++) {
-		if(list[i].code == id){
-			titleStr = '<p class="menu_title">'+ list[i].name +'</p>';
+		if (list[i].code == id) {
+			titleStr = '<p class="menu_title">' + list[i].name + '</p>';
 			menu_sub.append(titleStr);
 			listchild = list[i].subLevelModelList;
-			for(var j = 0;j < listchild.length; j++){
+			for (var j = 0; j < listchild.length; j++) {
 				listchild_child = listchild[j].subLevelModelList;
-				str = '<li><h4>'+ listchild[j].name +'</h4><div id="text_list'+ j +'"></div></li>';
+				str = '<li><h4>' + listchild[j].name + '</h4><div id="text_list' + j + '"></div></li>';
 				menu_sub.append(str);
-				for(var k = 0;k < listchild_child.length;k++){
-					$("#text_list"+ j +"").append('<a href="#">'+ listchild_child[k].name +'</a>');
+				for (var k = 0; k < listchild_child.length; k++) {
+					$("#text_list" + j + "").append('<a href="#">' + listchild_child[k].name + '</a>');
 				}
 			}
 		}
-		
+
 	}
 }
 
 //展示职位tab
-function showJobs(data){
+function showJobs(data) {
 	newJobs = data;
 	var data = data.data.it;
 	var str = "";
 	var address = "";
-	for (var i = 0; i < 9; i++) {
-		address = (data[i].address).substring(0,2);
-		str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">'+ data[i].jobName +'<span class="salary">'+ data[i].pay +'</span></p><p id="job_text">'+ address +'<span class="vline"></span>'+ data[i].year +'<span class="vline"></span>'+ data[i].education +'</p></a><a href="#" class="user_info"><p><img src="'+ data[i].img +'" />'+ data[i].companyName +'<span class="user_text">'+ data[i].recruiter +'<span class="vline"></span>'+ data[i].type +'</span></p></a></div></li>';
+	forJobs(data);
+}
+
+//展示公司tab
+function showCompanys(data) {
+	companyList = data;
+	var coms = data.data.rmqy;
+	var str = "";
+	forCompanys(coms);
+}
+
+function forJobs(jobs) {
+	for (var i = 0; i < jobs.length; i++) {
+		address = (jobs[i].address).substring(0, 2);
+		str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">' + jobs[i].jobName +
+			'<span class="salary">' + jobs[i].pay + '</span></p><p id="job_text">' + address + '<span class="vline"></span>' +
+			jobs[i].year + '<span class="vline"></span>' + jobs[i].education +
+			'</p></a><a href="#" class="user_info"><p><img src="' + jobs[i].img + '" />' + jobs[i].companyName +
+			'<span class="user_text">' + jobs[i].recruiter + '<span class="vline"></span>' + jobs[i].type +
+			'</span></p></a></div></li>';
 		$(".job_tab_ul").append(str);
 	}
 }
 
-//展示公司tab
-function showCompanys(data){
-	console.log(data);
-	var data = data.data.rmqy;
-	console.log(data)
-	var str = "";
-	for (var i = 0; i < data.length; i++) {
-		str = '<li><div class="sub_li"><a class="company_info" href="#"><img src="'+ data[i].src +'" /><div class="company_text"><h4>'+ data[i].name +'</h4><p>'+ data[i].financing +'<span class="vline"></span>'+ data[i].business +'</p></div></a><a class="about_info" href="#"><p><span class="text_blue">'+ data[i].jobCount +'</span>个热招职位<span class="pull_right"><span class="text_blue">'+ data[i].bossCount +'</span>位boss在线</span></p></a></div></li>';
+
+function forCompanys(coms){
+	for (var i = 0; i < coms.length; i++) {
+		str = '<li><div class="sub_li"><a class="company_info" href="#"><img src="' + coms[i].src +
+			'" /><div class="company_text"><h4>' + coms[i].name + '</h4><p>' + coms[i].financing + '<span class="vline"></span>' +
+			coms[i].business + '</p></div></a><a class="about_info" href="#"><p><span class="text_blue">' + coms[i].jobCount +
+			'</span>个热招职位<span class="pull_right"><span class="text_blue">' + coms[i].bossCount +
+			'</span>位boss在线</span></p></a></div></li>';
 		$(".company_tab_ul").append(str);
 	}
 }

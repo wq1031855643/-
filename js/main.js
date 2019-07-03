@@ -11,7 +11,9 @@ require.config({
 require(["hm", "jquery"], function(hm, $) {
 	hm.creatHead();
 	hm.creatFooter();
-	hm.creatSide($('.asideRight'));
+	if ($("#side").length != 0) {
+		hm.creatSide();
+	}
 	// console.log($('.xw_nav_left'))
 $('.xw_nav_left').on('click','a',function(){
     $('.xw_nav_left').children().children().removeClass('xw_js-left');
