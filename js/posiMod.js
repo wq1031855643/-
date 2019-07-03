@@ -1,4 +1,5 @@
 define(['jquery','jqmsw'],function (){
+	console.log($(".f_libcity"))
 	if($(".f_libcity").length == 0){
         return false;
     }
@@ -44,7 +45,7 @@ define(['jquery','jqmsw'],function (){
         }
     
     //单击地区选择，调用forArr函数
-        $(".f_libcity").click(function(){
+        $("#header").on("click",".f_libcity",function(){
             if($(".f_cityList ul").length == 0){
                 var str1 = '<div class = "f_cityList"><ul></ul><div class="f_sor"><p></p></div></div><div class = "f_cityOist"><ol></ol><div class="f_sor"><p></p></div></div>';
                 $(this).parent().parent().append(str1);

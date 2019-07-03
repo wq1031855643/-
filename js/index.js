@@ -18,44 +18,17 @@ window.onload = function() {
 			if (response.status == 200) {
 				showJobs(jobs);
 				showCompanys(companys);
-				var job_menu = document.querySelector(".job_menu");
 				list = response.data.zpData;
 				var position2 = perms.data;
 				var str = "";
-				for (var i = 0; i < 12; i++) {
-					if ((position2[i].pList).length == 3) {
-						str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
-							.pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[2] +
-							"</a></li><div class='menu_sub'></div></ul>"
-					} else if ((position2[i].pList).length == 2) {
-						str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
-							.pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
-					} else {
-						str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
-							.pList[0] + "</a></li><div class='menu_sub'></div></ul>"
-					}
-					job_menu.innerHTML += str;
-				}
-				job_menu.innerHTML += '<div class="show_all" style="display: block;">显示全部职位</div>';
-				// job_menu.innerHTML += '<div class="all_job" style="display: none;"></div>';
-
-				for (var i = 12; i < position2.length; i++) {
-					if ((position2[i].pList).length == 3) {
-						str = "<ul title='all' id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" +
-							position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[
-								2] + "</a></li><div class='menu_sub'></div></ul>"
-					} else if ((position2[i].pList).length == 2) {
-						str = "<ul title='all' id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" +
-							position2[i].pList[0] + "</a><a href='#'>" + position2[i].pList[1] +
-							"</a></li><div class='menu_sub'></div></ul>"
-					} else {
-						str = "<ul title='all' id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" +
-							position2[i].pList[0] + "</a></li><div class='menu_sub'></div></ul>"
-					}
-					// $(".all_job").append(str);
-					job_menu.innerHTML += str;
-				}
-				$(".job_menu").find("ul[title=all]").toggle();
+				
+				forPosition2(position2,0,12);
+				$(".job_menu").append('<div class="show_all" style="display: block;">显示全部职位</div>');
+				$(".job_menu").append('<div class="all_job"></div>');
+				
+				forPosition2(position2,12,position2.length);
+				
+				$(".all_job").toggle();
 
 				$(".job_menu").on("mouseenter", "ul", function() {
 					$(this).addClass("cur");
@@ -81,14 +54,14 @@ window.onload = function() {
 
 				$(".show_all").on("mouseenter", function() {
 					$(this).toggle();
-					$(".job_menu").find("ul[title=all]").toggle();
+					$(".all_job").toggle();
 					return false;
 				});
 
 				$(".job_menu").on("mouseleave", "ul", function() {
 					if ($(".show_all").css("display") == "none") {
 						$(".show_all").toggle();
-						$(".job_menu").find("ul[title=all]").toggle();
+						$(".all_job").toggle();
 					}
 					return false;
 				});
@@ -283,7 +256,6 @@ $(".company_tab_box").on("click", "span", function() {
 	$(this).addClass("cur");
 	$(".company_tab_ul").empty();
 	var data = companyList.data;
-	console.log(companyList);
 	switch ($(this).attr("data-name")) {
 		case "rmqy":
 			var coms = data.rmqy;
@@ -304,6 +276,19 @@ $(".company_tab_box").on("click", "span", function() {
 			defalut:
 				break;
 	}
+})
+
+//城市tab点击下一页
+$(".next").on("click",function(){
+	$(this).toggle();
+	$(".prev").toggle();
+	$(".slider_city_li").animate({left: "-504px"});
+})
+
+$(".prev").on("click",function(){
+	$(this).toggle();
+	$(".next").toggle();
+	$(".slider_city_li").animate({left: 0});
 })
 
 //吸顶效果函数
@@ -389,5 +374,26 @@ function forCompanys(coms){
 			'</span>个热招职位<span class="pull_right"><span class="text_blue">' + coms[i].bossCount +
 			'</span>位boss在线</span></p></a></div></li>';
 		$(".company_tab_ul").append(str);
+	}
+}
+
+function forPosition2(position2,sIndex,eIndex){
+	for (var i = sIndex; i < eIndex; i++) {
+		if ((position2[i].pList).length == 3) {
+			str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
+				.pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a><a href='#'>" + position2[i].pList[2] +
+				"</a></li><div class='menu_sub'></div></ul>"
+		} else if ((position2[i].pList).length == 2) {
+			str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
+				.pList[0] + "</a><a href='#'>" + position2[i].pList[1] + "</a></li><div class='menu_sub'></div></ul>"
+		} else {
+			str = "<ul id='" + position2[i].code + "'><li><i></i><b>" + position2[i].p + "</b><a href='#'>" + position2[i]
+				.pList[0] + "</a></li><div class='menu_sub'></div></ul>"
+		}
+		if (sIndex > 11) {
+			$(".all_job").append(str);
+			continue;
+		}
+		$(".job_menu").append(str);
 	}
 }
