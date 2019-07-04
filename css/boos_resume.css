@@ -21,7 +21,6 @@
     width: 240px;
     height: 100%;
     color: #8d92a1;
-    background-color: #f8fcff;
     border-radius: 10px 0 0 10px; }
     .f_warpMain .f_main_left .f_logo {
       float: none;
@@ -59,7 +58,7 @@
         background-position: 8px -49px; }
   .f_warpMain .f_main_right {
     float: left;
-    width: 324px;
+    width: 500px;
     padding-top: 68px;
     margin: 0 auto;
     text-align: center; }
