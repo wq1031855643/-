@@ -1,0 +1,324 @@
+.xw_poster{
+    height: 398px;
+    background: url(https://static.zhipin.com/zhipin/v173/web/news/images/list-banner.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+}
+.xw_poster h1{
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing:3px;
+    line-height: 40px;
+    color: #fff;
+    margin-top: 108px;
+    white-space:nowrap
+}
+.xw_poster a{
+    font-size: 20px;
+    display: inline-block;
+    width: 188px;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+    background: #59cac2;
+    border-radius: 24px;
+    margin-top: 50px;
+}
+/* ------------------以上是海报---------------- */
+/* ------------------以下是新闻---------------- */
+.xw_jou-top{
+    padding: 40px 10px;
+    width: 1150px;
+    height: 338px;
+    margin: -68px auto 0;
+    background: #fff;
+}
+.xw_jou-top ul li{
+    width: 382px;
+    height: 338px;
+    /* background: darkgoldenrod; */
+    float: left;
+    border-right: 1px solid #ededed;
+    
+    /* padding:  */
+}
+.xw_jou-top ul li:last-child{
+    border-right: 0;
+}
+.xw_jou-top ul li h6{
+    width: 284px;
+    margin: 0 auto;
+    line-height: 26px;
+}
+.xw_jou-top ul li h6 b{
+    display: inline-block;
+    font-size: 17px;
+    height: 17px;
+    line-height: 17px;
+    font-weight:normal;
+    border-left: 3px solid #59cac2;
+    padding-left: 10px;
+}
+.xw_jou-top ul li h6 span{
+    display: inline-block;
+    width: 47px;
+    height: 18px;
+    line-height: 16px;
+    float: right;
+    color: #999;
+    border: 1px #bebebe solid;
+    border-radius: 10px; 
+    text-align: center;
+    transition: background 0.3s;
+}
+.xw_jou-top ul li h6 span:hover{
+    background: #59cac2;
+    color: #fff;
+}
+.xw_jou-top ul li .xw_moveimg{
+    overflow: hidden;
+    display: block;
+    width: 283px;
+    height: 154px; 
+    margin: 40px auto 0;  
+}
+.xw_jou-top ul li .xw_moveimg img{
+    display: block;
+    width: 283px;
+    height: 154px;
+    transition: transform 0.3s;
+}
+.xw_jou-top ul li .xw_moveimg img:hover{
+    transform: scale(1.05,1.05)
+}
+.xw_jou-top ul li .xw_textcon{
+    display: block;
+    width: 283px;
+    margin: 30px auto 10px;
+    color: #111;
+    font-size: 20px;
+    height: 50px;
+    line-height: 25px;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+.xw_jou-top ul li .xw_textcon:hover{
+    color: #53cac3;
+}
+.xw_jou-top ul li .xw_examine{
+    display: block;
+    width: 283px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #999;
+    line-height: 26px;
+    transition: color 0.3s;
+}
+.xw_jou-top ul li .xw_examine:hover{
+    color: #53cac3;
+}
+/* -------------以上是新闻上半段----------------- */
+.xw_jou-bottom{
+    padding: 25px 100px;
+    width: 970px;
+    margin: 15px auto 0;
+    background: #fff; 
+    margin-bottom: 43px;
+    
+}
+.xw_jou-bottom ol li{
+    width: 970px;
+    height: 156px;
+    padding: 35px 0;
+    border-bottom: 1px solid #ededed;
+}
+.xw_jou-bottom ol li:last-of-type{
+    border-bottom: 0px;
+} 
+.xw_jou-bottom-left{
+    height: 156px;
+    width: 284px;
+    position: relative;
+    display: inline-block;
+    /* overflow: hidden; */
+}
+.xw_jou-bottom-left .xw_article{
+    display: block;
+    height: 156px;
+    width: 284px;
+    overflow: hidden;
+}
+.xw_jou-bottom-left .xw_article img{
+    transition: transform 0.3s;
+}
+.xw_jou-bottom-left .xw_article img:hover{
+    transform: scale(1.05,1.05)
+}
+
+.xw_jou-bottom-left .xw_picture{
+    position: absolute;
+    top: 12px;
+    left: -5px;
+    display: block;
+    width: 56px;
+    height: 24px;
+    font-size: 12px;
+    background: url(https://static.zhipin.com/zhipin/v173/web/news/images/sub-icons.png) no-repeat;
+}
+
+/* --------右边---------- */
+.xw_jou-bottom-right{
+    display: inline-block;
+    width: 640px;
+    height: 156px;
+    /* background: darkcyan; */
+    float: right;
+}
+.xw_jou-bottom-right a{
+    font-size: 20px;
+    color: #414a60;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+.xw_jou-bottom-right a:hover{
+    color: #53cac3;
+}
+.xw_jou-bottom-right p{
+    color: #666;
+    font-size: 14px;
+    height: 75px;
+    padding: 20px 0px 0px 0px;
+    margin-bottom: 15px;
+    line-height: 25px;
+    overflow: hidden;
+
+}
+.xw_jou-bottom-right span{
+    color: #999;
+    font-size: 14px;
+
+}
+.xw_jou-bottom-right span i{
+    font-style:normal;
+}
+.xw_more{
+    border: 1px #f0f0f0 solid;
+    display: block;
+    line-height: 60px;
+    font-size: 16px;
+    color: #bbb;
+    text-align: center;
+    cursor:pointer;
+}
+/* -------------------以下是媒体合作----------------- */
+.xw_media-wrap{
+    width: 100%;
+    height: 100%;
+    background: rgba(37,40,48,.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+     
+}
+.xw_media-centre{
+    width: 490px;
+    height: 536px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -245px;
+    margin-top: -256px;
+    background: #fff;
+    border-radius: 5px;
+    animation: pulse 0.5s;
+}
+.xw_media-centre h1{
+    width: 470px;
+    height: 56px;
+    font-size: 22px;
+    line-height: 56px;
+    border-bottom: 1px #eee solid;
+    padding-left: 20px;
+    
+}
+.xw_media-centre form{
+    width: 340px;
+    height: 417px;
+    /* background: darkblue; */
+    padding: 40px 75px 0;
+}
+.xw_media-centre form p{
+    position: relative;
+}
+.xw_media-centre form p input{
+    width: 297px;
+    height: 32px;
+    line-height: 32px;
+    padding: 10px 20px;
+    border: 1px #e2e2e2 solid;
+    border-bottom: 1px #fff solid;
+    font-size: 16px;
+    transition:box-shadow 0.3s;
+    position: relative;
+}
+.xw_media-centre form p .xw_finally{
+    border-bottom: 1px #e2e2e2 solid;
+}
+.xw_media-centre form p input:focus{
+    border: 1px #59cac2 solid;
+    box-shadow: 0px 0px 2px #59cac2;
+    z-index: 999;
+    
+}
+
+.xw_media-centre form p span{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 339px;
+    background: darkgoldenrod;
+    line-height: 52px;
+    min-width: 180px;
+    border: 1px #e2e2e2 solid;
+    padding: 0 15px 0 44px;
+    white-space: nowrap;
+    color: #ff5a5f;
+    background: #fff url(https://static.zhipin.com/zhipin/v175/web/news/images/sub-icons.png) 15px -80px no-repeat;
+    display: none;
+}
+.xw_media-centre form p span i{
+    border:10px solid rgba(0, 0, 0, 0);
+    border-right-color: #e2e2e2;
+    position: absolute;
+    top: 18px;
+    left: -20px;
+}
+.xw_media-centre form .xw_submit{
+    display: block;
+    width: 339px;
+    height: 52px;
+    margin-top: 48px;
+    background: #59cac2;
+    color: #fff;
+    font-size: 20px;
+}
+.xw_shut{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    /* background: #59cac2; */
+    color: #666;
+    font-size: 20px;
+    transition: color 0.3s;
+    cursor:pointer;
+}
+.xw_shut:hover{
+    color: #000;
+}

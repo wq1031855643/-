@@ -14,37 +14,27 @@ require(["hm", "jquery", "jqmsw"], function(hm, $) {
 	}
 	var url = location.href;
 	var type = url.split("=")[1];
-	$(".tra").css("color","#fff");
-	$("#" + type).css("color","#5dd5c8");
 	
+	if(type == "app" || type == "zx"){
+		$(".tra").css("color","#414a60");
+		$("#" + type).css("color","#5dd5c8");
+		$('#xw_wrap').attr('class', 'xw_wrap-b');
+		$('#xw_header').attr('class', 'xw_header-b');
+		$('#xw_logo').attr('class', 'xw_logo-b');
+		$('#xw_nav_left').addClass('xw_nav_left-b');
+		$('#xw_enter').addClass('xw_enter-b');
+		$('#xw_sign').addClass('xw_sign-b');
+		$('#xw_nav_right').addClass('xw_nav_right-b');
+	}else{
+		$(".tra").css("color","#fff");
+		$("#" + type).css("color","#5dd5c8");
+	}
 	
 	hm.creatFooter();
 	if ($("#side").length != 0) {
 		hm.creatSide();
 	}
 	
-	$('.xw_nav_left').on('click', 'a',
-    function() {
-        $('.xw_nav_left').children().children().removeClass('xw_js-left');
-        $(this).addClass('xw_js-left');
-        if ($(this).text() == 'APP' || $(this).text() == '资讯') {
-            $('#xw_wrap').attr('class', 'xw_wrap-b');
-            $('#xw_header').attr('class', 'xw_header-b');
-            $('#xw_logo').attr('class', 'xw_logo-b');
-            $('#xw_nav_left').addClass('xw_nav_left-b');
-            $('#xw_enter').addClass('xw_enter-b');
-            $('#xw_sign').addClass('xw_sign-b');
-            $('#xw_nav_right').addClass('xw_nav_right-b');
-        } else {
-            $('#xw_wrap').attr('class', 'xw_wrap');
-            $('#xw_header').attr('class', 'xw_header');
-            $('#xw_logo').attr('class', 'xw_logo');
-            $('#xw_nav_left').removeClass('xw_nav_left-b');
-            $('#xw_enter').removeClass('xw_enter-b');
-            $('#xw_sign').removeClass('xw_sign-b');
-            $('#xw_nav_right').removeClass('xw_nav_right-b');
-        }
-    });
     $('.xw_s-left,.xw_s-right').height($(window).height());
     $(window).scroll(function() {
         if ($(document).scrollTop() >= 50) {
