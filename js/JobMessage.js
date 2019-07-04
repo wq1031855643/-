@@ -81,8 +81,36 @@ require(['loginMod'],function(login){
         //                 require(['z_login'])
         //         }
         // })
-       
+       //手机号获取和失去焦点
+       $('.z_ipt1 ').bind('focus', function () {
+        $('.z_book').addClass('z_book1')
+    })
+    $('.z_ipt1').bind('blur', function () {
+        $('.z_book').removeClass('z_book1')
+    })
 
+    //验证
+    var reg2 = /1[1-8]\d{9}/;  //手机号初步验证
+    $('.z_btn_login').bind('click',function(){
+           if($('.sing-form').find('.z_ipt1 ').val()==''){
+                   $('.tip-error').show().html('请填写手机号')
+           } else if(reg2.test($('.sing-form').find('.z_ipt1 ').val())==false){
+                $('.tip-error').show().html('请填写正确的手机号')
+           }else{
+                $('.tip-error').hide()
+                if($('.sing-form').find('.z_bg b').text()!='验证通过'){
+                        $('.z_bg').find('.tip-error').css({
+                                'display':'block',
+                                'top':'48px',
+                                'color':'red',
+                                'text-fill-color':'none' 
+                        }).html('请滑动完成验证')
+                }
+           }
+    })
+
+
+ 
 
 })
 

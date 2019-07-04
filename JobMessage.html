@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
     <title>Document</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/head5.css">
@@ -108,37 +109,39 @@
                             <div class="sing-form">
                                 <h3 class="title">各大行业职位任你选</h3>
                                 <form>
-                                    <div class="form-row row-select">
-                                        <span class="dropdown-select">
+                                    <div class="form-row row-select" >
+                                        <span class="dropdown-select focs">
                                             <i class="z_ico"></i>
                                             <em class="text-select">+86</em>
                                         </span>
-                                        <span class="ipt-wrap">
-                                            <i class="icon-sign-phone"></i>
-                                            <input type="text" placeholder="手机号" class="ipt ipt-phone required">
+                                        <span class="ipt-wrap clear row-select">
+                                            <i class="z_book"></i>
+                                            <input type="text" placeholder="手机号" class="z_ipt1 ">
                                         </span>
                                         <div class="show_ul"></div>
                                         <div class="tip-error"></div>
                                     </div>
-                                    <div class="form-row">  
-                                            <b>请按住滑块，拖动到最右边</b>
-                                            <span class="z_boxMove">
-                                                <i class="iconfont icon-shuangyoujiantou-"></i>
-                                            </span>
-                                            <div class="tip-error"></div>
-                                        </div>
-                                    <div class="form-row">
-                                        <span class="ipt-wrap">
-                                            <i class="icon-sign-sms"></i>
+                                    <div class="z_bgg">
+                                    <div class="z_phone  z_bg">
+                                        <b>请按住滑块，拖动到最右边</b>
+                                        <span class="z_boxMove">
+                                            <i class="iconfont icon-shuangyoujiantou-"></i>
                                         </span>
+                                        <div class="boxFlage"></div>
+                                        <div class="tip-error"></div>
                                     </div>
+                                </div>
                                     <div class="form-row">
                                             <i class="z_mess_i"></i>
                                             <input type="text" class="z_inp_mess" placeholder="短信验证码" name="messCode">
                                             <div class="z_mess_btn">发送验证码</div>
-                                            <div class="z_err_msg">请输入短信验证码</div>
+                                            <div class="tip-error">请输入短信验证码</div>
                                         </div>
-                                        <div class="z_btn">登录</div>
+                                        <div class="z_btn_login">登录/注册</div>
+                                        <div class="htext-tip">
+                                            <input type="checkbox" name="" class="hAgree">我已同意
+                                            <a href="#" target="_blank" rel="noopener noreferrer">用户协议及隐私政策</a>
+                                        </div>
                                 </form>
                             </div>
                         </div>
@@ -262,8 +265,6 @@
                         </div>
 
                     </div>
-
-
 
                 </div>
             </div>
