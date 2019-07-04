@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>boos直聘</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="font/iconfont.css">
+<link rel="stylesheet" href="css/posi.css">
+<link rel="stylesheet" href="css/head.css">
+</head>
+<body id="f_posi">
+<!-- 顶部菜单引入 -->
+<div id = "header"></div>
+
+<div class="f_warpSearch">
+    <div class="f_contant">
+<!-- 头部导航  -->
+        <div class="f_posi_rela">
+            <div class="f_search">
+                <div class="f_sel">
+                    <span class="f_libcity">全国</span>
+                    <i></i>
+                    <input type="text" placeholder="搜索职位、公司" class="f_text">
+                    <div class="f_positype">
+                        <b>职位类型</b>
+                    </div>
+                    <div class="f_company">
+                        <b>公司行业</b>
+                    </div>                
+                </div>
+                <button class="f_btn iconfont ">&#xe62f;</button>
+            </div>
+            
+            <div class="f_posiList">
+                <div>
+                    <ul class="f_posi_ul1"></ul>
+                    <div class="f_posi_sor">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="f_posi_d2">
+                    <ul class="f_posi_ul2"></ul>
+                    <div class="f_posi_sor">
+                        <p></p>
+                    </div>
+                </div>
+                <div>
+                    <ul class="f_posi_ul3"></ul>
+                    <div class="f_posi_sor">
+                        <p></p>
+                    </div>
+                </div> 
+            </div>
+            <ul class="f_company_ul"></ul>
+        </div>
+<!-- 地区条件  -->
+        <div class="f_condition">
+            <dl class="f_condCity">
+                <dd>
+                    <a class="f_disabled  Color">热门</a>
+                    <em class="f_right_icon"></em>
+                    <a class="f_clik_refresh">不限</a>
+                    <em class="f_right_icon"></em>
+                    <a>不限</a>
+                    <a class="f_disabled">热门城市:</a>
+                    <a>全国</a>
+                    <a>北京</a>
+                    <a>上海</a>
+                    <a>广州</a>
+                    <a>深圳</a>
+                    <a>杭州</a>
+                    <a>天津</a>
+                    <a>西安</a>
+                    <a>苏州</a>
+                    <a>武汉</a>
+                    <a>厦门</a>
+                    <a>长沙</a>
+                    <a>全部城市</a>
+                </dd>
+            </dl>
+            <dl class='f_condition-area'>
+                <dd>
+                    <a>不限</a>
+                    <a>中关村</a>
+                    <a>上地</a>
+                    <a>五道口</a>
+                    <a>西二旗</a>
+                    <a>知春路</a>
+                    <a>清河</a>
+                    <a>西北旺</a>
+                    <a>马连洼</a>
+                    <a>四季青</a>
+                    <a>苏州街</a>
+                    <a>牡丹园</a>
+                    <a>魏公村</a>
+                    <a>万柳</a>
+                    <a>学院路</a>
+                    <a>大钟寺</a>
+                    <a>人民大学</a>
+                    <a>远大路</a>
+                    <a>海淀北部新区</a>
+                    <a>西三旗</a>
+                    <a>北下关</a>
+                    <a>五棵松</a>
+                    <a>双榆树</a>
+                    <a>西直门</a>
+                    <a>公主坟</a>
+                    <a>花园桥</a>
+                    <a>甘家口</a>
+                    <a>八里庄</a>
+                    <a>紫竹桥</a>
+                    <a>北太平庄</a>
+                    <a>航天桥</a>
+                    <a>万寿路</a>
+                    <a>动物园</a>
+                    <a>田村</a>
+                    <a>北京大学</a>
+                    <a>香山</a>
+                    <a>皂君庙</a>
+                    <a>世纪城</a>
+                    <a>颐和园</a>
+                    <a>木樨地</a>
+                    <a>圆明园</a>
+                    <a>小西天</a>
+                    <a>苏州桥</a>
+                    <a>军博</a>
+                    <a>北沙滩</a>
+                    <a>定慧寺</a>
+                    <a>白石桥</a>
+                    <a>新街口</a>
+                    <a>二里庄</a>
+                    <a>西苑</a>
+                    <a>西山</a>
+                    <a>清华大学</a>
+                    <a>蓟门桥</a>
+                    <a>马甸</a>
+                    <a>花园路</a>
+                    <a>莲花池</a>
+                    <a>永定路</a>
+                    <a class="f_disabledA">六里桥</a>
+                    <a class="f_disabledA">三里河</a>
+                    <a class="f_disabledA">杨庄</a>
+                    <a class="f_disabledA">万寿寺</a>
+                    <a class="f_disabledA">北京西站</a>
+                    <a class="f_disabledA">老山</a>
+                    <a class="f_disabledA">亚运村</a>
+                    <a class="f_disabledA">大屯</a>
+                    <a class="f_disabledA">霍营</a>
+                    <a class="f_disabledA">玉泉路</a>
+                    <a class="f_disabledA">沙河</a>
+                    <a class="f_disabledA">西客站</a>
+                    <a class="f_disabledA">车道沟</a>
+                    <a class="f_disabledA">马池口</a>
+                    <a class="f_disabledA">积水潭</a>
+                    <a class="f_disabledA">鲁谷</a>
+                    <a class="f_disabledA">奥运村</a>
+                    <a class="f_disabledA">丰台体育馆</a>
+                    <a class="f_disabledA">阜成门</a>
+                    <a class="f_disabledA">八角</a>
+                    <a class="f_disabledA">卢沟桥</a>
+                    <a class="f_disabledA">青塔</a>
+                    <a class="f_disabledA">八大处</a>
+                    <a class="f_disabledA">展览路</a>
+                    <a class="f_disabledA">车公庄</a>
+                    <a class="f_disabledA">月坛</a>
+                    <a class="f_disabledA">东小口</a>
+                    <a class="f_disabledA">古城</a>
+                    <a class="f_disabledA">万泉河</a>
+                    <a class="f_disabledA">阳坊</a>
+                    <a class="f_disabledA">植物园</a>
+                    <a class="f_disabledA">德胜门</a>
+                    <a class="f_disabledA">奥林匹克公园</a>
+                    <a class="f_disabledA">小营</a>
+                    <a class="f_disabledA">回龙观</a>
+                </dd>
+            </dl>
+            <div class="f_screening">
+                <div class = "f_scr_div">
+                    <span>工作经验</span>
+                    <div>
+                        <ul>
+                            <li>不限</li>
+                            <li>在校生</li>
+                            <li>应届生</li>
+                            <li>1年以内</li>
+                            <li>1-3年</li>
+                            <li>3-5年</li>
+                            <li>5-10年</li>
+                            <li>10年以上</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "f_scr_div">
+                    <span>学历要求</span>
+                    <div>
+                        <ul>
+                            <li>不限</li>
+                            <li>初中及以下</li>
+                            <li>中专/中技</li>
+                            <li>高中</li>
+                            <li>大专</li>
+                            <li>本科</li>
+                            <li>硕士</li>
+                            <li>博士</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "f_scr_div">
+                    <span>薪资要求</span>
+                    <div>
+                        <ul>
+                            <li>不限</li>
+                            <li>3K以下</li>
+                            <li>3-5K</li>
+                            <li>5-10K</li>
+                            <li>10-15K</li>
+                            <li>15-20K</li>
+                            <li>20-30K</li>
+                            <li>30-50K</li>
+                            <li>50K以上</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "f_scr_div">
+                    <span>融资阶段</span>
+                    <div>
+                        <ul>
+                            <li>不限</li>
+                            <li>未融资</li>
+                            <li>天使轮</li>
+                            <li>A轮</li>
+                            <li>B轮</li>
+                            <li>C轮</li>
+                            <li>D轮及以上</li>
+                            <li>已上市</li>
+                            <li>不需要融资</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class = "f_scr_div">
+                    <span>公司规模</span>
+                    <div>
+                        <ul>
+                            <li>不限</li>
+                            <li>0-20人</li>
+                            <li>20-99人</li>
+                            <li>100-499人</li>
+                            <li>500-999人</li>
+                            <li>1000-9999人</li>
+                            <li>10000人以上</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 页面主要信息  -->
+<div class="f_main f_contant">
+    <!-- 职位，公司等具体信息  -->
+    <div class="f_card_left">
+        <ul class="f_main_left"></ul>
+        <div class="f_page">
+            <a href="javascript:;" class="f_prev"><</a>
+            <a href="javascript:;" class="f_aselect">1</a>
+            <a href="javascript:;">2</a>
+            <a href="javascript:;">3</a>
+            <span>...</span>
+            <a href="javascript:;" class="f_next">></a>
+        </div>
+    </div>
+    
+    <!--侧边-->
+    <div class="f_main_right">
+        <!-- 侧边登录 -->
+        <div class="f_login">
+            <!--  登录 -->
+        </div>
+        <!-- 侧边上传简历 -->
+        <div class="f_resume">
+            <a href="#">上传简历一键注册</a>
+        </div>
+        <!-- 浏览历史 -->
+        <div class="f_read">
+            <h3>看过的职位</h3>
+            <ul></ul>
+        </div>
+        <!-- 职业测评 -->
+        <div class="f_review">
+            <h3>五维职业性格评测</h3>
+            <img src="../1906/images/boss_posi/five-graph.png" alt="">
+            <p>专业职场分析</p>
+            <a href="#">立即测试</a>
+        </div>
+        <!-- 侧边广告 -->
+        <div class="f_banner">
+            <a href="/app.html" target="_blank" ka="ad_banner_1"><img src="https://static.zhipin.com/zhipin/v173/web/geek/images/pro-1.png" alt=""></a>
+            <a href="/user/login.html?initType=3" target="_blank" ka="ad_banner_2"><img src="https://static.zhipin.com/zhipin/v173/web/geek/images/pro-2.png" alt=""></a>
+        </div>
+    </div>
+</div>
+
+
+<!-- 底部用户反馈 -->
+<div class="f_contant">
+    <form action="" name="f_feedback" class="f_feedback">
+        <h4>对搜索结果是否满意?</h4>
+        <div class="f_flevel_1">不满意</div>
+        <div class="f_flevel_2">一般</div>
+        <div class="f_flevel_3">满意</div>
+        <textarea class="f_opinion" placeholder="请填写更多反馈意见"></textarea>
+        <button class="f_btn f_ban">提交</button>
+    </form>
+</div>
+
+<!-- 引入侧边栏 -->
+<div id="side"></div>
+<!-- 底部引入 -->
+<div id="footer"></div>
+
+
+
+
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/posi.js"></script>
+<script src="js/require.js" data-main="js/main"></script>
+</body>
+</html>

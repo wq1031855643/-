@@ -35,6 +35,7 @@ window.onload = function() {
 				return false;
 			});
 			$(".job_menu").on("mouseleave", "ul", function() {
+				// console.log(123);
 				$(this).find(".menu_sub").empty();
 				$(this).find(".menu_sub").toggle();
 				$(this).removeClass("cur");

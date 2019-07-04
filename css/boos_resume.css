@@ -1,0 +1,106 @@
+.body, html {
+  width: 100%;
+  height: 100%;
+  background: #00c2b3 url("../images/boss_resume/newbg.png") no-repeat;
+  background-size: 100%; }
+
+.f_warpMain {
+  width: 740px;
+  min-height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -370px;
+  line-height: 26px;
+  color: #414a60;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 10px; }
+  .f_warpMain .f_main_left {
+    float: left;
+    width: 240px;
+    height: 100%;
+    color: #8d92a1;
+    background-color: #f8fcff;
+    border-radius: 10px 0 0 10px; }
+    .f_warpMain .f_main_left .f_logo {
+      float: none;
+      display: block;
+      width: auto;
+      height: 40px;
+      margin: 88px 0 0 40px;
+      padding: 0; }
+      .f_warpMain .f_main_left .f_logo img {
+        width: 42px;
+        height: 42px; }
+    .f_warpMain .f_main_left ul {
+      margin: 50px 0 0 40px; }
+      .f_warpMain .f_main_left ul li {
+        margin-bottom: 50px;
+        color: #8d92a1;
+        line-height: 26px;
+        font-size: 14px;
+        background: url("../images/boss_resume/sign-slide.png") no-repeat 8px 8px;
+        background-size: 25px; }
+        .f_warpMain .f_main_left ul li span {
+          display: block;
+          margin-left: 50px;
+          line-height: 22px;
+          color: #8d92a1;
+          font-size: 16px;
+          font-weight: 700; }
+        .f_warpMain .f_main_left ul li p {
+          margin-left: 50px;
+          margin-top: 2px;
+          line-height: 18px;
+          color: #b0b4c1;
+          font-size: 13px; }
+      .f_warpMain .f_main_left ul .f_libg {
+        background-position: 8px -49px; }
+  .f_warpMain .f_main_right {
+    float: left;
+    width: 324px;
+    padding-top: 68px;
+    margin: 0 auto;
+    text-align: center; }
+    .f_warpMain .f_main_right h4 {
+      margin-top: 54px;
+      line-height: 24px;
+      font-size: 24px;
+      font-weight: 400; }
+    .f_warpMain .f_main_right .f_sub_title {
+      margin-top: 30px;
+      line-height: 24px; }
+      .f_warpMain .f_main_right .f_sub_title .f_red {
+        color: #fc703e; }
+    .f_warpMain .f_main_right .f_btn {
+      display: block;
+      position: relative;
+      width: 324px;
+      height: 42px;
+      margin: 45px auto 20px;
+      line-height: 42px;
+      font-size: 15px;
+      overflow: hidden;
+      color: #fff;
+      background: #00d7c6; }
+      .f_warpMain .f_main_right .f_btn input {
+        position: absolute;
+        width: 100%;
+        height: 200%;
+        top: -100%;
+        left: 0;
+        background: 0 0;
+        opacity: 0;
+        cursor: pointer; }
+    .f_warpMain .f_main_right .f_link {
+      display: inline-block;
+      width: 324px;
+      height: 42px;
+      line-height: 42px;
+      color: #8d92a1;
+      font-size: 14px;
+      background: #fff;
+      border: 1px #5dd5c8 solid; }
+      .f_warpMain .f_main_right .f_link span {
+        color: #00c2b3; }

@@ -525,6 +525,7 @@ table {
 	/* position: absolute */
 	display: inline-block;
 	float: left;
+	box-shadow: -2px 0px 3px -2px #9fa3af;
 }
 
 .xw_s-left ul {
