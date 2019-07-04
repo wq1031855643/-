@@ -17,7 +17,7 @@ function showAll(){
 $(document).ready(function(){
 $.ajax({
     type:'get',
-    url:'../1906/data/city.json',
+    url:'data/city.json',
     dataType:'json',
     cache:false, //不使用缓存
     success:function (json){
@@ -70,7 +70,7 @@ $('.m_Ul').on('click','li',function(){
 //行业类型数据
 $.ajax({
     type:'get',
-    url:'../1906/data/oldindustry.json',
+    url:'data/oldindustry.json',
     dataType:'json',
     cache:false, //不使用缓存
     success:function (json){
@@ -90,7 +90,7 @@ $.ajax({
 //cell招聘信息
 $.ajax({
     type:'get',
-    url:'../1906/data/company.json',
+    url:'data/company.json',
     dataType:'json',
     cache:false, //不使用缓存
     success:function (json){
