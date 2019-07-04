@@ -9,13 +9,17 @@ require.config({
 });
 
 require(["hm", "jquery", "jqmsw","loginMod"], function(hm, $, jqm, login) {
-	console.log(login);
+	// console.log(login);
 	hm.creatHead();
 	if ($("#l_body").length == 1) {
 		$('<div class="nav-city"><p class="nav-city-box"><i class="icon-poi"></i><span class="nav-city-selected f_libcity">深圳</span><span class="switchover-city">[切换城市]</span></p></div>').insertAfter($("#xw_logo"));
 	}
 	var url = location.href;
 	var type = url.split("=")[1];
+	console.log(type)
+	if (type == "home#" || type == undefined) {
+		type = "home";
+	}
 	
 	if(type == "app" || type == "zx"){
 		$(".tra").css("color","#414a60");
@@ -45,6 +49,9 @@ require(["hm", "jquery", "jqmsw","loginMod"], function(hm, $, jqm, login) {
             $('.xw_sideBar').css('top', 50);
         }
     });
+	$("#xw_logo").on("click",function(){
+		location.href = "index.html?type=home";
+	});
     $('.xw_s-left li').click(function() {
         $('.xw_s-left li').children().removeAttr('style');
         if ($(this).text() == "") {
