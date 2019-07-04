@@ -48,7 +48,7 @@ $('.z_wrap_sele').bind('click', function () {
 });
 $('.z_phone').on("mouseover", "li", function () {
     $(this).css({ background: 'rgb(242,245,249)' }).siblings('li').css("background", "white");
-},
+}
 );
 $('.z_phone').on('click', 'li', function () {
     $('.z_openLi').children().remove();
