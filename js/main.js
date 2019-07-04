@@ -4,10 +4,12 @@ require.config({
 		'hm': 'headMod',
 		'jquery': ['https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min', 'jquery-1.8.3.min'],
 		'jqmsw': 'jquery.mousewheel',
+		'login': 'loginMod'
 	}
 });
 
-require(["hm", "jquery", "jqmsw"], function(hm, $) {
+require(["hm", "jquery", "jqmsw","loginMod"], function(hm, $, jqm, login) {
+	console.log(login);
 	hm.creatHead();
 	if ($("#l_body").length == 1) {
 		$('<div class="nav-city"><p class="nav-city-box"><i class="icon-poi"></i><span class="nav-city-selected f_libcity">深圳</span><span class="switchover-city">[切换城市]</span></p></div>').insertAfter($("#xw_logo"));
@@ -117,6 +119,15 @@ require(["hm", "jquery", "jqmsw"], function(hm, $) {
         }
         $('.vcc').text(getYZM(6));
     });
+	$(".landing").on("click",function(){
+		if($(document).find(".z_wrapall")[0]){
+			$('.z_wrapall').parent().show();
+		}else{
+			login.creatLogin();
+			require(['z_login']);
+		}  
+	})
+	
     function getYZM(num) {
         var yzm = "";
         for (var i = 0; i < num; i++) {
