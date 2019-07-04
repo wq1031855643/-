@@ -312,10 +312,10 @@ function showCompanys(data) {
 function forJobs(jobs) {
 	for (var i = 0; i < jobs.length; i++) {
 		address = (jobs[i].address).substring(0, 2);
-		str = '<li><div class="sub_li"><a href="#" target="_blank"><p class="user_title">' + jobs[i].jobName +
+		str = '<li><div class="sub_li"><a href="JobMessage.html?type=posi" target="_blank"><p class="user_title">' + jobs[i].jobName +
 			'<span class="salary">' + jobs[i].pay + '</span></p><p id="job_text">' + address + '<span class="vline"></span>' +
 			jobs[i].year + '<span class="vline"></span>' + jobs[i].education +
-			'</p></a><a href="#" class="user_info"><p><img src="' + jobs[i].img + '" />' + jobs[i].companyName +
+			'</p></a><a href="JobMessage.html?type=posi" class="user_info"><p><img src="' + jobs[i].img + '" />' + jobs[i].companyName +
 			'<span class="user_text">' + jobs[i].recruiter + '<span class="vline"></span>' + jobs[i].type +
 			'</span></p></a></div></li>';
 		$(".job_tab_ul").append(str);
@@ -324,9 +324,9 @@ function forJobs(jobs) {
 
 function forCompanys(coms) {
 	for (var i = 0; i < coms.length; i++) {
-		str = '<li><div class="sub_li"><a class="company_info" href="#"><img src="' + coms[i].src +
+		str = '<li><div class="sub_li"><a class="company_info" href="comdetails.html?type=com"><img src="' + coms[i].src +
 			'" /><div class="company_text"><h4>' + coms[i].name + '</h4><p>' + coms[i].financing + '<span class="vline"></span>' +
-			coms[i].business + '</p></div></a><a class="about_info" href="#"><p><span class="text_blue">' + coms[i].jobCount +
+			coms[i].business + '</p></div></a><a class="about_info" href="comdetails.html?type=com"><p><span class="text_blue">' + coms[i].jobCount +
 			'</span>个热招职位<span class="pull_right"><span class="text_blue">' + coms[i].bossCount +
 			'</span>位boss在线</span></p></a></div></li>';
 		$(".company_tab_ul").append(str);

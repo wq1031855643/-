@@ -16,7 +16,6 @@ require(["hm", "jquery", "jqmsw","loginMod"], function(hm, $, jqm, login) {
 	}
 	var url = location.href;
 	var type = url.split("=")[1];
-	console.log(type)
 	if (type == "home#" || type == undefined) {
 		type = "home";
 	}
