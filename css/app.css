@@ -9,12 +9,19 @@
     margin: 0 auto;
     clear: both;
 }
+.decent1{
+    background: #fff;
+    height: 940px;
+}
 #xheader{
     height: 60px;
     background-color: #ffffff;
 }
 .app1{
     background-color: #62d5c8;
+}
+.app2{
+    background: #62d5c8 url(../images/boss_app/app-bg.png) center bottom no-repeat;
 }
 #xfooter{
     height: 213px;
@@ -54,7 +61,7 @@
 }
 /*****************************************************************/
 .app{
-    background: #62d5c8 url(../images/boss_app/app-bg.png) center bottom no-repeat;
+    
     height: 803px;
     position: relative;
     padding: 0 82px;
