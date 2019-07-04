@@ -30,7 +30,7 @@
   width: 66px;
   line-height: 30px;
   padding: 6px 15px 8px;
-  background: url("../../images/boss_posi/f_icons.png") no-repeat 70px -29px; }
+  background: url("../images/boss_posi/f_icons.png") no-repeat 70px -29px; }
 
 .f_search .f_sel span.bg {
   background-position: 70px 18px; }
@@ -57,7 +57,7 @@
   height: 100%;
   padding: 6px 0 8px;
   float: left;
-  background: url("../../images/boss_posi/f_icons.png") no-repeat 82px -30px; }
+  background: url("../images/boss_posi/f_icons.png") no-repeat 82px -30px; }
 
 .f_search .f_sel div.bg {
   background-position: 82px 18px; }
@@ -225,7 +225,7 @@
       vertical-align: middle;
       width: 12px;
       height: 16px;
-      background: url("../../images/boss_posi/f_icons.png") no-repeat 0 -86px; }
+      background: url("../images/boss_posi/f_icons.png") no-repeat 0 -86px; }
 
 .f_condition .f_condition-area {
   border-bottom: 1px solid #eef0f5; }
@@ -254,7 +254,7 @@
     padding-left: 15px;
     overflow: hidden; }
     .f_condition .f_screening span em {
-      background: url("../../images/boss_posi/f_icons.png") no-repeat left -139px;
+      background: url("../images/boss_posi/f_icons.png") no-repeat left -139px;
       display: inline-block;
       width: 12px;
       height: 12px; }
@@ -263,7 +263,7 @@
   .f_condition .f_screening .f_scr_div {
     float: left;
     width: 140px;
-    background: url("../../images/boss_posi/f_icons.png") no-repeat 80px 12px;
+    background: url("../images/boss_posi/f_icons.png") no-repeat 80px 12px;
     line-height: 26px;
     color: #414a60;
     position: relative; }
@@ -295,6 +295,7 @@
 .f_main .f_card_left {
   float: left;
   width: 726px; }
+  
   .f_main .f_card_left .f_page {
     text-align: center;
     padding: 12px 0; }
@@ -323,6 +324,7 @@
   background: #fff;
   margin-top: 20px; }
   .f_main .f_main_left li {
+    display: block;
     overflow: hidden;
     padding: 22px 30px;
     font-size: 12px; }
@@ -383,7 +385,7 @@
       vertical-align: middle;
       background: #e0e0e0;
       margin: 0 10px; }
-    .f_main .f_main_left li a {
+    .f_main .f_main_left li .liLink {
       float: right;
       display: none;
       margin-right: 30px; }
@@ -519,135 +521,6 @@
       .f_main .f_main_right .f_banner a img {
         width: 250px; }
 
-.f_login {
-  background-color: #5dd5c8; }
-  .f_login h3 {
-    text-align: center;
-    padding: 20px 0 24px;
-    color: #fff;
-    font-size: 18px; }
-  .f_login form {
-    outline: none;
-    line-height: 26px;
-    color: #414a60;
-    font-size: 14px;
-    margin: 0 20px;
-    /* 滑块 */ }
-    .f_login form .f_phone {
-      position: relative;
-      line-height: 26px;
-      color: #414a60;
-      font-size: 14px;
-      padding: 8px 0;
-      margin-bottom: 30px;
-      border: 1px solid #fff;
-      background: #fff url("../../images/boss_posi/f_icons-sign.png") no-repeat 8px 12px;
-      padding-left: 33px; }
-      .f_login form .f_phone .f_select em {
-        display: inline-block;
-        padding-right: 20px;
-        background: url("../../images/boss_posi/f_icons.png") no-repeat right -222px;
-        cursor: pointer; }
-      .f_login form .f_phone .f_select em.f_emaction {
-        background-position: right -182px; }
-      .f_login form .f_phone .f_select ul {
-        position: absolute;
-        background: #fff;
-        left: 0;
-        top: 40px;
-        width: 176px;
-        z-index: 3;
-        display: none; }
-        .f_login form .f_phone .f_select ul li {
-          line-height: 42px;
-          padding: 0 15px;
-          cursor: pointer; }
-          .f_login form .f_phone .f_select ul li span {
-            float: right; }
-      .f_login form .f_phone .f_select [type='tel'] {
-        width: 95px;
-        padding: 0 14px;
-        border-color: #e3e7ed;
-        vertical-align: middle; }
-    .f_login form .f_phoneAction {
-      background-position: 8px -174px;
-      box-shadow: 1px 2px 3px #d7f4f1;
-      border-color: #00c2b3; }
-    .f_login form .f_validation {
-      text-align: center;
-      width: 100%;
-      line-height: 42px;
-      min-height: 42px;
-      position: relative;
-      font-size: 12px;
-      user-select: none;
-      margin-bottom: 30px;
-      background: -webkit-gradient(linear, left top, right top, color-stop(0, #eef0f5), color-stop(0.4, #eef0f5), color-stop(0.5, #fff), color-stop(0.6, #eef0f5), color-stop(1, #eef0f5));
-      background-color: #eef0f5;
-      color: #61687c;
-      -webkit-animation: "slidetounlock"  3s infinite; }
-      .f_login form .f_validation span.f_slider {
-        background: url("../../images/boss_posi/f_icons.png") no-repeat 22px -72px, url("../../images/boss_posi/f_icons.png") no-repeat 17px -72px;
-        display: inline-block;
-        background-color: #fff;
-        width: 46px;
-        height: 40px;
-        position: absolute;
-        top: 1px;
-        left: 0;
-        cursor: move;
-        color: #00c2b3; }
-
-@keyframes slidetounlock {
-  0% {
-    background-position: -200px 0; }
-  100% {
-    background-position: 200px 0; } }
-    .f_login form .f_validationAction {
-      background: #fff url("../../images/boss_posi/witing.gif") no-repeat 80px 1px;
-      background-size: 45px;
-      -webkit-animation: none;
-      background: -webkit-gradient(none); }
-    .f_login form .f_sms {
-      position: relative;
-      line-height: 26px;
-      color: #414a60;
-      font-size: 14px;
-      padding: 8px 0;
-      margin-bottom: 30px;
-      border: 1px solid #fff;
-      background: #fff url("../../images/boss_posi/f_icons-sign.png") no-repeat 8px -130px;
-      padding-left: 33px; }
-      .f_login form .f_sms input {
-        width: 85px;
-        border-right: 1px solid #ccc; }
-      .f_login form .f_sms span {
-        margin-left: 5px;
-        width: 92px;
-        color: #5dd5c8;
-        font-size: 14px; }
-    .f_login form .f_smsAction {
-      background-position: 8px -315px; }
-    .f_login form .f_btn {
-      background-color: #fff;
-      color: #00c2b3;
-      width: 100%;
-      font-size: 16px;
-      height: 42px;
-      line-height: 42px;
-      border: none;
-      cursor: pointer;
-      text-align: center; }
-    .f_login form .f_agreement {
-      padding: 10px 0 20px;
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.7);
-      text-align: center;
-      position: relative; }
-      .f_login form .f_agreement input {
-        position: absolute;
-        left: 8px;
-        margin-top: 8px; }
 
 /* E f_main_right  */
 /* E f_main */
@@ -679,13 +552,13 @@
     background-color: #fff;
     background-repeat: no-repeat; }
   .f_feedback .f_flevel_1 {
-    background-image: url("../../images/boss_posi/smile-face.png");
+    background-image: url("../images/boss_posi/smile-face.png");
     background-position: 1px 8px; }
   .f_feedback .f_flevel_2 {
-    background-image: url("../../images/boss_posi/smile-face.png");
+    background-image: url("../images/boss_posi/smile-face.png");
     background-position: -90px 8px; }
   .f_feedback .f_flevel_3 {
-    background-image: url("../../images/boss_posi/smile-face.png");
+    background-image: url("../images/boss_posi/smile-face.png");
     background-position: -190px 8px; }
   .f_feedback .f_select {
     color: #00c2b3; }

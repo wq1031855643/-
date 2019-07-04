@@ -1,3 +1,5 @@
+
+  
     //职位ajax请求
     var POSI = '';
     $.ajax({
@@ -14,9 +16,9 @@
         var str = "";
         for(var i=0,len = POSI.length ; i < len ;i++){
             if(POSI[i].code == code){
-                str += '<li code ='+ code +' style= "background:#f1f3f6">'+ POSI[i].name +'</li>';
+                str += '<a><li code ='+ code +' style= "background:#f1f3f6">'+ POSI[i].name +'</li>';
             }else{
-                str += '<li code ='+ POSI[i].code +'>'+ POSI[i].name +'</li>';
+                str += '<li code ='+ POSI[i].code +'>'+ POSI[i].name +'</li></a>';
             }  
         }
         $(".f_posiList .f_posi_ul1").html(str);
@@ -278,11 +280,9 @@
         var len = cardNUM + 30;
         var jen = cardJSON.length;
         for(var i = cardNUM; i < len && i < jen; i++){
-            str += '<li><div class="f_primary"><h3>'+ cardJSON[i].jobName+'<span>'+ cardJSON[i].pay+'</span></h3><p>'+ cardJSON[i].address +'<em></em>'+ cardJSON[i].year+'<em></em>'+cardJSON[i].education+'</p></div><div class="f_company_nama"><h3>'+cardJSON[i].companyName+'</h3><p>'+cardJSON[i].tmt+'<em></em>'+cardJSON[i].financing+'<em></em>'+cardJSON[i].peopleNum+'</p></div><div class="f_contact"><h3><img src="'+cardJSON[i].img +'">'+cardJSON[i].recruiter+'<em></em>'+cardJSON[i].type+'</h3></div><a>立即沟通</a></li>';
+            str += '<li><a class="url" target="_blank" herf = "JobMessage.html?type=posi"></a><div class="f_primary"><h3>'+ cardJSON[i].jobName+'<span>'+ cardJSON[i].pay+'</span></h3><p>'+ cardJSON[i].address +'<em></em>'+ cardJSON[i].year+'<em></em>'+cardJSON[i].education+'</p></div><div class="f_company_nama"><h3>'+cardJSON[i].companyName+'</h3><p>'+cardJSON[i].tmt+'<em></em>'+cardJSON[i].financing+'<em></em>'+cardJSON[i].peopleNum+'</p></div><div class="f_contact"><h3><img src="'+cardJSON[i].img +'">'+cardJSON[i].recruiter+'<em></em>'+cardJSON[i].type+'</h3></div><a class = "liLink ">立即沟通</a></li>';
         }
-        $('.f_main_left').html(str);
-        
-        
+        $('.f_main_left').html(str); 
     }
 
     //分页处理
@@ -319,47 +319,17 @@
 
 
     $(".f_card_left").on("mouseover","li",function(){
-        $(this).children('a').addClass('btn');
+        $(this).children('.liLink').addClass('btn')
         $(this).children('.f_contact').css("display","none");
-    })
+    });
     $(".f_card_left").on("mouseout","li",function(){
-        $(this).children('a').removeClass("btn");
+        //$(this).children('.liLink').removeClass("btn");
+        $(this).children('.liLink').removeClass('btn')
         $(this).children('.f_contact').css("display","block");
-    })
+    });
     $(".f_card_left").on("click","li",function(){
-        var str = $(this).children().eq(0).children("h3").html();
-        var val3 = $(this).children().eq(1).children("h3").html();
-        var strArr = str.split("<span>");
-        var val1 = strArr[0];
-        var val2 = strArr[1].split("</span>")[0];
-        var valArr = [val1,val2,val3];
-        if(localStorage.getItem('readArr')){
-            var readArr = localStorage.getItem('readArr').split(',');
-            for(var i = 0 ; i < valArr.length ; i++){
-                readArr.push(valArr[i]);
-            }
-            var heavyArr =[];
-            var heavyStr = "";
-            for(var i =0; i < readArr.length ; i++ ){
-                if((i + 1) % 3 == 0){
-                    heavyStr += readArr[i]
-                    heavyArr.push(heavyStr);
-                    heavyStr = '';
-                }else{
-                    heavyStr += readArr[i]+ ',';
-                }
-            }
-            var readArr = Array.from(new Set(heavyArr));
-        }else{
-            var readArr = [];
-            readArr.push(valArr);
-        }
-        while(readArr.length > 5){
-            heavyArr.shift();
-        }
-        localStorage.setItem("readArr",readArr);
-        f_card();
-        return false;
+        var url = $(this).children('.url').attr('herf');
+		location.href = url;
     });
 
 //E f_main_left

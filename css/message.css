@@ -1,10 +1,9 @@
 .xw_poster{
-    height: 398px;
+    height: 290px;
     background: url(https://static.zhipin.com/zhipin/v173/web/news/images/list-banner.jpg) no-repeat;
     background-size: cover;
-    overflow: hidden;
     text-align: center;
-    box-sizing: border-box;
+	padding-top: 108px;
 }
 .xw_poster h1{
     font-weight: 400;
@@ -12,7 +11,6 @@
     letter-spacing:3px;
     line-height: 40px;
     color: #fff;
-    margin-top: 108px;
     white-space:nowrap
 }
 .xw_poster a{
