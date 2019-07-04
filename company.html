@@ -5,15 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>BOSS直聘公司咨询</title>
+<link rel="stylesheet" href="css/font/iconfont.css">
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/head.css">
+<link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="css/company.css">
 <link rel="stylesheet" href="css/common.css">
 
 </head>
 <body>
-<div class="l_top"></div>
-<!-------------------------------header结束------------------------------- -->
+<div id="header"></div>
+<!-------------------------------header结束
+    ------------------------------- -->
 <div id="wrap">
     <div class="text main">
         <div class="company-address con-bottom">
@@ -62,19 +65,106 @@
                 <span>28+</span>
                 公司
             </div>
-            <a class="checkbox" href="#">
-                <input type="checkbox" value="0" class="cbox">
+            <div class="xdt">
+                <span class="cs">
+                    <input type="checkbox" class="cbox" >
+                </span>
                 <span>根据简历精准匹配</span>
-            </a>
+            </div>
         </div>
-        <div class="company-list">
-            <ul></ul>
+        <ul class="company-list">
+        </ul>
+        <div class="bar">
+            <a href="#"></a>
+            <a href="#" class="nm">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">···</a>
+            <a href="#"></a>
         </div>
     </div>
-    <!-------------------------------main结束------------------------------- -->
-    <div id="footer"></div>
-    <!-------------------------------footer结束------------------------------- -->
 </div>
+    <!-------------------------------main结束------------------------------- -->
+<div class="recruit">
+    <div class="t1 text">
+        <p>城市招聘:</p>
+        <ul class="u1">
+        </ul>
+    </div>
+    <div class="t2 text">
+        <p>热门行业:</p>
+        <ul class="u2">
+        </ul>
+    </div>
+    <div class="a_list">
+        <a href="#">首页</a>
+        <em></em>
+        <a href="#">公司大全</a>
+        <em></em>
+        <a href="#">行业不限</a>
+        <em></em>
+        <a href="#">全国</a>
+    </div>
+    <label class="z_u2">
+        <span class="zk">展开</span>
+        <em></em>
+    </label>
+</div>
+<!-------------------------------recruit结束------------------------------- -->
+<div id="footer"></div>
+<!-------------------------------footer结束------------------------------- -->
+
+
+<div class="xd">
+    <div class="xw">
+        <div class="xdt">
+            <span class="cs" style="margin-top: 15px">
+                <input type="checkbox" class="cbox" style="float: left; width:18px; height:18px;">
+            </span>
+            <span>根据简历精准匹配</span>
+        </div>
+        <div class="ul1">
+            <ul>
+                <li class="li1">
+                    <span class="text">公司地点
+                    <i class="arrow"></i>
+                    </span>
+                    <div class="z_address liz">
+                        <ul></ul>
+                    </div>
+                </li>
+                <li class="li1">
+                    <span class="text">行业类型
+                    <i class="arrow"></i>
+                    </span>
+                    <div class="z_type liz">
+                        <ul></ul>
+                    </div>
+                </li>
+                <li class="li1">
+                    <span class="text">融资阶段
+                    <i class="arrow"></i>
+                    </span>
+                    <div class="z_tage liz x_r">
+                        <ul></ul>
+                    </div>
+                </li>
+                <li class="li1">
+                    <span class="text">公司规模
+                    <i class="arrow"></i>
+                    </span>
+                    <div class="z_size liz x_r">
+                        <ul></ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="z_xd">
+        </div> -->
+    </div>
+        <!-------------------------出来吧 结束---------------------------->
+</div>
+<!-------------------------吸顶 结束---------------------------->
 
 <div class="mask">
 </div>
@@ -87,9 +177,11 @@
         <ul class="m_Ul0">
         </ul>
     </div>
+    <i class="c_close"></i>
 </div>
 </body>
 <script src="jquery-1.8.3/jquery-1.8.3.js"></script>
 <script src="js/require.js" data-main="js/main"></script>
 <script src="js/company.js"></script>
 </html>
+<!-------------------------mask 结束---------------------------->

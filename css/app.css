@@ -257,7 +257,7 @@
 .company .img img:nth-child(5){
     top: 256px;
     left: 170px;
-} 
+}
 .company .img img:nth-child(6){
     top: 238px;
     right: 22px;
@@ -428,52 +428,90 @@
 }
 
 /****************************media***************************/
-.media .lunbo{
-    width: 100%;
-    height:88px;
-    overflow: hidden;
-    margin-top: 135px;
-    margin-bottom:250px;
-    position: relative;
+
+* {
+    margin: 0;
+    padding: 0
 }
-.lunbo ul{
-    width: 1615%;
+
+ul li {
+    list-style: none
+}
+
+img {
+    margin: 0
+}
+
+
+.banner {
+    position: relative;
+    width: 970px;
+    height: 88px;
+    margin: 135px 35px 226px;
+    padding: 0 50px;
+}
+
+.banner .b_main {
+    position: relative;
+    max-width: 8250px;
+    margin: 0px auto;
+}
+
+.banner .b_main .lunbo {
+    width: 100%;
+    overflow: hidden;
     position: relative;
     height: 88px;
-
-    transition-duration: 0s;
-    transform: translate3d(0px, 0px, 0px);
+    margin-left: -32px;
+    padding-right: 32px;
 }
-.lunbo ul li{
+.banner .b_main .lunbo ul{
+    width: 1615%;
+    position: absolute;
+    margin-left: 45px;
+    margin-top: 4px;
+    left: 0;
+    cursor: pointer;
+}
+.b_main .lunbo li {
     float: left;
     list-style: outside none none;
     position: relative;
-    width: 117.143px;
+    width: 130px;
     margin-right: 10px;
 }
-.arrow {
+/*这里给绝对定位，是为了把li叠在一起*/
+
+
+/*两边耳朵的样式*/
+.b_btn div {
     position: absolute;
-    top: 35%;
-    color: green;
-    padding:0px 14px;
-    border-radius: 50%;
-    font-size: 50px;
-    z-index: 2;
-    display: none;
+    width: 50px;
+    height: 50px;
+    font-size: 70px;
+    color: #dadada;
+    text-align: center;
+    line-height: 45px;
+    top: 50%;
+    margin-top: -25px;
+    cursor: pointer;
 }
-.arrow_left {
-    left: 10px;
+.b_btn div:hover{
+    color: #59cac2;
 }
-.arrow_right {
-    right: 10px;
+.b_btn .b_left {
+    left: -65px;
+    border-radius: 50%
 }
-/* .container:hover .arrow {
-    display: block;
+
+/*移到左边*/
+
+.b_btn .b_right {
+    right: -65px;
+    border-radius: 50%
 }
-.container .arrow:hover {
-    background-color: rgba(0,0,0,0.2);
-} */
-/**********************************lunbo*************************************/
+
+/*移到右边*/**********************************lunbo*************************************/
 
 #finish{
     height: 136px;

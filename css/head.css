@@ -35,6 +35,7 @@
 .xw_nav_left{
     float: left;
     line-height: 49px;
+   
 }
 .xw_nav_left li{
     float: left;
@@ -297,6 +298,6 @@
     height: 640px;
     background: brown;
 }
-/* .xw_s-right{
+.xw_s-right{
 
-} */
+}
