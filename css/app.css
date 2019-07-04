@@ -34,34 +34,8 @@
 #xheader,#wrap,#xfooter{
     clear: both;
 }
-/*******************************动画********************************/
-.fadeInLeft {
-    -webkit-animation-name: fadeInLeft;
-    animation-name: fadeInLeft;
-}
-.fadeInRight {
-    -webkit-animation-name: fadeInRight;
-    animation-name: fadeInRight;
-}
-.fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-}
-.fadeInDown {
-    animation-name: fadeInDown;
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
-}
-.animation {
-    -webkit-animation-duration: 1s;
-    -webkit-animation-delay: .2s;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-delay: .2s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-}
+
+
 .xw_nav_left li {
     float: left;
     overflow: hidden;
@@ -84,7 +58,6 @@
     height: 660px;
     float: left;
     position: relative;
-    animation-name: fadeInLeft;
 }
 
 .direcruit .img{background: url(../images/boss_app/figure-phone-2.png) center bottom no-repeat;}
@@ -94,8 +67,6 @@
     height: 100px;
     top: 256px;
     left: 127px;
-    animation: fadeInUp 1s ease 1.3s;
-    animation-fill-mode: both;
     background: url(../images/boss_app/app-tip.png) no-repeat;
 }
 .direcruit .img .app-tip{
@@ -165,8 +136,10 @@
 .chat{
     background: #f5f7f9;
     padding: 220px 0 100px;
+    height: 941px;
 }
 .chat .text{
+    display: none;
     background: url(../images/boss_app/text-title.png) no-repeat;
     height: 114px;
     margin-left: 15%;
@@ -241,7 +214,7 @@
     height: 160px;
     background: url(../images/boss_app/text-title.png) center -507px no-repeat;
 }
-.company .img{
+.company .img0{
     margin: 0 auto;
     width: 866px;
     height: 368px;
@@ -249,30 +222,30 @@
     background: url(../images/boss_app/figure-computer.png) center bottom no-repeat;
     position: relative;
 }
-.company .img img{
+.company .img0 img{
     position: absolute;
 }
-.company .img img:nth-child(1){
+.company .img0 img:nth-child(1){
     top: 150px;
     right: 170px;
 }
-.company .img img:nth-child(2){
+.company .img0 img:nth-child(2){
     top: 177px;
     left: 0;
 }
-.company .img img:nth-child(3){
+.company .img0 img:nth-child(3){
     top: 58px;
     left: 85px;
 }
-.company .img img:nth-child(4){
+.company .img0 img:nth-child(4){
     top: 58px;
     right: 50px;
 }
-.company .img img:nth-child(5){
+.company .img0 img:nth-child(5){
     top: 256px;
     left: 170px;
 }
-.company .img img:nth-child(6){
+.company .img0 img:nth-child(6){
     top: 238px;
     right: 22px;
 }
@@ -284,6 +257,7 @@
     padding-left: 47px;
 }
 .decent .text{
+    float: left;
     display: inline-block;
     width: 634px;
     height: 240px;
@@ -313,35 +287,26 @@
     background:url(../images/boss_app/cards-list.png) no-repeat;
 }
 .decent .img .show_cards li:nth-child(1){
-    animation: cardShow1 2.1s ease .2s;
-}
-.decent .img .show_cards li:nth-child(2){
-    animation: cardShow2 1.8s ease .2s;
     background-position: 0 -100px;
 }
-.decent .img .show_cards li:nth-child(3){
-    animation: cardShow3 1.5s ease .2s;
+.decent .img .show_cards li:nth-child(2){
     background-position: 0 -200px;
 }
-.decent .img .show_cards li:nth-child(4){
-    animation: cardShow4 1.2s ease .2s;
+.decent .img .show_cards li:nth-child(3){
     background-position: 0 -316px;
-    transform: perspective(500px) rotateX(-5deg) scale(1.14) translateY(-30px);
     margin-top: -10px;
+    transform: perspective(500px) rotateX(-5deg) scale(1.14) translateY(-30px);
 }
-.decent .img .show_cards li:nth-child(5){
-    animation: cardShow5 .9s ease .2s;
+.decent .img .show_cards li:nth-child(4){
     background-position: 0 -433px;
     margin-top: -80px;
     transform: perspective(500px) rotateX(-10deg) scale(1.23) translateY(-15px);
 }
-.decent .img .show_cards li:nth-child(6){
-    animation: cardShow6 .6s ease .2s;
+.decent .img .show_cards li:nth-child(5){
     background-position: 0 -541px;
     margin-top: -81px;
-    box-shadow: 0 -2px 15px rgba(0,0,0,.1);
     transform: perspective(500px) rotateX(-10deg) scale(1.32) translateY(0);
-
+    box-shadow: 0 -2px 15px rgba(0,0,0,.1);
 }
 /****************************decent***************************/
 .media{
@@ -350,6 +315,7 @@
     padding-top: 150px;
 }
 .media .text{
+    display: none;
     height: 60px;
     padding-bottom:100px;
     background: url(../images/boss_app/text-title.png) center -1155px no-repeat;
@@ -362,7 +328,9 @@
     margin-right: 34px;
     background:url(../images/boss_app/media-logos.png) no-repeat;
 }
-
+.chat .text,.chat .fadein,.chat .footer,.direcruit .img,.direcruit .text,.company .img0,.company .text,.company .img1,.decent .text,.decent .img,.show_cards,.show_cards li,.media .text,.media .img,.media .text2,.banner .lunbo{
+    display: none;
+}
 .media .img a:nth-child(1){
     background-position: 0 0;
 }
@@ -472,6 +440,7 @@ img {
 }
 
 .banner .b_main .lunbo {
+    display: none;
     width: 100%;
     overflow: hidden;
     position: relative;

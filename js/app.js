@@ -59,3 +59,37 @@ $(".b_main .lunbo ul").hover(function () {
     auto();
 });
 
+    var a_height = $(document).scrollTop();
+    $(window).scroll(function(){
+        var b_height = $(document).scrollTop();
+        console.log(123);
+        if(a_height < b_height){
+            if(b_height>863){
+                $('.chat .text').show().addClass(' animated fadeInDown');
+                $('.chat .fadein').show().addClass(' animated fadein');
+                $('.chat .footer').show().addClass(' animated fadeInUp');
+            }
+            if(b_height>1800){
+                $('.direcruit .img').show().addClass(' animated fadeInLeft');
+                $('.direcruit .text').show().addClass(' animated fadeInRight');
+            }
+            if(b_height>2725){
+                $('.company .img0').show().addClass(' animated fadeInUp');
+                $('.company .text').show().addClass(' animated fadeInDown');
+                $('.company .img1').show().addClass(' animated fadeIn');
+            }
+            if(b_height>3640){
+                $('.decent .text').show().addClass(' animated fadeInLeft');
+                $('.decent .img').show().addClass(' animated fadeInRight');
+                $('.show_cards,.show_cards li').show().addClass(' animated fadeInDown');
+            }
+            if(b_height>4580){
+                $('.media .text').show().addClass(' animated fadeInDown');
+                $('.media .img').show().addClass(' animated fadeIn');
+                $('.media .text2').show().addClass(' animated fadeInDown');
+            }
+            if(b_height>4580){
+                $('.banner .lunbo').show().addClass(' animated fadeIn');
+            }
+        }
+    });

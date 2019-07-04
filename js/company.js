@@ -194,7 +194,6 @@ $('.cbox').bind('click',function(){
 
 // 吸顶
 $(window).on("scroll", function(){
-    console.log(1);
     var top = $(this).scrollTop(); // 当前窗口的滚动距离
     if(top>350){
         $(".xd").show();
