@@ -25,7 +25,7 @@
 }
 #xfooter{
     height: 213px;
-    background-color: #f5f7f9;
+    background-color: #fff;
 }
 #header,#footer,.app,.chat,.direcruit,.decent,.media{
     width: 1263px;
@@ -62,12 +62,15 @@
     animation-timing-function: ease;
     animation-fill-mode: both;
 }
+.xw_nav_left li {
+    float: left;
+    overflow: hidden;
+    height: 60px;
+}
 /*****************************************************************/
 .app{
-    
     height: 803px;
     position: relative;
-    padding: 0 82px;
 }
 .direcruit{
     height: 855px;
@@ -161,37 +164,40 @@
 /****************************app direcruit***************************/
 .chat{
     background: #f5f7f9;
-    padding: 220px 200px 100px 230px;
+    padding: 220px 0 100px;
 }
 .chat .text{
     background: url(../images/boss_app/text-title.png) no-repeat;
     height: 114px;
+    margin-left: 15%;
 }
 .chat .fadein{
     text-align: center;
     height: 210px;
     position: relative;
+    padding: 0 180px
 }
 
 .chat .fadein img{
     float: left;
     position: absolute;
+    z-index: 999;
 }
 .chat .fadein .fade-img1{
     top: 100px;
-    left: 0;
+    left: 12%;
 }
 .chat .fadein .fade-img2{
     top: 135px;
-    left: 35%;
+    left: 36%;
 }
 .chat .fadein .fade-img3{
     top: 135px;
-    left: 64%;
+    left: 58%;
 }
 .chat .fadein .fade-img4{
     top: 120px;
-    right: 0;
+    right: 12%;
 }
 
 .chat .footer{
@@ -203,20 +209,19 @@
     display: block;
     position: absolute;
 }
-.chat .footer:nth-child(1){
+.chat .footer img:nth-child(1){
     z-index: 1;
-    height: 336px;
-    left: 14%;
+    left: 17%;
 }
 .chat .footer img:nth-child(2){
     top: 115px;
-    left: 43%;
+    left: 46%;
     height: 115px;
     z-index: 99999;
 }
 .chat .footer img:nth-child(3){
     bottom: 0;
-    left: 20%;
+    left: 23%;
     height: 152px;
     z-index: 1;
 }
@@ -525,4 +530,20 @@ img {
     background: #fff;
 }
 
+.xw_footer {
+    height: 212px;
+    background: #fff;
+    border-bottom: none;
+}
+.xw_msg-left{
+    float: left;
+}
+.xw_siteinfo {
+    width: 1263px;
+    height: 212px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 28px 0 18px 0;
+    position: relative;
+}
 /*********************************footer*************************************/

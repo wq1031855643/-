@@ -101,7 +101,7 @@ $.ajax({
         var str3 = "";
         for (let i = 0; i < json.length; i++) {
             var str = "";
-            str +='<li href="#" class="cell"><div class="part1"><img src='+json[i].src+' alt="" class="pl"><div class="pr"><p>'+json[i].comName+'</p><div><span>'+json[i].financing+'</span><em class="vline"></em><span>'+json[i].business+'</span></div></div></div><div class="part2"><span>热招：</span><span class="h">'+json[i].hot+'</span><span>'+json[i].pay+'</span></div></li>';
+            str +='<li class="cell"><a href="../comdetails.html"><div class="part1"><img src='+json[i].src+' alt="" class="pl"><div class="pr"><p>'+json[i].comName+'</p><div><span>'+json[i].financing+'</span><em class="vline"></em><span>'+json[i].business+'</span></div></div></div><div class="part2"><span>热招：</span><span class="h">'+json[i].hot+'</span><span>'+json[i].pay+'</span></div></a></li>';
             if(i>55){
                 str3 += str;
             }else if(i>27){
@@ -110,6 +110,7 @@ $.ajax({
                 str1 += str;
             }
         }
+        $('.cell').click(function(){});
         el.append(str1);
         console.log($('.bar').find('a').eq(1).attr('class'));
         $('.bar').on('click','a',function(){
