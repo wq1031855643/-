@@ -86,6 +86,13 @@ $.ajax({
     }
 });
 
+$('.m_Ul0').on("click","li",function(){
+    $('#wrap .text .industy-type .content').find('a').eq(0).html()
+    $('.mBody').hide();
+    $('.mask').hide();
+    $('#wrap .text .company-address .content').find('a').eq(0).html($(this).html());
+});
+
 //cell招聘信息
 $.ajax({
     type:'get',
