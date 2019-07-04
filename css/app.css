@@ -7,23 +7,33 @@
 }
 #wrap{
     margin: 0 auto;
+    clear: both;
 }
-#header{
+.decent1{
+    background: #fff;
+    height: 940px;
+}
+#xheader{
     height: 60px;
-    width: 1263px;
     background-color: #ffffff;
 }
-#main{
-    height: 5647px;
-    width: 1263px;
+.app1{
     background-color: #62d5c8;
 }
-#footer{
+.app2{
+    background: #62d5c8 url(../images/boss_app/app-bg.png) center bottom no-repeat;
+}
+#xfooter{
     height: 213px;
-    width: 1263px;
     background-color: #f5f7f9;
 }
-
+#header,#footer,.app,.chat,.direcruit,.decent,.media{
+    width: 1263px;
+    margin: 0 auto;
+}
+#xheader,#wrap,#xfooter{
+    clear: both;
+}
 /*******************************动画********************************/
 .fadeInLeft {
     -webkit-animation-name: fadeInLeft;
@@ -54,7 +64,7 @@
 }
 /*****************************************************************/
 .app{
-    background: #62d5c8 url(../images/boss_app/app-bg.png) center bottom no-repeat;
+    
     height: 803px;
     position: relative;
     padding: 0 82px;
@@ -62,7 +72,6 @@
 .direcruit{
     height: 855px;
     padding-top: 70px;
-    background: #59cac2;
 }
 .app .img{
     background: url(../images/boss_app/figure-phone-app.png) center bottom no-repeat;
@@ -160,7 +169,6 @@
 }
 .chat .fadein{
     text-align: center;
-    width: 960px;
     height: 210px;
     position: relative;
 }
@@ -171,19 +179,19 @@
 }
 .chat .fadein .fade-img1{
     top: 100px;
-    left: -60px;
+    left: 0;
 }
 .chat .fadein .fade-img2{
     top: 135px;
-    left: 240px;
+    left: 35%;
 }
 .chat .fadein .fade-img3{
     top: 135px;
-    left: 515px;
+    left: 64%;
 }
 .chat .fadein .fade-img4{
     top: 120px;
-    left: 775px;
+    right: 0;
 }
 
 .chat .footer{
@@ -198,6 +206,7 @@
 .chat .footer:nth-child(1){
     z-index: 1;
     height: 336px;
+    left: 14%;
 }
 .chat .footer img:nth-child(2){
     top: 115px;
@@ -207,7 +216,7 @@
 }
 .chat .footer img:nth-child(3){
     bottom: 0;
-    left: 77px;
+    left: 20%;
     height: 152px;
     z-index: 1;
 }
@@ -511,67 +520,9 @@ img {
     border-radius: 50%
 }
 
-/*移到右边*/**********************************lunbo*************************************/
-
 #finish{
     height: 136px;
     background: #fff;
 }
-.xw_siteinfo {
-    width: 1170px;
-}
-.xw_msg-right {
-    margin-top: -160px;
-}
-/* -------------------转换分割---------------------- */
-.xw_wrap{
-    height: 60px;
-    background: #fff;
-    border-top: 1px solid #b6b4b6;
-    /* display: none; */
 
-}
-.xw_header{
-    width: 1170px;
-    height: 60px;
-    margin: 0 auto;
-}
-.xw_logo{
-    color: #5dd5c8;
-    float: left;
-    width: 173px;
-    height: 36px;
-    margin-top: 10px;
-    /* margin-right: 5px; */
-    background: url(https://static.zhipin.com/zhipin/v171/web/news/images/logo-x.png) 3px 7px no-repeat;
-}
-.xw_nav_left{
-    float: left;
-    line-height: 60px;
-}
-.xw_nav_left li a{
-    margin-left: 34px;
-    color: #000;
-    height: 60px;
-}
-.xw_enter,.xw_sign{
-    margin-top: 18px;
-    color: #9fa3b0;
-}
-.xw_her_right .xw_enter:hover{
-    background: #5dd5c8;
-    color: #fff;
-}
-.xw_her_right .xw_sign:hover{
-    background: #5dd5c8;
-    color: #fff;
-}
-.xw_nav_right li{
-    line-height: 60px;
-    margin: 0 20px 0 20px;
-
-}
-.xw_nav_right li a{
-    color: #000;
-}
 /*********************************footer*************************************/

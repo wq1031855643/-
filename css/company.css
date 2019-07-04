@@ -78,7 +78,6 @@ h5{
 }
 .m_Ul0 li{
     display: inline-block;
-    float: left;
     line-height: 40px;
     width: 25%;
     cursor: pointer;
