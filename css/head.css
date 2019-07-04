@@ -300,6 +300,8 @@ body{
     /* position: absolute */
     display: inline-block;
     float: left;
+    box-shadow: -2px 0px 3px -2px #9fa3af;
+    /* border-left: 1px solid #666 ; */
 }
 .xw_s-left ul{
     width: 60px;
