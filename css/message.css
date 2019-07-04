@@ -126,6 +126,7 @@
     margin: 15px auto 0;
     background: #fff; 
     margin-bottom: 43px;
+    
 }
 .xw_jou-bottom ol li{
     width: 970px;
@@ -220,6 +221,7 @@
     top: 0;
     left: 0;
     display: none;
+     
 }
 .xw_media-centre{
     width: 490px;
@@ -231,6 +233,7 @@
     margin-top: -256px;
     background: #fff;
     border-radius: 5px;
+    animation: pulse 0.5s;
 }
 .xw_media-centre h1{
     width: 470px;

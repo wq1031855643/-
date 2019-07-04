@@ -5,7 +5,7 @@ require.config({
 		'jquery': ['https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min', 'jquery-1.8.3.min']
 	}
 });
-
+// 以下是头部
 require(["hm", "jquery"], function(hm, $) {
 	hm.creatHead();
 	hm.creatFooter();
@@ -36,6 +36,7 @@ $('.xw_nav_left').on('click','a',function(){
 // 以上是头部
 // 以下是侧边栏
 // $('.xw_sideBar')
+$('.xw_s-left,.xw_s-right').height($(window).height());
 $(window).scroll(function() {
     if($(document).scrollTop()>=50){
         $('.xw_sideBar').css('position','fixed').css('top',0);
