@@ -101,7 +101,7 @@ require(["hm", "jquery", "jqmsw"], function(hm, $) {
     $('.xw_close').click(function() {
         $('.xw_dim').css('display', 'none');
     });
-    $('.xw_f-bottom:last').click(function() {
+    $('.xw_f-bottom a:last').click(function() {
         $('.xw_dim').css('display', 'none');
     });
     $('.vcc').text(getYZM(6)).click(function() {
