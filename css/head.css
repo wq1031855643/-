@@ -1,6 +1,3 @@
-body{
-    background: #999;
-}
 .clearfix:after{
     content: ".";
     clear: both;

@@ -9,13 +9,16 @@ require.config({
 });
 
 require(["hm", "jquery", "jqmsw","loginMod"], function(hm, $, jqm, login) {
-	console.log(login);
+	// console.log(login);
 	hm.creatHead();
 	if ($("#l_body").length == 1) {
 		$('<div class="nav-city"><p class="nav-city-box"><i class="icon-poi"></i><span class="nav-city-selected f_libcity">深圳</span><span class="switchover-city">[切换城市]</span></p></div>').insertAfter($("#xw_logo"));
 	}
 	var url = location.href;
 	var type = url.split("=")[1];
+	if (type == "home#") {
+		type = "home";
+	}
 	
 	if(type == "app" || type == "zx"){
 		$(".tra").css("color","#414a60");

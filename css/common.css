@@ -1,9 +1,10 @@
 @charset "utf-8";
 
 /* css common */
-html {
+html,body{
 	overflow: auto;
 	background: #f6f6f8;
+	height: 100%;
 }
 
 body,
