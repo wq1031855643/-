@@ -187,6 +187,9 @@ $('.cbox').bind('click',function(){
             login.creatLogin()
             require(['z_login'])
     }
+    $('.z_close').click(function(){
+        $('.mask').hide();
+    });
 })
 
 
