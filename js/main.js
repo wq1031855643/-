@@ -16,7 +16,8 @@ require(["hm", "jquery", "jqmsw","loginMod"], function(hm, $, jqm, login) {
 	}
 	var url = location.href;
 	var type = url.split("=")[1];
-	if (type == "home#") {
+	console.log(type)
+	if (type == "home#" || type == undefined) {
 		type = "home";
 	}
 	
@@ -48,6 +49,9 @@ require(["hm", "jquery", "jqmsw","loginMod"], function(hm, $, jqm, login) {
             $('.xw_sideBar').css('top', 50);
         }
     });
+	$("#xw_logo").on("click",function(){
+		location.href = "index.html?type=home";
+	});
     $('.xw_s-left li').click(function() {
         $('.xw_s-left li').children().removeAttr('style');
         if ($(this).text() == "") {
