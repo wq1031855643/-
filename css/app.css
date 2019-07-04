@@ -169,7 +169,6 @@
 }
 .chat .fadein{
     text-align: center;
-    width: 960px;
     height: 210px;
     position: relative;
 }
@@ -180,19 +179,19 @@
 }
 .chat .fadein .fade-img1{
     top: 100px;
-    left: -60px;
+    left: 0;
 }
 .chat .fadein .fade-img2{
     top: 135px;
-    left: 240px;
+    left: 35%;
 }
 .chat .fadein .fade-img3{
     top: 135px;
-    left: 515px;
+    left: 64%;
 }
 .chat .fadein .fade-img4{
     top: 120px;
-    left: 775px;
+    right: 0;
 }
 
 .chat .footer{
@@ -207,6 +206,7 @@
 .chat .footer:nth-child(1){
     z-index: 1;
     height: 336px;
+    left: 14%;
 }
 .chat .footer img:nth-child(2){
     top: 115px;
@@ -216,7 +216,7 @@
 }
 .chat .footer img:nth-child(3){
     bottom: 0;
-    left: 77px;
+    left: 20%;
     height: 152px;
     z-index: 1;
 }
