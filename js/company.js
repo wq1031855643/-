@@ -21,14 +21,13 @@ $.ajax({
     dataType:'json',
     cache:false, //不使用缓存
     success:function (json){
-        console.log(json);
         var h_list = "";
         var cAddress =$('#wrap .text .company-address .content');
         var hotCity = json.zpData.hotCityList;
         citylist = json.zpData.cityList;
         $('.m_Ul0').append('<li>全国</li>');//.m_Ul0添加首项
 
-        for (let i = 1; i < hotCity.length; i++) {//遍历热门城市
+        for (var i = 1; i < hotCity.length; i++) {//遍历热门城市
             h_list = hotCity[i];
             cAddress.append('<a href="#">'+h_list.name+'</a>');//公司地址添加a内容
             $('.m_Ul0').append('<li>'+h_list.name+'</li>');//.m_Ul0添加li内容
@@ -39,7 +38,7 @@ $.ajax({
         h_city = cAddress.html();
         $('.showAll').click(function(){showAll();});
 
-        for (let i = 0; i < citylist.length; i++) {//遍历全国城市
+        for (var i = 0; i < citylist.length; i++) {//遍历全国城市
             c_List = citylist[i];
             $('.m_Ul').append('<li>'+c_List.name+'</li>');//.m_Ul添加li内容
         }
@@ -58,7 +57,7 @@ $('.m_Ul').on('click','li',function(){
         //城市点击事件
         var s_List = "";//热门城市1
         s_List = citylist[num-1].subLevelModelList;
-        for (let a = 0; a < s_List.length; a++) {
+        for (var a = 0; a < s_List.length; a++) {
             // return s_List[a].name;
             $('.m_Ul0').append('<li>'+s_List[a].name+'</li>')
         }
@@ -76,7 +75,7 @@ $.ajax({
     success:function (json){
         var el =$('#wrap .text .industy-type .content');
         var dig = json.zpData;
-        for (let i = 0; i < dig.length; i++) {
+        for (var i = 0; i < dig.length; i++) {
         var element = dig[i];
         el.append('<a href="#">'+element.name+'</a>');
         h_type +='<a href="#">'+element.name+'</a>'
@@ -94,14 +93,13 @@ $.ajax({
     dataType:'json',
     cache:false, //不使用缓存
     success:function (json){
-        console.log(json);
         var el =$('.company-list');
         var str1 = "";
         var str2 = "";
         var str3 = "";
-        for (let i = 0; i < json.length; i++) {
+        for (var i = 0; i < json.length; i++) {
             var str = "";
-            str +='<li class="cell"><a href="../comdetails.html"><div class="part1"><img src='+json[i].src+' alt="" class="pl"><div class="pr"><p>'+json[i].comName+'</p><div><span>'+json[i].financing+'</span><em class="vline"></em><span>'+json[i].business+'</span></div></div></div><div class="part2"><span>热招：</span><span class="h">'+json[i].hot+'</span><span>'+json[i].pay+'</span></div></a></li>';
+            str +='<li class="cell"><a href="comdetails.html?type=com"><div class="part1"><img src='+json[i].src+' alt="" class="pl"><div class="pr"><p>'+json[i].comName+'</p><div><span>'+json[i].financing+'</span><em class="vline"></em><span>'+json[i].business+'</span></div></div></div><div class="part2"><span>热招：</span><span class="h">'+json[i].hot+'</span><span>'+json[i].pay+'</span></div></a></li>';
             if(i>55){
                 str3 += str;
             }else if(i>27){
@@ -110,9 +108,8 @@ $.ajax({
                 str1 += str;
             }
         }
-        $('.cell').click(function(){});
+        // $('.cell').click(function(){});
         el.append(str1);
-        console.log($('.bar').find('a').eq(1).attr('class'));
         $('.bar').on('click','a',function(){
             $(this).attr('class','nm');
             $(this).siblings().attr('class','');
@@ -138,15 +135,7 @@ $.ajax({
     }
 });
 
-// 吸顶
-$(window).bind("scroll", function(){
-    var top = $(this).scrollTop(); // 当前窗口的滚动距离
-    if(top>350){
-        $(".xd").show();
-    } else{
-        $(".xd").hide();
-    }
-});
+
 
 
 $('.xd .li1').hover(function(){
@@ -167,7 +156,7 @@ $('.c_close').click(function(){
     $('.mask').hide();
 });
 
-for (let i = 0; i < 31; i++) {
+for (var i = 0; i < 31; i++) {
     $('.recruit ul').append('<li>鸡你太美</li>');
 }
 $('.recruit ul li').css({'cursor': 'pointer'});
@@ -194,8 +183,16 @@ $('.cbox').bind('click',function(){
     });
 })
 
-
-
 });
 
+// 吸顶
+$(window).on("scroll", function(){
+    console.log(1);
+    var top = $(this).scrollTop(); // 当前窗口的滚动距离
+    if(top>350){
+        $(".xd").show();
+    } else{
+        $(".xd").hide();
+    }
+});
 })
