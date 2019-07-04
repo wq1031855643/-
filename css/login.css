@@ -182,7 +182,7 @@ body,html{
    top: 45px;
    height: 18px;
    padding: 0 0 0 27px;
-   background: url('/project/images/z_login/z_icons.png') no-repeat 0 -1059px;
+   background: url('../images/z_login/z_icons.png') no-repeat 0 -1059px;
    background-size: 18px auto;
    color: #fc703e;
    text-align: left;
@@ -340,7 +340,7 @@ body,html{
    line-height: 18px;
    font-size: 14px;
    padding: 0 0 0 27px;
-   background: url('/project/images/z_login/z_icons.png') no-repeat 0 -1059px;
+   background: url('../images/z_login/z_icons.png') no-repeat 0 -1059px;
    background-size: 18px auto;
    color: #fc703e;
    text-align: left;
@@ -531,7 +531,7 @@ body,html{
     height: 20px;
     left: 9px;
     top: 11px;
-    background: url('/project/images/z_login/z_icons-sign.png') 2px -141px no-repeat;
+    background: url('../images/z_login/z_icons-sign.png') 2px -141px no-repeat;
     
 }
 .z_mess_i1{
@@ -562,7 +562,7 @@ body,html{
    letter-spacing: 1px;
    text-align: center;
    cursor: pointer;
-   background: url('/project/images/z_login/z_icons-sign.png') no-repeat;
+   background: url('../images/z_login/z_icons-sign.png') no-repeat;
    background-color: #fff;
    background-position: 0 -356px;
 

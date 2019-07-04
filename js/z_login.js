@@ -224,8 +224,8 @@ $('.z_wrapall').each(function (index, ele) {
                         $('.z_tipCon').html(json.msg);
                         $('.z_Tips').show();
                     },
-                    erroe:function(err){
-                        $('.z_tipCon').html(err.err);
+                    error:function(err){
+                        $('.z_tipCon').html(err.msg);
                         $('.z_Tips').show();
                     }
                 })
@@ -247,6 +247,8 @@ $('.z_wrapall').each(function (index, ele) {
                     $('.z_Tips').show();
                 },
                 error:function(err){
+                    $('.z_tipCon').html(err.msg);
+                    $('.z_Tips').show();
                 }
             })
         }   else{
