@@ -2,6 +2,14 @@
 
     //职位ajax请求
     var POSI = '';
+    $.ajax({
+        url:'./data/position.json',
+        type:'get',
+        dataType:'json',
+        success:function(json){
+            POSI = json.zpData;
+        }
+    });
     //单击职位调用的函数
     function posiArr(POSI){
         var code = localStorage.getItem("posiTypeCode");

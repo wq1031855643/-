@@ -30,7 +30,7 @@
   width: 66px;
   line-height: 30px;
   padding: 6px 15px 8px;
-  background: url("../images/boss_posi/f_icons.png") no-repeat 70px -29px; }
+  background: url("../../images/boss_posi/f_icons.png") no-repeat 70px -29px; }
 
 .f_search .f_sel span.bg {
   background-position: 70px 18px; }
@@ -57,7 +57,7 @@
   height: 100%;
   padding: 6px 0 8px;
   float: left;
-  background: url("../images/boss_posi/f_icons.png") no-repeat 82px -30px; }
+  background: url("../../images/boss_posi/f_icons.png") no-repeat 82px -30px; }
 
 .f_search .f_sel div.bg {
   background-position: 82px 18px; }
@@ -225,7 +225,7 @@
       vertical-align: middle;
       width: 12px;
       height: 16px;
-      background: url("../images/boss_posi/f_icons.png") no-repeat 0 -86px; }
+      background: url("../../images/boss_posi/f_icons.png") no-repeat 0 -86px; }
 
 .f_condition .f_condition-area {
   border-bottom: 1px solid #eef0f5; }
@@ -254,7 +254,7 @@
     padding-left: 15px;
     overflow: hidden; }
     .f_condition .f_screening span em {
-      background: url("../images/boss_posi/f_icons.png") no-repeat left -139px;
+      background: url("../../images/boss_posi/f_icons.png") no-repeat left -139px;
       display: inline-block;
       width: 12px;
       height: 12px; }
@@ -263,7 +263,7 @@
   .f_condition .f_screening .f_scr_div {
     float: left;
     width: 140px;
-    background: url("../images/boss_posi/f_icons.png") no-repeat 80px 12px;
+    background: url("../../images/boss_posi/f_icons.png") no-repeat 80px 12px;
     line-height: 26px;
     color: #414a60;
     position: relative; }
@@ -541,12 +541,12 @@
       padding: 8px 0;
       margin-bottom: 30px;
       border: 1px solid #fff;
-      background: #fff url("../images/boss_posi/f_icons-sign.png") no-repeat 8px 12px;
+      background: #fff url("../../images/boss_posi/f_icons-sign.png") no-repeat 8px 12px;
       padding-left: 33px; }
       .f_login form .f_phone .f_select em {
         display: inline-block;
         padding-right: 20px;
-        background: url("../images/boss_posi/f_icons.png") no-repeat right -222px;
+        background: url("../../images/boss_posi/f_icons.png") no-repeat right -222px;
         cursor: pointer; }
       .f_login form .f_phone .f_select em.f_emaction {
         background-position: right -182px; }
@@ -587,7 +587,7 @@
       color: #61687c;
       -webkit-animation: "slidetounlock"  3s infinite; }
       .f_login form .f_validation span.f_slider {
-        background: url("../images/boss_posi/f_icons.png") no-repeat 22px -72px, url("../images/boss_posi/f_icons.png") no-repeat 17px -72px;
+        background: url("../../images/boss_posi/f_icons.png") no-repeat 22px -72px, url("../../images/boss_posi/f_icons.png") no-repeat 17px -72px;
         display: inline-block;
         background-color: #fff;
         width: 46px;
@@ -604,7 +604,7 @@
   100% {
     background-position: 200px 0; } }
     .f_login form .f_validationAction {
-      background: #fff url("../images/boss_posi/witing.gif") no-repeat 80px 1px;
+      background: #fff url("../../images/boss_posi/witing.gif") no-repeat 80px 1px;
       background-size: 45px;
       -webkit-animation: none;
       background: -webkit-gradient(none); }
@@ -616,7 +616,7 @@
       padding: 8px 0;
       margin-bottom: 30px;
       border: 1px solid #fff;
-      background: #fff url("../images/boss_posi/f_icons-sign.png") no-repeat 8px -130px;
+      background: #fff url("../../images/boss_posi/f_icons-sign.png") no-repeat 8px -130px;
       padding-left: 33px; }
       .f_login form .f_sms input {
         width: 85px;
@@ -679,13 +679,13 @@
     background-color: #fff;
     background-repeat: no-repeat; }
   .f_feedback .f_flevel_1 {
-    background-image: url("../images/boss_posi/smile-face.png");
+    background-image: url("../../images/boss_posi/smile-face.png");
     background-position: 1px 8px; }
   .f_feedback .f_flevel_2 {
-    background-image: url("../images/boss_posi/smile-face.png");
+    background-image: url("../../images/boss_posi/smile-face.png");
     background-position: -90px 8px; }
   .f_feedback .f_flevel_3 {
-    background-image: url("../images/boss_posi/smile-face.png");
+    background-image: url("../../images/boss_posi/smile-face.png");
     background-position: -190px 8px; }
   .f_feedback .f_select {
     color: #00c2b3; }
