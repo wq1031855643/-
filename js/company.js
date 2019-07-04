@@ -35,8 +35,9 @@ $.ajax({
             // h_city +='<li>'+h_list.name+'</li>';
             // str = $('.m_Ul0').html();
         }
-        cAddress.append("<a href='#' onclick='showAll()'>全国城市</a>");//公司地址添加尾项
+        cAddress.append("<a href='#' class = 'showAll'>全国城市</a>");//公司地址添加尾项
         h_city = cAddress.html();
+        $('.showAll').click(function(){showAll();});
 
         for (let i = 0; i < citylist.length; i++) {//遍历全国城市
             c_List = citylist[i];

@@ -7,6 +7,7 @@
 }
 #wrap{
     margin: 0 auto;
+    clear: both;
 }
 #header{
     height: 60px;
