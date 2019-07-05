@@ -67,7 +67,15 @@ $(".b_main .lunbo ul").hover(function () {
             if(b_height>863){
                 $('.chat .text').show().addClass(' animated fadeInDown');
                 $('.chat .fadein').show().addClass(' animated fadein');
-                $('.chat .footer').show().addClass(' animated fadeInUp');
+                $('.chat .footer').show();
+                $('.chat .fadein .fade-img1').animate({top:100,left:'12%'},function(){
+                $('.chat .fadein .fade-img2').animate({top:135,left:'36%'},function(){
+                $('.chat .fadein .fade-img3').animate({top:135,left:'58%'},function(){
+                $('.chat .fadein .fade-img4').animate({top:100,right:'12%'},function(){
+                $('.chat .footer img:nth-child(1)').animate({left: '17%'},function(){
+                $('.chat .footer img:nth-child(2)').animate({top: 115,left: '46%',height: 115},function(){
+                $('.chat .footer img:nth-child(3)').animate({bottom: 0,left: '23%',height: 152});
+                });});});});});});
             }
             if(b_height>1800){
                 $('.direcruit .img').show().addClass(' animated fadeInLeft');
@@ -76,12 +84,25 @@ $(".b_main .lunbo ul").hover(function () {
             if(b_height>2725){
                 $('.company .img0').show().addClass(' animated fadeInUp');
                 $('.company .text').show().addClass(' animated fadeInDown');
-                $('.company .img1').show().addClass(' animated fadeIn');
+                $('.company .img1').show();
+                $('.company .img0 img:nth-child(1)').animate({top:150,right: 170},function(){
+                $('.company .img0 img:nth-child(2)').animate({top:177,left:0},function(){
+                $('.company .img0 img:nth-child(3)').animate({top:58,left:85},function(){
+                $('.company .img0 img:nth-child(4)').animate({top:58,right:50},function(){
+                $('.company .img0 img:nth-child(5)').animate({top:256,left:170},function(){
+                $('.company .img0 img:nth-child(6)').animate({top:238,right:22});
+                });});});});});
             }
             if(b_height>3640){
                 $('.decent .text').show().addClass(' animated fadeInLeft');
                 $('.decent .img').show().addClass(' animated fadeInRight');
                 $('.show_cards,.show_cards li').show().addClass(' animated fadeInDown');
+                $('.show_cards li:nth-child(1)').animate({width: 230},function(){
+                $('.show_cards li:nth-child(2)').animate({width: 230},function(){
+                $('.show_cards li:nth-child(3)').animate({width: 230},function(){
+                $('.show_cards li:nth-child(4)').animate({width: 230},function(){
+                $('.show_cards li:nth-child(5)').animate({width: 230},function(){
+                $('.show_cards li:nth-child(6)').animate({width: 230});});});});});});
             }
             if(b_height>4580){
                 $('.media .text').show().addClass(' animated fadeInDown');

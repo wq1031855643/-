@@ -156,7 +156,7 @@
     position: absolute;
     z-index: 999;
 }
-.chat .fadein .fade-img1{
+/* .chat .fadein .fade-img1{
     top: 100px;
     left: 12%;
 }
@@ -171,7 +171,7 @@
 .chat .fadein .fade-img4{
     top: 120px;
     right: 12%;
-}
+} */
 
 .chat .footer{
     padding-bottom: 70px;
@@ -184,18 +184,18 @@
 }
 .chat .footer img:nth-child(1){
     z-index: 1;
-    left: 17%;
+    /* left: 17%; */
 }
 .chat .footer img:nth-child(2){
-    top: 115px;
-    left: 46%;
-    height: 115px;
+    /* top: 115px;
+    left: 46%;*/
+    height: 0;
     z-index: 99999;
 }
 .chat .footer img:nth-child(3){
-    bottom: 0;
-    left: 23%;
-    height: 152px;
+    /* bottom: 0;
+    left: 23%;*/
+    height: 0;
     z-index: 1;
 }
 /****************************chat***************************/
@@ -224,30 +224,6 @@
 }
 .company .img0 img{
     position: absolute;
-}
-.company .img0 img:nth-child(1){
-    top: 150px;
-    right: 170px;
-}
-.company .img0 img:nth-child(2){
-    top: 177px;
-    left: 0;
-}
-.company .img0 img:nth-child(3){
-    top: 58px;
-    left: 85px;
-}
-.company .img0 img:nth-child(4){
-    top: 58px;
-    right: 50px;
-}
-.company .img0 img:nth-child(5){
-    top: 256px;
-    left: 170px;
-}
-.company .img0 img:nth-child(6){
-    top: 238px;
-    right: 22px;
 }
 /****************************company***************************/
 .decent{
@@ -281,28 +257,36 @@
 }
 .decent .img .show_cards li{
     display: block;
-    width: 230px;
+    width: 0;
     height: 90px;
     margin: 8px 0 0 12px;
     background:url(../images/boss_app/cards-list.png) no-repeat;
 }
 .decent .img .show_cards li:nth-child(1){
-    background-position: 0 -100px;
+    animation: cardShow1 2.1s ease .2s;
 }
 .decent .img .show_cards li:nth-child(2){
-    background-position: 0 -200px;
+    animation: cardShow2 1.8s ease .2s;
+    background-position: 0 -100px;
 }
 .decent .img .show_cards li:nth-child(3){
+    animation: cardShow3 1.5s ease .2s;
+    background-position: 0 -200px;
+}
+.decent .img .show_cards li:nth-child(4){
+    animation: cardShow4 1.2s ease .2s;
     background-position: 0 -316px;
     margin-top: -10px;
     transform: perspective(500px) rotateX(-5deg) scale(1.14) translateY(-30px);
 }
-.decent .img .show_cards li:nth-child(4){
+.decent .img .show_cards li:nth-child(5){
+    animation: cardShow5 .9s ease .2s;
     background-position: 0 -433px;
     margin-top: -80px;
     transform: perspective(500px) rotateX(-10deg) scale(1.23) translateY(-15px);
 }
-.decent .img .show_cards li:nth-child(5){
+.decent .img .show_cards li:nth-child(6){
+    animation: cardShow6 .6s ease .2s;
     background-position: 0 -541px;
     margin-top: -81px;
     transform: perspective(500px) rotateX(-10deg) scale(1.32) translateY(0);
