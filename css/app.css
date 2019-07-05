@@ -295,14 +295,15 @@
 /****************************decent***************************/
 .media{
     background: #f5f7f9;
-    padding-left: 60px;
     padding-top: 150px;
 }
 .media .text{
     display: none;
-    height: 60px;
     padding-bottom:100px;
     background: url(../images/boss_app/text-title.png) center -1155px no-repeat;
+}
+.media .img{
+    padding-left: 60px;
 }
 .media .img a{
     display: inline-block;
@@ -413,7 +414,7 @@ img {
     position: relative;
     width: 970px;
     height: 88px;
-    margin: 135px 35px 226px;
+    margin: 135px 100px 226px;
     padding: 0 50px;
 }
 
