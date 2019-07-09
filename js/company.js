@@ -1,4 +1,4 @@
-require(['loginMod'],function(login){
+﻿require(['loginMod'],function(login){
 
 var citylist = "";
 var str = "";
@@ -78,7 +78,7 @@ $.ajax({
         for (var i = 0; i < dig.length; i++) {
         var element = dig[i];
         el.append('<a href="#">'+element.name+'</a>');
-        h_type +='<a href="#">'+element.name+'</a>'
+        h_type = el.html();
         }
     },
     error:function (){
