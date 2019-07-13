@@ -16,7 +16,7 @@ server.get('/posi', (req, res)=>{
 })
 
 server.get('/JobMessage', (req, res)=>{
-	res.sendFile(__dirname + '/dist/JobMessage.html');
+	res.sendFile(__dirname + '/dst/JobMessage.html');
 })
 
 server.get('/comdetails', (req, res)=>{
@@ -40,6 +40,14 @@ server.get('/login', (req, res)=>{
 })
 
 server.get('/resume', (req, res)=>{
+	res.sendFile(__dirname + '/dist/resume.html');
+})
+
+server.get('/JobMessage.html', (req, res)=>{
+	res.sendFile(__dirname + '/dist/JobMessage.html');
+})
+
+server.get('/resume.html', (req, res)=>{
 	res.sendFile(__dirname + '/dist/resume.html');
 })
 //启动服务
